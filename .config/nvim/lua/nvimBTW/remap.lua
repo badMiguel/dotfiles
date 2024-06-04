@@ -31,8 +31,9 @@ v("n", "<leader>y", "\"+y")
 v("v", "<leader>y", "\"+y")
 v("n", "<leader>Y", "\"+Y")
 
-v("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+v("n", "<C-f>", "<cmd>silent !tmux neww ~/bin/.local/scripts/tmux-sessionizer<CR>")
 v("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
 
+v("n", "<leader>/", ":noh<CR>")
