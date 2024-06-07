@@ -14,8 +14,38 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	-- Theme
-	use ({
+	------ THEMES COLLECTION ------
+    -- note: select colorscheme in after/colors.lua 
+
+    -- rosepine theme
+    use ({
+        "rose-pine/neovim",
+        as = "rose-pine",
+
+        config = function ()
+            vim.cmd('colorscheme rose-pine')
+        end
+    })
+
+    -- nord theme
+    use ({
+        'shaunsingh/nord.nvim',
+        config = function ()
+            vim.cmd('colorscheme nord')
+        end
+    })
+
+    -- kanagawa theme
+    use ({
+        'rebelot/kanagawa.nvim',
+
+        config = function ()
+            vim.cmd("colorscheme kanagawa")
+        end
+    })
+
+    -- catpuccin theme
+    use ({
 		"catppuccin/nvim",
 		as = "catppuccin",
 
@@ -23,6 +53,7 @@ return require('packer').startup(function(use)
 			vim.cmd('colorscheme catppuccin')
 		end
 	})
+	------ END THEMES COLLECTION ------
 
 	-- Treesitter
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
