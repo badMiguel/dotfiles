@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
 		"tsserver",
 		"eslint",
         "html",
+        "cssls",
         "css_variables",
 	}
 })
@@ -25,6 +26,9 @@ require('lspconfig').eslint.setup {
 	capabilities = capabilities,
 }
 require('lspconfig').html.setup {
+	capabilities = capabilities,
+}
+require('lspconfig').cssls.setup {
 	capabilities = capabilities,
 }
 require('lspconfig').css_variables.setup {
