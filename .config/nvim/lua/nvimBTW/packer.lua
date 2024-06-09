@@ -53,6 +53,16 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme catppuccin')
         end
     })
+
+    -- sonokai theme
+    use 'sainnhe/sonokai'
+
+    -- everforest theme
+    use 'sainnhe/everforest'
+
+    -- nightfox theme
+    use "EdenEast/nightfox.nvim"
+
     ------ END THEMES COLLECTION ------
 
     -- Treesitter
@@ -107,6 +117,12 @@ return require('packer').startup(function(use)
     --         "MunifTanjim/nui.nvim"
     --     },
     -- })
+
+    -- lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     use 'ThePrimeagen/vim-be-good'
 
