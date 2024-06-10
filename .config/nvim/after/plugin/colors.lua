@@ -1,6 +1,7 @@
 function ColorMyPencils(color)
-    local color_options = { "catppuccin", "kanagawa", "nord", "rose-pine", 'sonokai', 'everforest', 'nightfox' }
+    local color_options = { "catppuccin", "kanagawa", "nord", "rose-pine", 'sonokai', 'everforest', 'nightfox', 'nordic' }
     color = color or color_options[3]
+    -- color = color or color_options[math.random(7)]
 
     if color == 'catppuccin' then
         require('catppuccin').setup{
@@ -45,3 +46,4 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
+

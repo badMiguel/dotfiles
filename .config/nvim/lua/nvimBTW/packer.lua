@@ -48,10 +48,6 @@ return require('packer').startup(function(use)
     use ({
         "catppuccin/nvim",
         as = "catppuccin",
-
-        config = function()
-            vim.cmd('colorscheme catppuccin')
-        end
     })
 
     -- sonokai theme
@@ -63,11 +59,15 @@ return require('packer').startup(function(use)
     -- nightfox theme
     use "EdenEast/nightfox.nvim"
 
+    -- nordic theme
+    use 'AlexvZyl/nordic.nvim'
+
     ------ END THEMES COLLECTION ------
 
     -- Treesitter
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use ('nvim-treesitter/playground')
+    use ('nvim-treesitter/nvim-treesitter-context')
 
     -- Harpoon
     use ('theprimeagen/harpoon')
@@ -109,16 +109,6 @@ return require('packer').startup(function(use)
         'rafamadriz/friendly-snippets'
     }
 
-    -- use { 'christoomey/vim-tmux-navigator', }
-
-    -- use({
-    --     "MaximilianLloyd/ascii.nvim",
-    --     requires = {
-    --         "MunifTanjim/nui.nvim"
-    --     },
-    -- })
-
-    -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -126,4 +116,25 @@ return require('packer').startup(function(use)
 
     use 'ThePrimeagen/vim-be-good'
 
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
 end)
+
+-- use { 'christoomey/vim-tmux-navigator', }
+
+-- use({
+--     "MaximilianLloyd/ascii.nvim",
+--     requires = {
+--         "MunifTanjim/nui.nvim"
+--     },
+-- })
+
+-- lualine

@@ -21,9 +21,11 @@ v.incsearch = true
 
 v.termguicolors = true
 
-v.scrolloff = 8
+v.scrolloff = 16
 v.signcolumn = "yes" 
 v.isfname:append("@-@")
+
+v.colorcolumn = '80'
 
 v.updatetime = 50 
 
