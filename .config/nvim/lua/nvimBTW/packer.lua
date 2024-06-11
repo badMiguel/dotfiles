@@ -17,37 +17,22 @@ return require('packer').startup(function(use)
     ------ THEMES COLLECTION ------
     -- note: select colorscheme in after/colors.lua 
 
-    -- rosepine theme
-    use ({
-        "rose-pine/neovim",
-        as = "rose-pine",
-
-        config = function ()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
-
-    -- nord theme
-    use ({
-        'shaunsingh/nord.nvim',
-        config = function ()
-            vim.cmd('colorscheme nord')
-        end
-    })
-
-    -- kanagawa theme
-    use ({
-        'rebelot/kanagawa.nvim',
-
-        config = function ()
-            vim.cmd("colorscheme kanagawa")
-        end
-    })
-
     -- catpuccin theme
     use ({
         "catppuccin/nvim",
         as = "catppuccin",
+    })
+
+    -- kanagawa theme
+    use 'rebelot/kanagawa.nvim'
+
+    -- nord theme
+    use 'shaunsingh/nord.nvim'
+
+    -- rosepine theme
+    use ({
+        "rose-pine/neovim",
+        as = "rose-pine",
     })
 
     -- sonokai theme
@@ -109,13 +94,16 @@ return require('packer').startup(function(use)
         'rafamadriz/friendly-snippets'
     }
 
+    -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
+    -- vim be good
     use 'ThePrimeagen/vim-be-good'
 
+    -- surround
     use({
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -126,6 +114,14 @@ return require('packer').startup(function(use)
         end
     })
 
+    -- git blame
+    use 'f-person/git-blame.nvim'
+
+    -- TreeSj
+    use({
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
+    })
 end)
 
 -- use { 'christoomey/vim-tmux-navigator', }
@@ -137,4 +133,3 @@ end)
 --     },
 -- })
 
--- lualine
