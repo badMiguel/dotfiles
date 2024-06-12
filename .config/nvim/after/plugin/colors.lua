@@ -10,7 +10,7 @@ function ColorMyPencils(color)
         'nordic',
     }
 
-    color = color or color_options[4]
+    color = color or color_options[1]
     -- color = color or color_options[math.random(7)]
 
     if color == 'catppuccin' then

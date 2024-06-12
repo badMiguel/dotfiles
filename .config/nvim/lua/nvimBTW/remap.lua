@@ -43,7 +43,7 @@ end)
 v("n", "<leader>/", ":noh<CR>", { noremap = true, silent = true })
 v("n", "<leader>.", ":nohlsearch<CR>", { noremap = true, silent = true })
 
-v("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+v("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 v("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 

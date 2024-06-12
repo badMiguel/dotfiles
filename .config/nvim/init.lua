@@ -1,3 +1,3 @@
 require("nvimBTW")
 
--- require("ascii")
+vim.g.netrw_banner = 0
