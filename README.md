@@ -4,8 +4,9 @@ This is my first time using Linux + Noevim! I am using WSL though since I don't 
 
 Heavily inspired by ThePrimeagen
 
-### Note:
-Note to future self. Add this code on .bashrc for tmux sessionizer to work
+### Setup Tips:
+
+1. Add this code on .bashrc for tmux sessionizer to work
 
 ```bashrc
 function ctrl_f_search() {
@@ -13,4 +14,9 @@ function ctrl_f_search() {
 }
 
 bind -x '"\C-f": ctrl_f_search'
+```
+2. You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
+
+```
+git clone https://github.com/tmux-plugins/tpm.git ./plugins/tpm    
 ```
