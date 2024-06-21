@@ -10,8 +10,10 @@ return require('packer').startup(function(use)
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.6',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons'
+        }
     }
 
     ------ THEMES COLLECTION ------
@@ -46,6 +48,9 @@ return require('packer').startup(function(use)
 
     -- nordic theme
     use 'AlexvZyl/nordic.nvim'
+
+    -- darcula theme
+    use 'Mofiqul/dracula.nvim'
 
     ------ END THEMES COLLECTION ------
 

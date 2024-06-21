@@ -8,9 +8,10 @@ function ColorMyPencils(color)
         'everforest',
         'nightfox',
         'nordic',
+        'dracula',
     }
 
-    color = color or color_options[1]
+    color = color or color_options[4]
     -- color = color or color_options[math.random(7)]
 
     if color == 'catppuccin' then
@@ -20,12 +21,16 @@ function ColorMyPencils(color)
     elseif color == 'kanagawa' then
         require('kanagawa').setup{
             transparent = true,
-            colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
+            colors = {
+                theme = { all = { ui = { bg_gutter = "none" } } },
+            },
         }
     elseif color == 'rose-pine' then
-        require('rose-pine').setup(
-            { styles = { transparency = true } }
-        )
+        require('rose-pine').setup({
+            styles = {
+                transparency = true,
+            } ,
+        })
     elseif color == "sonokai" then
         vim.g.sonokai_transparent_background = 2
     elseif color == "everforest" then
@@ -42,7 +47,7 @@ function ColorMyPencils(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = 'none' })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = 'none' })
-    vim.api.nvim_set_hl(0, "LineNr", { bg = 'none' })
+    -- vim.api.nvim_set_hl(0, "LineNr", { bg = 'none' })
     vim.api.nvim_set_hl(0, "FoldColumn", { bg = 'none' })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = 'none' })
 end

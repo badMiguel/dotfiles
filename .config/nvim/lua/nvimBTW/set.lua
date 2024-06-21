@@ -25,7 +25,7 @@ v.scrolloff = 16
 v.signcolumn = "yes" 
 v.isfname:append("@-@")
 
-v.colorcolumn = '80'
+-- v.colorcolumn = '80'
 
 v.updatetime = 50 
 
