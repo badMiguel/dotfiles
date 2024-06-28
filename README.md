@@ -27,12 +27,14 @@ My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 13. ffmpeg
 14. shutter
 
+To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
+
 ## Neovim:
 
 Setup Tips:
 
-1. I am user [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before using.
-2. Add this code on .bashrc for tmux sessionizer to work
+1. I am user [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
+3. Add this code on .bashrc for tmux sessionizer to work
 
 ```bashrc
 function ctrl_f_search() {
