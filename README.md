@@ -15,6 +15,8 @@ Heavily inspired by ThePrimeagen
     - [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
     - [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
     - [tmux](https://github.com/tmux/tmux/wiki/Installing)
+    - [i3 windows manager](https://i3wm.org/)
+    - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
     - git and github cli (gh)
     - TLDR
     - neofetch
@@ -22,9 +24,9 @@ Heavily inspired by ThePrimeagen
     - btop
     - fzf
     - nautilus
-    - copyq
     - bat
     - ffmpeg
+    - copyq
     - shutter
 
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
@@ -35,7 +37,6 @@ Heavily inspired by ThePrimeagen
         - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
         - Scroll to an option that says (recovery) at the end of the listing and press enter.
         - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
-        - Figure out how to connect to the internet through terminal commands
         - run sudo apt update, sudo apt upgrade
         - run sudo apt-get install --reinstall ubuntu-desktop
         - then sudo reboot
