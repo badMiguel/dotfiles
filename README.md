@@ -24,6 +24,8 @@ My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 10. nautilus
 11. copyq
 12. bat
+13. ffmpeg
+14. shutter
 
 ## Neovim:
 
