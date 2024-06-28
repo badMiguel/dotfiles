@@ -10,32 +10,41 @@ Heavily inspired by ThePrimeagen
 
 ## Ubuntu:
 
-My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
+1. My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
-1. [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-2. [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
-3. [tmux](https://github.com/tmux/tmux/wiki/Installing)
-4. git and github cli (gh)
-5. TLDR
-6. neofetch
-7. asciiquarium
-8. btop
-9. fzf
-10. nautilus
-11. copyq
-12. bat
-13. ffmpeg
-14. shutter
+    - [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+    - [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
+    - [tmux](https://github.com/tmux/tmux/wiki/Installing)
+    - git and github cli (gh)
+    - TLDR
+    - neofetch
+    - asciiquarium
+    - btop
+    - fzf
+    - nautilus
+    - copyq
+    - bat
+    - ffmpeg
+    - shutter
 
-To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
+2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
+
+3. Booting Problems (so far experienced one booting problem) 
+    - nvidia persistence daemon failed
+        - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
+        - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
+        - Scroll to an option that says (recovery) at the end of the listing and press enter.
+        - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
+        - Figure out how to connect to the internet through terminal commands
+        - run sudo apt update, sudo apt upgrade
+        - run sudo apt-get install --reinstall ubuntu-desktop
+        - then sudo reboot
 
 ## Neovim:
 
-Setup Tips:
+1. I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
 
-1. I am user [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
-3. Add this code on .bashrc for tmux sessionizer to work
-
+2. Add this code on .bashrc for tmux sessionizer to work
 ```bashrc
 function ctrl_f_search() {
     ~/bin/.local/scripts/tmux-sessionizer
@@ -43,8 +52,8 @@ function ctrl_f_search() {
 
 bind -x '"\C-f": ctrl_f_search'
 ```
-3. You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
 
+3. You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
 ```
 git clone https://github.com/tmux-plugins/tpm.git <PATH>  
 ```
