@@ -21,6 +21,9 @@ My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 7. asciiquarium
 8. btop
 9. fzf
+10. nautilus
+11. copyq
+12. bat
 
 ## Neovim:
 
