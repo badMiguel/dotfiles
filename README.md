@@ -1,6 +1,8 @@
 # Welcome
 
-This is my first time using Linux (Ubuntu) + Noevim!  ~~I am using WSL though since I don't want the struggle of having to reboot to play games :3~~ 
+This is my first time using Linux (Ubuntu) + Noevim!  
+
+~~I am using WSL though since I don't want the struggle of having to reboot to play games :3~~
 
 Heavily inspired by ThePrimeagen
 
@@ -11,9 +13,13 @@ Heavily inspired by ThePrimeagen
 ### My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
 1. [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-2. Git
-3. TLDR
-4. [oh-my-bash](https://github.com/ohmybash/oh-my-bash) 
+2. [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
+3. [tmux](https://github.com/tmux/tmux/wiki/Installing)
+4. git and github cli (gh)
+5. TLDR
+6. neofetch
+7. asciiquarium
+8. btop
 
 ## Neovim:
 
