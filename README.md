@@ -31,7 +31,8 @@ My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
 Setup Tips:
 
-1. Add this code on .bashrc for tmux sessionizer to work
+1. I am user [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before using.
+2. Add this code on .bashrc for tmux sessionizer to work
 
 ```bashrc
 function ctrl_f_search() {
@@ -40,7 +41,7 @@ function ctrl_f_search() {
 
 bind -x '"\C-f": ctrl_f_search'
 ```
-2. You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
+3. You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
 
 ```
 git clone https://github.com/tmux-plugins/tpm.git <PATH>  
