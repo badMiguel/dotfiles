@@ -144,4 +144,7 @@ exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 100.00 --rotate left 
 
 # night light
-exec --no-startup-id redshift -O 3500 -P
+exec --no-startup-id redshift -O 3000 -P
+
+# set bg color
+exec --no-startup-id feh --bg-fill ~/.config/bg-image.jpg
