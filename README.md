@@ -44,6 +44,7 @@ Heavily inspired by ThePrimeagen
         - then sudo reboot
 
 4. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
+5. xprop | grep -E 'WM_CLASS|WM_NAME'
 
 ## Neovim:
 
