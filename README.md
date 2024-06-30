@@ -41,6 +41,8 @@ Heavily inspired by ThePrimeagen
         - run sudo apt-get install --reinstall ubuntu-desktop
         - then sudo reboot
 
+4. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
+
 ## Neovim:
 
 1. I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
