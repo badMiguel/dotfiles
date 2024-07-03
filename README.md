@@ -17,6 +17,7 @@ Heavily inspired by ThePrimeagen
     - [tmux](https://github.com/tmux/tmux/wiki/Installing)
     - [i3 windows manager](https://i3wm.org/)
     - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
+    - [cava](https://github.com/karlstav/cava)
     - git and github cli (gh)
     - TLDR
     - neofetch
@@ -44,7 +45,6 @@ Heavily inspired by ThePrimeagen
         - then sudo reboot
 
 4. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
-5. xprop | grep -E 'WM_CLASS|WM_NAME'
 
 ## Neovim:
 
