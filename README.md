@@ -28,6 +28,8 @@ Heavily inspired by ThePrimeagen
     - ffmpeg
     - copyq
     - shutter
+    - feh
+    - redshift
 
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
 
@@ -42,6 +44,7 @@ Heavily inspired by ThePrimeagen
         - then sudo reboot
 
 4. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
+5. xprop | grep -E 'WM_CLASS|WM_NAME'
 
 ## Neovim:
 
