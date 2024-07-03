@@ -1,4 +1,6 @@
 include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/startup.conf
+
 set $mod Mod1
 
 font pango:monospace 8
@@ -148,3 +150,5 @@ exec --no-startup-id redshift -O 3000 -P
 
 # set bg color
 exec --no-startup-id feh --bg-fill ~/.config/bg-image.jpg
+
+for_window [class="org.gnome.Nautilus"] floating enabled
