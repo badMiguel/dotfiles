@@ -1,0 +1,18 @@
+import = [
+    "~/.config/alacritty/rose-pine.toml",
+]
+[window]
+
+padding = { x = 5, y = 17 }
+decorations = "None"
+# opacity = 0.0
+# blur = true
+
+[scrolling]
+
+history = 100000
+multiplier = 3
+
+[font]
+
+size = 13

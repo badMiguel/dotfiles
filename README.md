@@ -18,7 +18,6 @@ Heavily inspired by ThePrimeagen
     - [i3 windows manager](https://i3wm.org/)
     - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
     - [cava](https://github.com/karlstav/cava)
-    - [picom](https://github.com/yshui/picom/blob/next/picom.sample.conf)
     - git and github cli (gh)
     - TLDR
     - neofetch
@@ -29,9 +28,9 @@ Heavily inspired by ThePrimeagen
     - bat
     - ffmpeg
     - copyq
-    - shutter
     - feh
     - redshift
+    - flameshot
 
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
 
