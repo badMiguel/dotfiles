@@ -18,6 +18,7 @@ Heavily inspired by ThePrimeagen
     - [i3 windows manager](https://i3wm.org/)
     - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
     - [cava](https://github.com/karlstav/cava)
+    - [picom](https://github.com/yshui/picom/blob/next/picom.sample.conf)
     - git and github cli (gh)
     - TLDR
     - neofetch
