@@ -32,6 +32,7 @@ Heavily inspired by ThePrimeagen
     - feh
     - redshift
     - flameshot
+    - pavucontrol
 
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
 

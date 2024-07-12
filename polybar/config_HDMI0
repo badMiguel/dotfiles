@@ -40,7 +40,7 @@ font-0 = "monospace:pixelsize=12;0"
 font-1 = "FiraCode Nerd Font:pixelsize=12;0"
 
 modules-left = xworkspaces 
-modules-right = wlan pulseaudio date 
+modules-right = wlan pulseaudio date time
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -105,6 +105,7 @@ ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀
 ramp-volume-2 = 󰕾
 
+click-right = google-chrome
 # ramp-volume-foreground = ${colors.primary}
 
 [module/memory]
@@ -146,16 +147,19 @@ inherit = network-base
 interface-type = wired
 label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
 
-[module/date]
+[module/time]
 format =   <label>
 type = internal/date
 interval = 1
+time = %H:%M
+label = %time%
 
-date = "%H:%M  %a, %b %d"
-date-alt = %H:%M
-
+[module/date]
+format =   <label>
+type = internal/date
+interval = 1
+date = "%a, %b %d"
 label = %date%
-# label-foreground = ${colors.primary}
 
 [settings]
 screenchange-reload = true
