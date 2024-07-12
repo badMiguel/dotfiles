@@ -18,6 +18,7 @@ Heavily inspired by ThePrimeagen
     - [i3 windows manager](https://i3wm.org/)
     - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
     - [cava](https://github.com/karlstav/cava)
+    - [polybar](https://github.com/polybar/polybar/wiki/Configuration)
     - git and github cli (gh)
     - TLDR
     - neofetch
