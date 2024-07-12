@@ -10,7 +10,7 @@ set $sm HDMI-0
 set $mod Mod1
 
 # font 
-font pango:Fira Code 10
+font pango:monospace 10
 
 # Start XDG autostart .desktop files using dex. See also
 exec --no-startup-id dex --autostart --environment i3
@@ -28,8 +28,12 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# dont focus when hovering through container
+focus_follows_mouse no 
+
 # status bar
-exec --no-startup-id polybar
+exec_always --no-startup-id killall polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # auto lock screen
 exec --no-startup-id xautolock -detectsleep -time 1800 -locker "i3lock -c 000000"
@@ -38,13 +42,24 @@ exec --no-startup-id xautolock -detectsleep -time 1800 -locker "i3lock -c 000000
 exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 100.00 --rotate left 
 
 # night light
-exec --no-startup-id redshift -O 3000 -P
+exec_always --no-startup-id redshift -O 3800 -P
 
 # set bg color
-exec_always --no-startup-id feh --bg-fill ~/.config/background/background.jpg --bg-fill ~/.config/background/background_portrait.png
+exec_always --no-startup-id ~/bin/.local/scripts/background.sh
 
-# set following apps floating by default
+# floating windows
+for_window [class="steam" title="Friends List"] floating enabled
+for_window [class="steam" title="Steam Settings"] floating enabled
 for_window [class="org.gnome.Nautilus"] floating enabled
 for_window [class="gnome-calculator"] floating enabled
 for_window [class="Display-im6.q16"] floating enabled
+for_window [class="feh"] floating enabled
 for_window [class="Totem"] floating enabled
+for_window [class="Gpick"] floating enabled
+for_window [class="Pavucontrol"] floating enabled
+for_window [class="copyq"] floating enabled
+for_window [class="org.gnome.clocks"] floating enabled
+for_window [class="gnome-calendar"] floating enabled
+
+# add gaps
+gaps inner 15
