@@ -1,7 +1,7 @@
 @import "default"
 
 * {
-	bg: #191724;
+	bg: #232136;
 	cur: #1f1d2e;
 	fgd: #e0def4;
 	cmt: #6e6a86;
@@ -12,7 +12,7 @@
 	red: #eb6f92;
 	yel: #f6c177;
 
-	font: "Cartograph CF 12";
+	font: "monospace 13";
 
 	foreground: @fgd;
 	background: @bg;
@@ -28,17 +28,17 @@
 
 #window {
 	background-color: @background;
-	border:           3;
-	border-radius:    6;
+	border:           0;
+	border-radius:    0;
 	border-color:     @bordercolor;
-	padding:          5;
+	padding:          20;
 }
 #mainbox {
 	border:  0;
 	padding: 5;
 }
 #message {
-	border:       1px dash 0px 0px ;
+	border:       1px 0px 0px ;
 	border-color: @separatorcolor;
 	padding:      1px ;
 }
@@ -47,7 +47,7 @@
 }
 #listview {
 	fixed-height: 0;
-	border:       2px dash 0px 0px ;
+	border:       0px ;
 	border-color: @bordercolor;
 	spacing:      2px ;
 	scrollbar:    false;

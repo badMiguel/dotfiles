@@ -1,14 +1,12 @@
 configuration{
-    modi: "combi";
-    icon-theme: "Oranchelo";
-    show-icons: true;
+    modi: "run";
+    show-icons: false;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-combi: " 💻 Window ";
-    sidebar-mode: true;
+    display-run: " 💻 ";
 }
 
 @theme "rosepine"
