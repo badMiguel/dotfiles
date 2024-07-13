@@ -74,21 +74,6 @@ label-empty = %name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:60:...%
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
-
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.disabled}
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -105,7 +90,7 @@ ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀
 ramp-volume-2 = 󰕾
 
-click-right = google-chrome
+click-right = pavucontrol
 # ramp-volume-foreground = ${colors.primary}
 
 [module/memory]
@@ -165,5 +150,5 @@ label = %date%
 screenchange-reload = true
 pseudo-transparency = true
 
-; vim:ft=dosini
-
+[module/i3]
+type = internal/i3
