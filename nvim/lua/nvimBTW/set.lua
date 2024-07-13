@@ -1,5 +1,7 @@
 local v = vim.opt
 
+v.guicursor = ""
+
 v.relativenumber = true
 v.nu = true
 

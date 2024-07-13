@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    
+
     -- vim be good
     use 'ThePrimeagen/vim-be-good'
 
@@ -122,14 +122,10 @@ return require('packer').startup(function(use)
     -- git blame
     use 'f-person/git-blame.nvim'
 
-    -- TreeSj
-    use({
-        'Wansmer/treesj',
-        requires = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
-    })
-
     -- indent line
     use "lukas-reineke/indent-blankline.nvim"
+
+    use 'norcalli/nvim-colorizer.lua'
 
 end)
 
