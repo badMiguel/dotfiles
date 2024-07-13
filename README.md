@@ -19,6 +19,7 @@ Heavily inspired by ThePrimeagen
     - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
     - [cava](https://github.com/karlstav/cava)
     - [polybar](https://github.com/polybar/polybar/wiki/Configuration)
+    - [mangohud](https://github.com/flightlessmango/MangoHud)
     - git and github cli (gh)
     - TLDR
     - neofetch
