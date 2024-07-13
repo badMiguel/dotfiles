@@ -69,6 +69,9 @@ label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 1
 
+label-visible = %index%
+label-visible-padding = 1
+
 label-unfocused = %index%
 label-unfocused-padding = 1
 

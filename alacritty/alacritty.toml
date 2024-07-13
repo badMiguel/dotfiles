@@ -1,18 +1,21 @@
 import = [
     "~/.config/alacritty/rose-pine.toml",
+    # "~/.config/alacritty/rose-pine-moon.toml",
+    # "~/.config/alacritty/rose-pine-dawn.toml",
 ]
-[window]
 
-padding = { x = 5, y = 17 }
-decorations = "None"
-# opacity = 0.0
-# blur = true
+[window]
+padding = { x = 15, y = 15 }
+opacity = 0.8
+blur = true
 
 [scrolling]
-
 history = 100000
 multiplier = 3
 
 [font]
-
 size = 13
+normal = { family = "monospace", style = "Regular" }
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+bold_italic = { style = "Bold Italic" }

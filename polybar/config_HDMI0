@@ -150,5 +150,3 @@ label = %date%
 screenchange-reload = true
 pseudo-transparency = true
 
-[module/i3]
-type = internal/i3

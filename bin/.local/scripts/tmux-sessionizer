@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/personal ~/school ~/.config -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
+    selected=$(find ~/bin/.local ~/Documents ~/.config -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
 fi
 
 if [[ -z $selected ]]; then
