@@ -37,18 +37,7 @@ Heavily inspired by ThePrimeagen
     - pavucontrol
 
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
-
-3. Booting Problems (so far experienced one booting problem) 
-    - nvidia persistence daemon failed
-        - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
-        - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
-        - Scroll to an option that says (recovery) at the end of the listing and press enter.
-        - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
-        - run sudo apt update, sudo apt upgrade
-        - run sudo apt-get install --reinstall ubuntu-desktop
-        - then sudo reboot
-
-4. Mount them drives
+3. Mount them drives
    - List available drives
 ```
 lsblk or sudo fdisk -l
@@ -65,9 +54,22 @@ df -h
 ```
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
-5. [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
-6. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
-
+4. [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
+5. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
+6. Booting Problems (so far experienced one booting problem) 
+    - nvidia persistence daemon failed
+        - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
+        - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
+        - Scroll to an option that says (recovery) at the end of the listing and press enter.
+        - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
+        - run sudo apt update, sudo apt upgrade
+        - run sudo apt-get install --reinstall ubuntu-desktop
+        - then sudo reboot
+7.Other Issues
+    - E: The package <package-name> needs to be reinstalled, but I can't find an archive for it [duplicate]
+```
+sudo dpkg --remove --force-all <package-name> 
+```
 ## Neovim:
 
 1. I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
