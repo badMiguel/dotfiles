@@ -49,17 +49,25 @@ Heavily inspired by ThePrimeagen
         - then sudo reboot
 
 4. Mount them drives
-        - List available drives
+   - List available drives
 ```
-lsblk
-# or
-sudo fdisk -l
+lsblk or sudo fdisk -l
+```
+   - Make mmount point directory
+```
+sudo mkdir -p /mnt/<your desired drive name>
+```
+   - Verify mount
+```
+df -h
+```
+   - Edit /etc/fstab to mount automatically on boot
+```
+/dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
+```
 
-```
-        - Make mmount point directory
-```
 sudo mkdir -p /mnt/mydrive
-```
+
         
 6. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
 
