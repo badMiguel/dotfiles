@@ -65,10 +65,7 @@ df -h
 ```
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
-
-sudo mkdir -p /mnt/mydrive
-
-        
+5. [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
 6. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
 
 ## Neovim:
