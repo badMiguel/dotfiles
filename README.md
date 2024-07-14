@@ -48,7 +48,20 @@ Heavily inspired by ThePrimeagen
         - run sudo apt-get install --reinstall ubuntu-desktop
         - then sudo reboot
 
-4. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
+4. Mount them drives
+        - List available drives
+```
+lsblk
+# or
+sudo fdisk -l
+
+```
+        - Make mmount point directory
+```
+sudo mkdir -p /mnt/mydrive
+```
+        
+6. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
 
 ## Neovim:
 
