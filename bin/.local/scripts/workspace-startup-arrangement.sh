@@ -3,7 +3,7 @@
 sleep 1
 
 i3-msg restart
-i3-msg '[class="Alacritty" title="secondary"] move to workspace 10'
+i3-msg '[class="Alacritty" title="secondary"] move to workspace 11'
 i3-msg '[class="Gnome-terminal" title="Package Install"] kill'
 
 sleep 1
