@@ -21,6 +21,7 @@ Heavily inspired by ThePrimeagen
     - [polybar](https://github.com/polybar/polybar/wiki/Configuration)
     - [mangohud](https://github.com/flightlessmango/MangoHud)
     - git and github cli (gh)
+    - jq
     - TLDR
     - neofetch
     - asciiquarium
