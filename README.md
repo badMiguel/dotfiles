@@ -39,22 +39,23 @@ Heavily inspired by ThePrimeagen
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
    
 3. Mount them drives
-   - List available drives
+
+List available drives
 ```
 lsblk or sudo fdisk -l
 ```
 
-   - Make mmount point directory
+Make mmount point directory
 ```
 sudo mkdir -p /mnt/<your desired drive name>
 ```
 
-   - Verify mount
+Verify mount
 ```
 df -h
 ```
-   
-   - Edit /etc/fstab to mount automatically on boot
+
+Edit /etc/fstab to mount automatically on boot
 ```
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
@@ -75,7 +76,8 @@ df -h
         - then sudo reboot
 
 7.Other Issues
-    - E: The package <package-name> needs to be reinstalled, but I can't find an archive for it [duplicate]
+
+E: The package <package-name> needs to be reinstalled, but I can't find an archive for it.
 ```
 sudo dpkg --remove --force-all <package-name> 
 ```
