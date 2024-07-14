@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pid="$(pgrep picom)"
+
+if [[ -z $pid ]]; then
+    picom -b
+else
+    kill $pid
+fi

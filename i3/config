@@ -21,9 +21,9 @@ exec_always --no-startup-id xrandr --output $sm --dpi 90
 
 # remove title bar on window
 default_border pixel 1
+default_floating_border normal
 
-# set bg color
-# exec_always --no-startup-id ~/bin/.local/scripts/background.sh
+# set bg 
 exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/space-aircraft.png
 
 # font 
@@ -50,7 +50,7 @@ focus_follows_mouse no
 
 # status bar
 exec_always --no-startup-id killall polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch
 
 # auto lock screen
 exec --no-startup-id xautolock -detectsleep -time 1800 -locker "i3lock -c 000000"
@@ -75,3 +75,8 @@ for_window [class="copyq"] floating enabled
 for_window [class="org.gnome.clocks"] floating enabled
 for_window [class="gnome-calendar"] floating enabled
 
+# kill steam package install which causes problem on automation
+exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
+
+# focus on primary monitor when reloading
+exec_always --no-startup-id i3-msg 'focus output $pm'
