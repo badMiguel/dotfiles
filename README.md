@@ -83,6 +83,17 @@ add this config:
 default=gtk;wlr
 ```
 
+### Multi-Monitor Setup on Login
+
+My workaround:
+
+1. Sign in via Ubuntu rather than i3wm
+2. Set up your monitors in the settings
+3. Copy this display config to gdm3
+```
+sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
+```
+
 ### Issues
 
 #### Booting Problems (so far experienced one booting problem) 
