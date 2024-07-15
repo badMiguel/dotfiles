@@ -10,74 +10,79 @@ Heavily inspired by ThePrimeagen
 
 ## Ubuntu:
 
-1. My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
+### My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
-    - [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-    - [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
-    - [tmux](https://github.com/tmux/tmux/wiki/Installing)
-    - [i3 windows manager](https://i3wm.org/)
-    - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
-    - [cava](https://github.com/karlstav/cava)
-    - [polybar](https://github.com/polybar/polybar/wiki/Configuration)
-    - [mangohud](https://github.com/flightlessmango/MangoHud)
-    - git and github cli (gh)
-    - jq
-    - calibre
-    - TLDR
-    - neofetch
-    - asciiquarium
-    - btop
-    - fzf
-    - nautilus
-    - bat
-    - ffmpeg
-    - copyq
-    - feh
-    - redshift
-    - flameshot
-    - pavucontrol
-    - dust
+- [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+- [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
+- [tmux](https://github.com/tmux/tmux/wiki/Installing)
+- [i3 windows manager](https://i3wm.org/)
+- [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
+- [cava](https://github.com/karlstav/cava)
+- [polybar](https://github.com/polybar/polybar/wiki/Configuration)
+- [mangohud](https://github.com/flightlessmango/MangoHud)
+- git and github cli (gh)
+- jq
+- calibre
+- TLDR
+- neofetch
+- asciiquarium
+- btop
+- fzf
+- nautilus
+- bat
+- ffmpeg
+- copyq
+- feh
+- redshift
+- flameshot
+- pavucontrol
+- dust
 
-2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
+### Icons 
+
+To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
    
-3. Mount them drives
+### Mount them drives
 
-List available drives
+1. List available drives
 ```
 lsblk or sudo fdisk -l
 ```
 
-Make mmount point directory
+2. Make mmount point directory
 ```
-sudo mkdir -p /mnt/<your desired drive name>
+sudo mkdir -p /path/to/mount/
 ```
 
-Verify mount
+3. Verify mount
 ```
 df -h
 ```
 
-Edit /etc/fstab to mount automatically on boot
+4. Edit /etc/fstab to mount automatically on boot
 ```
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
 
-4. [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
+### Backup guide 
 
-5. iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
+[Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
+*still yet to do this* 
 
-6. Booting Problems (so far experienced one booting problem) 
+### Issues
 
-    - nvidia persistence daemon failed
-        - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
-        - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
-        - Scroll to an option that says (recovery) at the end of the listing and press enter.
-        - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
-        - run sudo apt update, sudo apt upgrade
-        - run sudo apt-get install --reinstall ubuntu-desktop
-        - then sudo reboot
+#### Booting Problems (so far experienced one booting problem) 
 
-7.Other Issues
+- nvidia persistence daemon failed
+    - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
+    - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
+    - Scroll to an option that says (recovery) at the end of the listing and press enter.
+    - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
+    - run sudo apt update, sudo apt upgrade
+    - run sudo apt-get install --reinstall ubuntu-desktop
+    - then sudo reboot
+
+#### Package Install Error
 
 E: The package <package-name> needs to be reinstalled, but I can't find an archive for it.
 ```
@@ -101,3 +106,7 @@ bind -x '"\C-f": ctrl_f_search'
 ```
 git clone https://github.com/tmux-plugins/tpm.git <PATH>  
 ```
+
+## Miscs
+
+iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
