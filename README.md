@@ -69,6 +69,20 @@ df -h
 [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
 *still yet to do this* 
 
+### GTK Dark Theme on i3
+
+Followed this [github post](https://github.com/i3/i3/discussions/5896#discussioncomment-8556941)
+
+TLDR:
+
+Make a config file for xdg-desktop-portal i.e. $HOME/.config/xdg-desktop-portal/portals.conf
+
+add this config:
+```
+[preferred]
+default=gtk;wlr
+```
+
 ### Issues
 
 #### Booting Problems (so far experienced one booting problem) 
