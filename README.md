@@ -22,6 +22,7 @@ Heavily inspired by ThePrimeagen
     - [mangohud](https://github.com/flightlessmango/MangoHud)
     - git and github cli (gh)
     - jq
+    - calibre
     - TLDR
     - neofetch
     - asciiquarium
