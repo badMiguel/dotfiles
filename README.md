@@ -36,6 +36,7 @@ Heavily inspired by ThePrimeagen
     - redshift
     - flameshot
     - pavucontrol
+    - dust
 
 2. To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
    
