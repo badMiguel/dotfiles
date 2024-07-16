@@ -28,8 +28,6 @@ if [[ -e $visible_focused && -e $visible_unfocused ]]; then
         fi
     done
 
-    echo < $visible_unfocused
-
     i3-msg "workspace $(<"$visible_unfocused")"
     i3-msg "workspace $(<"$visible_focused")"
 

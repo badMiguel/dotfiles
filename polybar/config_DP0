@@ -39,8 +39,8 @@ separator-foreground = ${colors.disabled}
 font-0 = "monospace:pixelsize=13;0"
 font-1 = "FiraCode Nerd Font:pixelsize=13;0"
 
-modules-left = i3
-modules-right = systray wlan pulseaudio date time
+modules-left = xworkspaces i3
+modules-right = systray memory cpu wlan pulseaudio date time
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -55,30 +55,33 @@ type = internal/tray
 format-margin = 8pt
 tray-spacing = 16pt
 
+[module/xworkspaces]
+type = internal/xworkspaces
+
+label-active = %name%
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.primary}
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
+
 [module/i3]
 type = internal/i3
 
-format = <label-state> <label-mode>
+format = <label-mode>
 
 label-mode = %mode%
 label-mode-padding = 1
 label-mode-underline = ${colors.alert}
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
-label-focused-padding = 1
-
-label-visible = %index%
-label-visible-padding = 1
-
-label-unfocused = %index%
-label-unfocused-padding = 1
-
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -102,14 +105,12 @@ click-right = pavucontrol
 type = internal/memory
 interval = 2
 format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
 label = %percentage_used:2%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
+format-prefix = "CPU"
 label = %percentage:2%%
 
 [network-base]

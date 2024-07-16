@@ -24,7 +24,7 @@ default_border pixel 1
 default_floating_border normal
 
 # set bg 
-exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/space-aircraft.png
+exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/cherry_blossom_flipped.png
 
 # font 
 font pango:monospace 10
@@ -33,7 +33,7 @@ font pango:monospace 10
 exec --no-startup-id dex --autostart --environment i3
 
 # Uses xss-lock to manage screen locking before the system suspends and uses i3lock to lock the screen
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 # use nm-applet to manage network with GUI
 exec --no-startup-id nm-applet
@@ -61,6 +61,12 @@ exec_always --no-startup-id redshift -O 3800 -P
 # add gaps
 gaps inner 15
 
+# kill steam package install which causes problem on automation
+exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
+
+# focus on primary monitor when reloading
+exec --no-startup-id i3-msg 'focus output $pm'
+
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled
 for_window [class="steam" title="Steam Settings"] floating enabled
@@ -74,9 +80,3 @@ for_window [class="Pavucontrol"] floating enabled
 for_window [class="copyq"] floating enabled
 for_window [class="org.gnome.clocks"] floating enabled
 for_window [class="gnome-calendar"] floating enabled
-
-# kill steam package install which causes problem on automation
-exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
-
-# focus on primary monitor when reloading
-exec_always --no-startup-id i3-msg 'focus output $pm'

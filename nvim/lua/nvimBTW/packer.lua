@@ -17,10 +17,10 @@ return require('packer').startup(function(use)
     }
 
     ------ THEMES COLLECTION ------
-    -- note: select colorscheme in after/colors.lua 
+    -- note: select colorscheme in after/colors.lua
 
     -- catpuccin theme
-    use ({
+    use({
         "catppuccin/nvim",
         as = "catppuccin",
     })
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
     use 'shaunsingh/nord.nvim'
 
     -- rosepine theme
-    use ({
+    use({
         "rose-pine/neovim",
         as = "rose-pine",
     })
@@ -55,18 +55,18 @@ return require('packer').startup(function(use)
     ------ END THEMES COLLECTION ------
 
     -- Treesitter
-    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use ('nvim-treesitter/playground')
-    use ('nvim-treesitter/nvim-treesitter-context')
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('nvim-treesitter/playground')
+    use('nvim-treesitter/nvim-treesitter-context')
 
     -- Harpoon
-    use ('theprimeagen/harpoon')
+    use('theprimeagen/harpoon')
 
     -- Undo Tree
-    use ('mbbill/undotree')
+    use('mbbill/undotree')
 
     -- for git
-    use ('tpope/vim-fugitive')
+    use('tpope/vim-fugitive')
 
     -- commenting
     use {
@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
     }
 
-    -- snippets 
+    -- snippets
     use {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
@@ -126,9 +126,6 @@ return require('packer').startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
 
     use 'norcalli/nvim-colorizer.lua'
-
 end)
 
 -- use { 'christoomey/vim-tmux-navigator', }
-
-

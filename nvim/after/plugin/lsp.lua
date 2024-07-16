@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
         "html",
         "cssls",
         "css_variables",
+        "bashls",
 	}
 })
 
@@ -32,6 +33,9 @@ require('lspconfig').cssls.setup {
 	capabilities = capabilities,
 }
 require('lspconfig').css_variables.setup {
+	capabilities = capabilities,
+}
+require('lspconfig').bashls.setup {
 	capabilities = capabilities,
 }
 
