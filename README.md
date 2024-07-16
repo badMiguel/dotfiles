@@ -37,6 +37,7 @@ Heavily inspired by ThePrimeagen
 - flameshot
 - pavucontrol
 - dust
+- dunst
 
 ### Icons 
 
