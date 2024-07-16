@@ -136,6 +136,19 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 ```
+**Enable one tap click for laptop**
+
+Add the following code in /etc/X11/xorg.conf.d/90-touchpad.conf
+```
+Section "InputClass"
+        Identifier "touchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "Tapping" "on"
+        Option "NaturalScrolling" "true"
+        Option "TappingButtonMap" "lrm" # 1/2/3 finger, for 3-finger middle lrm
+EndSection
+```
 
 ## Neovim:
 
