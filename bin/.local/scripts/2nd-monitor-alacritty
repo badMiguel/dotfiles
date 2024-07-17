@@ -5,7 +5,7 @@ focused_workspace() {
 }
 
 if [[ $(focused_workspace) == "HDMI-0" ]]; then
-    alacritty -o 'font.size=12'
+    alacritty -o font.size=12 -o window.opacity=0.7
 else
     alacritty
 fi

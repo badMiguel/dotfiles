@@ -19,6 +19,9 @@ exec --no-startup-id picom
 # scale down monitor 2
 exec_always --no-startup-id xrandr --output $sm --dpi 90
 
+# notification
+exec_always --no-startup-id dunst
+
 # remove title bar on window
 default_border pixel 1
 default_floating_border normal
