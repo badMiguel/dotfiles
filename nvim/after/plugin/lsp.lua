@@ -4,7 +4,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"pylsp",
+		"pyright",
 		"tsserver",
 		"eslint",
         "html",
@@ -19,7 +19,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig').lua_ls.setup {
 	capabilities = capabilities,
 }
-require('lspconfig').pylsp.setup {
+require('lspconfig').pyright.setup {
 	capabilities = capabilities,
 }
 require('lspconfig').tsserver.setup {
@@ -51,7 +51,8 @@ cmp.setup({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-e>'] = cmp.mapping.abort(),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		['<C-Space>'] = cmp.mapping.complete(),
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
