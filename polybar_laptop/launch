@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+polybar --reload polybar -c ~/.config/polybar/config.ini &
