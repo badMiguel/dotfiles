@@ -92,6 +92,11 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
     }
 
+    -- LSP zero
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+    }
+
     -- snippets
     use {
         'L3MON4D3/LuaSnip',
