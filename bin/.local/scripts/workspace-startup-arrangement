@@ -3,23 +3,23 @@
 sleep 1
 
 i3-msg restart
-i3-msg '[class="Alacritty" title="primary"] move container to down'
+
+sleep 1
+
+i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 
 sleep 1
 
 i3-msg '[class="Alacritty" title="cava"] resize set width 700px'
 i3-msg '[class="Spotify"] resize set height 1100px'
+i3-msg '[class="Google-chrome" title="Messenger — Google Chrome"] move to workspace 11'
 
 sleep 1 
 
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 
-sleep 1 
-
-i3-msg '[class="Google-chrome" title="Messenger — Google Chrome"] move to workspace 11'
-
-sleep 1
+sleep 2 
 
 i3-msg '[class="firefox" title="Google — Mozilla Firefox"] move to workspace 2'
 i3-msg '[class="firefox" title="Blackboard Learn — Mozilla Firefox"] move container to workspace 10'
