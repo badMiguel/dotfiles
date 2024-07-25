@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
+    selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/miguel/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
 fi
 
 if [[ -z $selected ]]; then
@@ -24,6 +24,7 @@ fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
+    exit 0
 fi
 
 tmux switch-client -t $selected_name
