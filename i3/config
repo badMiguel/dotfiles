@@ -39,10 +39,13 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 # auto lock screen
-exec --no-startup-id xautolock -detectsleep -time 600 -locker "i3lock -c 000000"
+exec --no-startup-id xautolock -detectsleep -time 30 -locker "i3lock -c 000000"
 
 # use nm-applet to manage network with GUI
 exec --no-startup-id nm-applet
+
+# use blueman-applet for bluetooth
+exec --no-startup-id blueman-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -83,3 +86,5 @@ for_window [class="Pavucontrol"] floating enabled
 for_window [class="copyq"] floating enabled
 for_window [class="org.gnome.clocks"] floating enabled
 for_window [class="gnome-calendar"] floating enabled
+for_window [class="Blueman-manager"] floating enabled
+for_window [class="PacketTracer"] floating enabled

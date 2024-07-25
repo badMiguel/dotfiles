@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+dunstctl set-paused true
+
+i3lock -c 000000 -n -f -e &
+
+LOCK_PID=$!
+
+sleep 1
+xset dpms force off
+
+wait $LOCK_PID
+
+dunstctl set-paused false
