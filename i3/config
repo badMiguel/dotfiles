@@ -76,7 +76,7 @@ exec --no-startup-id i3-msg 'focus output $pm'
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled
 for_window [class="steam" title="Steam Settings"] floating enabled
-for_window [class="org.gnome.Nautilus"] floating enabled
+for_window [class="Thunar"] floating enabled
 for_window [class="gnome-calculator"] floating enabled
 for_window [class="Display-im6.q16"] floating enabled
 for_window [class="feh"] floating enabled

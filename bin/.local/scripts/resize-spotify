@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+firefox
+
+counter=0
+while [ $counter -lt 10 ]; do
+    i3-msg '[class="Spotify"] resize set height 1100px'
+    ((counter++))
+    sleep 1
+done
+

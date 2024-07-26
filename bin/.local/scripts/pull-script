@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# for pulling in both github and bitbucket as i prefer github
+
+git pull origin main
+git pull bitbucket main
