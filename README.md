@@ -17,18 +17,16 @@ Heavily inspired by ThePrimeagen
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 - [i3 windows manager](https://i3wm.org/)
 - [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
-- [cava](https://github.com/karlstav/cava)
 - [polybar](https://github.com/polybar/polybar/wiki/Configuration)
 - [mangohud](https://github.com/flightlessmango/MangoHud)
 - git and github cli (gh)
-- jq
+- cava
 - calibre
 - TLDR
 - neofetch
-- asciiquarium
 - btop
 - fzf
-- nautilus
+- thunar
 - bat
 - ffmpeg
 - copyq
@@ -37,7 +35,8 @@ Heavily inspired by ThePrimeagen
 - flameshot
 - pavucontrol
 - dust
-- dunst
+- xcape
+- stow
 
 ### Icons 
 
