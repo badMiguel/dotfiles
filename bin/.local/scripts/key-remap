@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sleep 5
+
+xmodmap ~/.config/xmodmap/xmodmap
+
+xcape -e 'Control_L=Escape'
