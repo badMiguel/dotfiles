@@ -11,7 +11,6 @@
     progress_bar_max_width = 380
     progress_bar_corner_radius = 2
 
-    transparency = 10
     padding = 20
     horizontal_padding = 20
     frame_width = 1
