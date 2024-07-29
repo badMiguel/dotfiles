@@ -1,10 +1,9 @@
 # Welcome
 
-This is my first time using Linux (Ubuntu) + Neovim!  
+My beloved dotfiles. First time using linux and neovim after being heavily inspired by ThePrimeagen and I'm loving it.
 
-~~I am using WSL though since I don't want the struggle of having to reboot to play games :3~~
-
-Heavily inspired by ThePrimeagen
+![my current riced setup](rice.jpeg)
+*My riced setup. (I have 2 monitors causing the gap)* 
 
 # Setup Guide
 
@@ -36,7 +35,7 @@ Heavily inspired by ThePrimeagen
 - pavucontrol
 - dust
 - xcape
-- stow
+- stow (still about to implement when i have the time)
 
 ### Icons 
 
