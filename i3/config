@@ -61,16 +61,15 @@ focus_follows_mouse no
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch
 
+# set custom key binding
+exec --no-startup-id ~/bin/.local/scripts/key-remap
+
 # night light
-exec_always --no-startup-id redshift -O 3800 -P
+exec_always --no-startup-id redshift -O 3800 -P -b 0.6
 
 # add gaps
 gaps inner 15
-
-# set custom key binding
-exec --no-startup-id xmodmap ~/.config/xmodmap/xmodmap
-#this enables mod-tap behaviour. tap to ESC. hold to CONTROL
-exec --no-startup-id xcape -e 'Control_L=Escape'
+workspace 1 gaps left 400
 
 # kill steam package install which causes problem on automation
 exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
