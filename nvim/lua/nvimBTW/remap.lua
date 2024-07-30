@@ -44,8 +44,8 @@ v("n", "<leader>/", ":noh<CR>", { noremap = true, silent = true })
 v("n", "<leader>.", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 v("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
--- v("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+v("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-v("n", "<leader>w", function ()
-        vim.wo.wrap = not vim.wo.wrap
+v("n", "<leader>w", function()
+    vim.wo.wrap = not vim.wo.wrap
 end, { noremap = true, silent = true })

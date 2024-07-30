@@ -16,43 +16,11 @@ return require('packer').startup(function(use)
         }
     }
 
-    ------ THEMES COLLECTION ------
-    -- note: select colorscheme in after/colors.lua
-
-    -- catpuccin theme
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin",
-    })
-
-    -- kanagawa theme
-    use 'rebelot/kanagawa.nvim'
-
-    -- nord theme
-    use 'shaunsingh/nord.nvim'
-
     -- rosepine theme
     use({
         "rose-pine/neovim",
         as = "rose-pine",
     })
-
-    -- sonokai theme
-    use 'sainnhe/sonokai'
-
-    -- everforest theme
-    use 'sainnhe/everforest'
-
-    -- nightfox theme
-    use "EdenEast/nightfox.nvim"
-
-    -- nordic theme
-    use 'AlexvZyl/nordic.nvim'
-
-    -- darcula theme
-    use 'Mofiqul/dracula.nvim'
-
-    ------ END THEMES COLLECTION ------
 
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -113,24 +81,12 @@ return require('packer').startup(function(use)
     -- vim be good
     use 'ThePrimeagen/vim-be-good'
 
-    -- surround
-    use({
-        "kylechui/nvim-surround",
-        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-        config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
-        end
-    })
-
     -- git blame
     use 'f-person/git-blame.nvim'
 
     -- indent line
     use "lukas-reineke/indent-blankline.nvim"
 
+    -- color preview
     use 'norcalli/nvim-colorizer.lua'
 end)
-
--- use { 'christoomey/vim-tmux-navigator', }

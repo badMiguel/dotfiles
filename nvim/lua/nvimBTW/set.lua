@@ -12,7 +12,7 @@ v.expandtab = true
 
 v.smartindent = true
 
-v.wrap = false
+-- v.wrap = false
 
 v.swapfile = false
 v.backup = false
@@ -24,12 +24,9 @@ v.incsearch = true
 v.termguicolors = true
 
 v.scrolloff = 16
-v.signcolumn = "yes" 
+v.signcolumn = "yes"
 v.isfname:append("@-@")
 
--- v.colorcolumn = '80'
+v.colorcolumn = '80'
 
-v.updatetime = 50 
-
-
-
+v.updatetime = 50
