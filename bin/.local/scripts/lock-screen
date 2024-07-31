@@ -6,7 +6,7 @@ i3lock -c 000000 -n -f -e &
 
 LOCK_PID=$!
 
-sleep 1
+sleep 2
 xset dpms force off
 
 wait $LOCK_PID

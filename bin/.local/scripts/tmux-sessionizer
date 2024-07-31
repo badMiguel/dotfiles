@@ -18,12 +18,16 @@ if tmux has-session -t "$selected_name" 2>/dev/null; then
 fi
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    exit 0
+    tmux new-session -ds $selected_name -c $selected
 fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
 fi
 
-tmux switch-client -t $selected_name
+if [[ $TMUX ]]; then 
+    tmux switch-client -t $selected_name
+    exit 0
+fi
+
+tmux attach-session -t $selected_name

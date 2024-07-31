@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 SOURCE_PATH="/home/miguel//Documents/sem2/"
-DESTINATION_PATH="/home/miguel/sem2_backup/"
+
+DESTINATION_PATH_1="/home/miguel/sem2_backup/"
+DESTINATION_PATH_2="/mnt/backup/sem2_backup"
+
 LOG_PATH="/home/miguel/backup_logs/backup_log.log"
 
-rsync -avh "$SOURCE_PATH" "$DESTINATION_PATH" >> "$LOG_PATH" 2>&1
+rsync -avh "$SOURCE_PATH" "$DESTINATION_PATH_1" >> "$LOG_PATH" 2>&1
+rsync -avh "$SOURCE_PATH" "$DESTINATION_PATH_2" >> "$LOG_PATH" 2>&1

@@ -4,11 +4,9 @@ sleep 1
 
 i3-msg restart
 
-sleep 5
+sleep 7
 
-i3-msg '[class="firefox" title="Google — Mozilla Firefox"] move to workspace 2'
 i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
-i3-msg 'exec firefox --new-window youtube.com'
 
 sleep 0.5 
 
@@ -27,14 +25,14 @@ i3-msg '[class="Alacritty" title="notes"] move container to down'
 
 sleep 0.5 
 
+i3-msg '[class="firefox" title="Google — Mozilla Firefox"] move to workspace 2'
+
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 i3-msg '[class="Alacritty" title="notes"] move container to down'
 
 sleep 0.5
 
-i3-msg '[class="firefox" title="YouTube — Mozilla Firefox"] move to workspace 4'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
-
 i3-msg '[class="discord"] move container to up'
 
 sleep 0.5 
@@ -50,9 +48,11 @@ sleep 0.5
 
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 i3-msg '[class="Alacritty" title="notes"] move container to down'
+i3-msg 'workspace 4'
 
 sleep 0.5
 
+i3-msg '[class="Spotify"] resize set height 1100px'
 i3-msg '[class="Alacritty" title="notes"] split horizontally'
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 
@@ -60,4 +60,3 @@ sleep 0.5
 
 i3-msg 'focus output DP-0; workspace 1'
 
-~/bin/.local/scripts/resize-spotify
