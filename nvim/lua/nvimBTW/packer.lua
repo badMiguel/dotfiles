@@ -49,19 +49,11 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-    }
-
-    -- LSP completion
-    use {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/nvim-cmp',
-    }
-
-    -- LSP zero
-    use {
         'VonHeikemen/lsp-zero.nvim',
     }
 
@@ -80,9 +72,6 @@ return require('packer').startup(function(use)
 
     -- vim be good
     use 'ThePrimeagen/vim-be-good'
-
-    -- git blame
-    use 'f-person/git-blame.nvim'
 
     -- indent line
     use "lukas-reineke/indent-blankline.nvim"

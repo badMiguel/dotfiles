@@ -1,5 +1,5 @@
 require('gitblame').setup {
-    enabled = true,
+    enabled = false,
 
     ignored_filetypes = {
         'netrw',
