@@ -94,3 +94,4 @@ for_window [class="org.gnome.clocks"] floating enabled
 for_window [class="gnome-calendar"] floating enabled
 for_window [class="Blueman-manager"] floating enabled
 for_window [class="PacketTracer"] floating enabled
+for_window [class="firefox" title="Library"] floating enabled

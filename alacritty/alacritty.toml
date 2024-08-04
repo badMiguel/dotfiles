@@ -6,7 +6,7 @@ import = [
 
 [window]
 padding = { x = 15, y = 15 }
-opacity = 0.9
+opacity = 0.95
 blur = true
 
 [scrolling]
@@ -19,3 +19,4 @@ normal = { family = "monospace", style = "Regular" }
 bold = { style = "Bold" }
 italic = { style = "Italic" }
 bold_italic = { style = "Bold Italic" }
+offset = { y = 2 }
