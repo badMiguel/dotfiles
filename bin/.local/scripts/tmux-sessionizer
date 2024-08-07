@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
+    selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/codes/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
 fi
 
 if [[ -z $selected ]]; then
@@ -14,7 +14,13 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if tmux has-session -t "$selected_name" 2>/dev/null; then
-    tmux attach-session -t "$selected_name"
+    if [[ $TMUX ]]; then 
+        tmux switch-client -t $selected_name
+        exit 0
+    fi
+
+    tmux attach-session -d -t "$selected_name"
+    exit 0
 fi
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
@@ -29,5 +35,4 @@ if [[ $TMUX ]]; then
     tmux switch-client -t $selected_name
     exit 0
 fi
-
 tmux attach-session -t $selected_name
