@@ -72,6 +72,12 @@ df -h
 
 Followed this [github post](https://github.com/i3/i3/discussions/5896#discussioncomment-8556941)
 
+or
+
+```
+env XDG_CURRENT_DESKTOP=GNOME gnome-control-center --verbose
+```
+
 TLDR:
 
 Make a config file for xdg-desktop-portal i.e. $HOME/.config/xdg-desktop-portal/portals.conf
