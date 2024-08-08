@@ -81,6 +81,14 @@ add this config:
 [preferred]
 default=gtk;wlr
 ```
+then ....
+
+Add the following code to: ~/.config/gtk-3.0/settings.ini
+
+```
+[Settings]
+gtk-application-prefer-dark-theme=1
+```
 
 ### Multi-Monitor Setup on Login
 
