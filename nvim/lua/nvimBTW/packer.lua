@@ -64,6 +64,9 @@ return require('packer').startup(function(use)
         'rafamadriz/friendly-snippets'
     }
 
+    -- icons on lsp
+    use { 'onsails/lspkind.nvim' }
+
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',

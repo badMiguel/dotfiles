@@ -1,4 +1,6 @@
-local lsp = require("lsp-zero")
+local lspzero = require("lsp-zero")
+local lspkind = require("lspkind")
+local lspconfig = require("lspconfig")
 
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -14,41 +16,20 @@ require("mason-lspconfig").setup({
     }
 })
 
+-- LSP config
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').lua_ls.setup {
+lspconfig.pylsp.setup {
     capabilities = capabilities,
+    settings = { pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, }, }, },
 }
-require('lspconfig').pylsp.setup {
-    capabilities = capabilities,
-    settings = {
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    ignore = { 'E501' }, -- Add the warnings you want to ignore
-                },
-            },
-        },
-    },
-}
-require('lspconfig').tsserver.setup {
-    capabilities = capabilities,
-}
-require('lspconfig').eslint.setup {
-    capabilities = capabilities,
-}
-require('lspconfig').html.setup {
-    capabilities = capabilities,
-}
-require('lspconfig').cssls.setup {
-    capabilities = capabilities,
-}
-require('lspconfig').css_variables.setup {
-    capabilities = capabilities,
-}
-require('lspconfig').bashls.setup {
-    capabilities = capabilities,
-}
+lspconfig.lua_ls.setup { capabilities = capabilities, }
+lspconfig.tsserver.setup { capabilities = capabilities, }
+lspconfig.eslint.setup { capabilities = capabilities, }
+lspconfig.html.setup { capabilities = capabilities, }
+lspconfig.cssls.setup { capabilities = capabilities, }
+lspconfig.css_variables.setup { capabilities = capabilities, }
+lspconfig.bashls.setup { capabilities = capabilities, }
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -76,10 +57,43 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body);
         end,
     },
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            symbol_map = {
+                Text = "文",
+                Method = "方",
+                Function = "関",
+                Constructor = "作",
+                Field = "域",
+                Variable = "変",
+                Class = "類",
+                Interface = "面",
+                Module = "部",
+                Property = "性",
+                Unit = "単",
+                Value = "値",
+                Enum = "列",
+                Keyword = "語",
+                Snippet = "ス",
+                Color = "色",
+                File = "項",
+                Reference = "参",
+                Folder = "フォ",
+                EnumMember = "列",
+                Constant = "定",
+                Struct = "構",
+                Event = "事",
+                Operator = "操",
+                TypeParameter = "型",
+            }
+        })
+    },
 })
 
-
-lsp.on_attach(function(client, bufnr)
+lspzero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -88,8 +102,9 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
 
-lsp.setup()
+lspzero.setup()
