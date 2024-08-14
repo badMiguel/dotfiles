@@ -36,6 +36,7 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 - dust
 - xcape
 - stow (still about to implement when i have the time)
+- openssh-server
 
 ### Icons 
 
