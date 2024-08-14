@@ -5,9 +5,9 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 ![my current riced setup](rice.jpeg)
 *My riced setup. (I have 2 monitors causing the gap)* 
 
-# Setup Guide
+## My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
-### My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
+----------
 
 - [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
@@ -36,11 +36,13 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 - stow (still about to implement when i have the time)
 - openssh-server
 
-### Icons 
+## Icons 
+----------
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
    
-### Mount them drives
+## Mount them drives
+----------
 
 1. List available drives
 ```
@@ -62,12 +64,14 @@ df -h
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
 
-### Backup guide 
+## Backup guide 
+----------
 
 [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
 *still yet to do this* 
 
-### GTK Dark Theme on i3
+## GTK Dark Theme on i3
+----------
 
 Followed this [github post](https://github.com/i3/i3/discussions/5896#discussioncomment-8556941)
 
@@ -89,7 +93,8 @@ Add the following code to: ~/.config/gtk-3.0/settings.ini
 gtk-application-prefer-dark-theme=1
 ```
 
-### Multi-Monitor Setup on Login
+## Multi-Monitor Setup on Login
+----------
 
 My workaround:
 
@@ -100,9 +105,10 @@ My workaround:
 sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
 ```
 
-### Issues
+## Issues
+----------
 
-#### Booting Problems (so far experienced one booting problem) 
+### Booting Problems (so far experienced one booting problem) 
 
 - nvidia persistence daemon failed
     - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
@@ -113,14 +119,15 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
     - run sudo apt-get install --reinstall ubuntu-desktop
     - then sudo reboot
 
-#### Package Install Error
+### Package Install Error
 
 E: The package <package-name> needs to be reinstalled, but I can't find an archive for it.
 ```
 sudo dpkg --remove --force-all <package-name> 
 ```
 
-### FOR LAPTOP
+## FOR LAPTOP
+----------
 
 **Add this for touchpad and other keybinds**
 ```
@@ -156,7 +163,8 @@ Section "InputClass"
 EndSection
 ```
 
-### TMUX
+## TMUX
+----------
 
 **Colors**
 
@@ -186,12 +194,14 @@ You need tmux plugin manager to install plugins for tmux. **Remember to specify 
 git clone https://github.com/tmux-plugins/tpm.git <PATH>  
 ```
 
-### Neovim:
+## Neovim:
+----------
 
 I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
 
 
 
-### Miscs
+## Miscs
+----------
 
 iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
