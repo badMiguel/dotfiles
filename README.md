@@ -7,8 +7,6 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 
 # Setup Guide
 
-## Ubuntu:
-
 ### My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
 - [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
@@ -158,11 +156,21 @@ Section "InputClass"
 EndSection
 ```
 
-## Neovim:
+### TMUX
 
-1. I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
+**Colors**
 
-2. Add this code on .bashrc for tmux sessionizer to work
+Run echo $TERM 
+
+On tmux.conf add:
+```
+set-option -a terminal-features '<change to $TERM value>:RGB'
+```
+You can also set the $TERM varibale to your desired value e.g. xterm-256color:RGB. On alacritty it's running 'alacritty' and I dont like the undercurl it gives.
+
+**TMUX Sessioniser** 
+
+Add this code on .bashrc for tmux sessionizer to work
 ```bashrc
 function ctrl_f_search() {
     ~/bin/.local/scripts/tmux-sessionizer
@@ -171,11 +179,19 @@ function ctrl_f_search() {
 bind -x '"\C-f": ctrl_f_search'
 ```
 
-3. You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
+**Plugins**
+
+You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
 ```
 git clone https://github.com/tmux-plugins/tpm.git <PATH>  
 ```
 
-## Miscs
+### Neovim:
+
+I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
+
+
+
+### Miscs
 
 iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
