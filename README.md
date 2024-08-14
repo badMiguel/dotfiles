@@ -7,8 +7,6 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 
 ## My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
 
-----------
-
 - [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
@@ -37,12 +35,10 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 - openssh-server
 
 ## Icons 
-----------
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
    
 ## Mount them drives
-----------
 
 1. List available drives
 ```
@@ -65,13 +61,11 @@ df -h
 ```
 
 ## Backup guide 
-----------
 
 [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
 *still yet to do this* 
 
 ## GTK Dark Theme on i3
-----------
 
 Followed this [github post](https://github.com/i3/i3/discussions/5896#discussioncomment-8556941)
 
@@ -94,7 +88,6 @@ gtk-application-prefer-dark-theme=1
 ```
 
 ## Multi-Monitor Setup on Login
-----------
 
 My workaround:
 
@@ -106,7 +99,6 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
 ```
 
 ## Issues
-----------
 
 ### Booting Problems (so far experienced one booting problem) 
 
@@ -127,7 +119,6 @@ sudo dpkg --remove --force-all <package-name>
 ```
 
 ## FOR LAPTOP
-----------
 
 **Add this for touchpad and other keybinds**
 ```
@@ -164,7 +155,6 @@ EndSection
 ```
 
 ## TMUX
-----------
 
 **Colors**
 
@@ -198,13 +188,11 @@ git clone https://github.com/tmux-plugins/tpm.git <PATH>
 ```
 
 ## Neovim:
-----------
 
 I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
 
 
 
 ## Miscs
-----------
 
 iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
