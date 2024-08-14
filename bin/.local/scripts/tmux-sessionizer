@@ -3,7 +3,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/codes/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
+    # selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
+    selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" -not \( -path "$HOME/.config/Code" -prune \) | fzf)
+
 fi
 
 if [[ -z $selected ]]; then
@@ -35,4 +37,5 @@ if [[ $TMUX ]]; then
     tmux switch-client -t $selected_name
     exit 0
 fi
+
 tmux attach-session -t $selected_name

@@ -21,5 +21,5 @@ CONFIG_PATH_2="/mnt/backup/backup/.config/"
 
 LOG_PATH_CONFIG="/home/miguel/backup_logs/backup_config_log.log"
 
-rsync -avh "$CONFIG" "$CONFIG_PATH_1" >> "$LOG_PATH_CONFIG" 2>&1
-rsync -avh "$CONFIG" "$CONFIG_PATH_2" >> "$LOG_PATH_CONFIG" 2>&1
+rsync -avh --exclude='BraveSoftware/' --exclude='YouTube Music Desktop App' --exclude='google-chrome' --exclude='discord' "$CONFIG" "$CONFIG_PATH_1" >> "$LOG_PATH_CONFIG" 2>&1
+rsync -avh --exclude='BraveSoftware/' --exclude='YouTube Music Desktop App' --exclude='google-chrome' --exclude='discord' "$CONFIG" "$CONFIG_PATH_2" >> "$LOG_PATH_CONFIG" 2>&1
