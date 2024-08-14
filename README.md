@@ -174,7 +174,10 @@ On tmux.conf add:
 ```
 set-option -a terminal-features '<change to $TERM value>:RGB'
 ```
-You can also set the $TERM varibale to your desired value e.g. xterm-256color:RGB. On alacritty it's running 'alacritty' and I dont like the undercurl it gives.
+You can also set the $TERM varibale to your desired value e.g. "xterm-256color:RGB" on bashrc. On alacritty it's running 'alacritty' and I dont like the undercurl it gives.
+```
+export TERM=xterm-256color
+```
 
 **TMUX Sessioniser** 
 
