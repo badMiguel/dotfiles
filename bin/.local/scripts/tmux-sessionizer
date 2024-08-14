@@ -19,7 +19,7 @@ if tmux has-session -t "$selected_name" 2>/dev/null; then
         exit 0
     fi
 
-    tmux attach-session -d -t "$selected_name"
+    tmux attach-session -t "$selected_name"
     exit 0
 fi
 
