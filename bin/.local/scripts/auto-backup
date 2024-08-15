@@ -7,19 +7,86 @@ SEM2="/home/miguel/Documents/"
 SEM2_PATH_1="/home/miguel/backup/documents"
 SEM2_PATH_2="/mnt/backup/backup/documents"
 
-LOG_PATH="/home/miguel/backup_logs/backup_log.log"
+SEM2_LOG_PATH="/home/miguel/backup_logs/documents.log"
 
-rsync -avh "$SEM2" "$SEM2_PATH_1" >> "$LOG_PATH" 2>&1
-rsync -avh "$SEM2" "$SEM2_PATH_2" >> "$LOG_PATH" 2>&1
+rsync -avh "$SEM2" "$SEM2_PATH_1" >> "$SEM2_LOG_PATH" 2>&1
+rsync -avh "$SEM2" "$SEM2_PATH_2" >> "$SEM2_LOG_PATH" 2>&1
+
+# Pictures
+
+PICTURES="/home/miguel/Pictures/"
+
+PICTURES_PATH_1="/home/miguel/backup/pictures"
+PICTURES_PATH_2="/mnt/backup/backup/pictures"
+
+PICTURES_LOG_PATH="/home/miguel/backup_logs/pictures_backup.log"
+
+rsync -avh "$PICTURES" "$PICTURES_PATH_1" >> "$PICTURES_LOG_PATH" 2>&1
+rsync -avh "$PICTURES" "$PICTURES_PATH_2" >> "$PICTURES_LOG_PATH" 2>&1
+
+# Videos
+
+VIDEOS="/home/miguel/Videos/"
+
+VIDEOS_PATH_1="/home/miguel/backup/videos"
+VIDEOS_PATH_2="/mnt/backup/backup/videos"
+
+VIDEOS_LOG_PATH="/home/miguel/backup_logs/videos_backup.log"
+
+rsync -avh "$VIDEOS" "$VIDEOS_PATH_1" >> "$VIDEOS_LOG_PATH" 2>&1
+rsync -avh "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
+
+# Downloads
+
+DOWNLOADS="/home/miguel/Downloads/"
+
+DOWNLOADS_PATH_1="/home/miguel/backup/downloads"
+DOWNLOADS_PATH_2="/mnt/backup/backup/downloads"
+
+DOWNLOADS_LOG_PATH="/home/miguel/backup_logs/downloads_backup.log"
+
+rsync -avh "$DOWNLOADS" "$DOWNLOADS_PATH_1" >> "$DOWNLOADS_LOG_PATH" 2>&1
+rsync -avh "$DOWNLOADS" "$DOWNLOADS_PATH_2" >> "$DOWNLOADS_LOG_PATH" 2>&1
+
+# Scripts
+
+SCRIPTS="/home/miguel/bin/.local/scripts/"
+
+SCRIPTS_PATH_1="/home/miguel/backup/scripts"
+SCRIPTS_PATH_2="/mnt/backup/backup/scripts"
+
+SCRIPTS_LOG_PATH="/home/miguel/backup_logs/scripts_backup.log"
+
+rsync -avh "$SCRIPTS" "$SCRIPTS_PATH_1" >> "$SCRIPTS_LOG_PATH" 2>&1
+rsync -avh "$SCRIPTS" "$SCRIPTS_PATH_2" >> "$SCRIPTS_LOG_PATH" 2>&1
 
 # .config
 
 CONFIG="/home/miguel/.config"
 
-CONFIG_PATH_1="/home/miguel/backup/.config/"
-CONFIG_PATH_2="/mnt/backup/backup/.config/"
+CONFIG_PATH_1="/home/miguel/backup/"
+CONFIG_PATH_2="/mnt/backup/backup/"
 
-LOG_PATH_CONFIG="/home/miguel/backup_logs/backup_config_log.log"
+CONFIG_LOG_PATH="/home/miguel/backup_logs/config_backup.log"
 
-rsync -avh --exclude='BraveSoftware/' --exclude='YouTube Music Desktop App' --exclude='google-chrome' --exclude='discord' "$CONFIG" "$CONFIG_PATH_1" >> "$LOG_PATH_CONFIG" 2>&1
-rsync -avh --exclude='BraveSoftware/' --exclude='YouTube Music Desktop App' --exclude='google-chrome' --exclude='discord' "$CONFIG" "$CONFIG_PATH_2" >> "$LOG_PATH_CONFIG" 2>&1
+rsync -avh "$CONFIG" "$CONFIG_PATH_1" >> "$CONFIG_LOG_PATH" 2>&1
+rsync -avh "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
+
+# bash config
+
+BASHRC="/home/miguel/.bashrc"
+BASH_HISTORY="/home/miguel/.bash_history"
+
+BASHRC_PATH_1="/home/miguel/backup/bash"
+BASHRC_PATH_2="/mnt/backup/backup/bash"
+
+BASHRC_LOG_PATH="/home/miguel/backup_logs/bashrc_backup.log"
+BASH_HISTORY_LOG_PATH="/home/miguel/backup_logs/bash_history_backup.log"
+
+# bashrc
+rsync -avh "$BASHRC" "$BASHRC_PATH_1" >> "$BASHRC_LOG_PATH" 2>&1
+rsync -avh "$BASHRC" "$BASHRC_PATH_2" >> "$BASHRC_LOG_PATH" 2>&1
+
+# bash history
+rsync -avh "$BASH_HISTORY" "$BASHRC_PATH_1" >> "$BASH_HISTORY_LOG_PATH" 2>&1
+rsync -avh "$BASH_HISTORY" "$BASHRC_PATH_2" >> "$BASH_HISTORY_LOG_PATH" 2>&1
