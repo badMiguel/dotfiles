@@ -154,7 +154,32 @@ Section "InputClass"
 EndSection
 ```
 
-## TMUX
+**Pinch to zoom in/out**
+
+Install dependencies:
+```
+sudo apt install libinput-tools xdotool
+git clone https://github.com/bulletmark/libinput-gestures.git
+cd libinput-gestures
+sudo make install
+```
+If you encounter permissions problem:
+```
+sudo gpasswd -a $USER input
+reboot
+```
+Add the following to ~/.config/libinput-gestures.conf:
+```gesture pinch in   xdotool key ctrl+minus
+gesture pinch out  xdotool key ctrl+plus
+```
+To start the gestures:
+```
+libinput-gestures-setup autostart #run automatically on the startup
+libinput-gestures-setup start
+libinput-gestures-setup status #check if its running
+```
+
+### TMUX
 
 **Colors**
 

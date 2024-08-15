@@ -12,7 +12,7 @@ set $mod Mod1
 # start picom
 exec --no-startup-id picom
 
-# start picom
+# start dunst
 exec_always --no-startup-id dunst 
 
 # remove title bar on window
