@@ -40,10 +40,14 @@ v("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
 
-v("n", "<C-j>", "<cmd>cnext<CR>zz")
-v("n", "<C-k>", "<cmd>cprev<CR>zz")
-v("n", "<leader>j", "<cmd>lnext<CR>zz")
-v("n", "<leader>k", "<cmd>lprev<CR>zz")
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        v("n", "<C-j>", "<cmd>cnext<CR>zz")
+        v("n", "<C-k>", "<cmd>cprev<CR>zz")
+        v("n", "<leader>j", "<cmd>lnext<CR>zz")
+        v("n", "<leader>k", "<cmd>lprev<CR>zz")
+    end
+})
 
 v("n", "<leader>/", ":noh<CR>", { noremap = true, silent = true })
 v("n", "<leader>.", ":nohlsearch<CR>", { noremap = true, silent = true })
