@@ -11,7 +11,6 @@ require("mason-lspconfig").setup({
         "eslint",
         "html",
         "cssls",
-        "css_variables",
         "bashls",
     }
 })
@@ -28,7 +27,6 @@ lspconfig.tsserver.setup { capabilities = capabilities, }
 lspconfig.eslint.setup { capabilities = capabilities, }
 lspconfig.html.setup { capabilities = capabilities, }
 lspconfig.cssls.setup { capabilities = capabilities, }
-lspconfig.css_variables.setup { capabilities = capabilities, }
 lspconfig.bashls.setup { capabilities = capabilities, }
 
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -60,7 +58,7 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol_text',
-            maxwidth = 50,
+            maxwidth = 15,
             ellipsis_char = '...',
             symbol_map = {
                 Text = "文",
