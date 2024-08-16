@@ -216,8 +216,6 @@ git clone https://github.com/tmux-plugins/tpm.git <PATH>
 
 I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
 
-
-
 ## Miscs
 
 iykyk @nClientDownloadEnableHTTP2PlatformLinux 0

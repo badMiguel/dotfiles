@@ -30,7 +30,7 @@ default_floating_border normal
 exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/cherry_blossom_flipped.png
 
 # font 
-font pango:monospace 10
+font pango:monoscape 10
 
 # Start XDG autostart .desktop files using dex. See also
 exec --no-startup-id dex --autostart --environment i3
@@ -65,7 +65,7 @@ exec_always --no-startup-id ~/.config/polybar/launch
 exec --no-startup-id ~/bin/.local/scripts/key-remap
 
 # night light
-exec_always --no-startup-id redshift -O 3800 -P -b 0.6
+exec_always --no-startup-id redshift -O 4800 -P -b 0.8
 
 # add gaps
 gaps inner 15
@@ -76,6 +76,9 @@ exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
 
 # focus on primary monitor when reloading
 exec --no-startup-id i3-msg 'focus output $pm'
+
+# focus on primary monitor when reloading
+exec --no-startup-id i3-msg 'xrdb -merge ~/.Xresources'
 
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled
@@ -89,6 +92,7 @@ for_window [class="feh"] floating enabled
 for_window [class="Totem"] floating enabled
 for_window [class="Gpick"] floating enabled
 for_window [class="Pavucontrol"] floating enabled
+for_window [class="Emulator"] floating enabled
 for_window [class="copyq"] floating enabled
 for_window [class="org.gnome.clocks"] floating enabled
 for_window [class="gnome-calendar"] floating enabled
