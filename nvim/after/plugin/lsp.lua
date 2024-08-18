@@ -1,7 +1,8 @@
 local lspzero = require("lsp-zero")
-local lspkind = require("lspkind")
-local lspconfig = require("lspconfig")
+local lspkind = require("lspkind") local lspconfig = require("lspconfig")
 
+
+-- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
@@ -15,21 +16,45 @@ require("mason-lspconfig").setup({
     }
 })
 
+
 -- LSP config
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local border = {
+    { '┌', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '┐', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+    { '┘', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '└', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+}
+local handlers = {
+    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
 
 lspconfig.pylsp.setup {
     capabilities = capabilities,
     settings = { pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, }, }, },
+    handlers = handlers,
 }
-lspconfig.lua_ls.setup { capabilities = capabilities, }
-lspconfig.tsserver.setup { capabilities = capabilities, }
-lspconfig.eslint.setup { capabilities = capabilities, }
-lspconfig.html.setup { capabilities = capabilities, }
-lspconfig.cssls.setup { capabilities = capabilities, }
-lspconfig.bashls.setup { capabilities = capabilities, }
+lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
+lspconfig.tsserver.setup { capabilities = capabilities, handlers = handlers, }
+lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers, }
+lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
+lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
+lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+    },
+    float = { border = border },
+})
 
 require("luasnip.loaders.from_vscode").lazy_load()
+
 
 -- Auto completions
 local cmp = require('cmp')
@@ -55,6 +80,12 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body);
         end,
     },
+
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol_text',
@@ -91,6 +122,8 @@ cmp.setup({
     },
 })
 
+
+-- lspzero
 lspzero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
