@@ -7,12 +7,6 @@ vim.api.nvim_exec([[
   augroup netrw_settings
     autocmd!
     autocmd FileType netrw setlocal relativenumber
+    autocmd FileType netrw noremap <C-h> <Nop>
   augroup END
 ]], false)
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "netrw",
-    callback = function()
-        vim.api.nvim_buf_del_keymap(0, "n", "<C-h>")
-    end,
-})
