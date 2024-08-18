@@ -9,3 +9,10 @@ vim.api.nvim_exec([[
     autocmd FileType netrw setlocal relativenumber
   augroup END
 ]], false)
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "netrw",
+    callback = function()
+        vim.api.nvim_buf_del_keymap(0, "n", "<C-h>")
+    end,
+})
