@@ -1,7 +1,7 @@
 function ColorMyPencils(color)
     color = color or "rose-pine"
 
-    require('rose-pine').setup({
+    require(color).setup({
         styles = {
             transparency = true,
         },
@@ -13,7 +13,6 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = 'none' })
     vim.api.nvim_set_hl(0, "FoldColumn", { bg = 'none' })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = 'none' })
-
 end
 
 ColorMyPencils()
