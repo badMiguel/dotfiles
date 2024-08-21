@@ -6,12 +6,12 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
-        "pylsp",
+        "ruff",
+        "pyright",
         "tsserver",
         "eslint",
         "html",
         "cssls",
-        "css_variables",
         "bashls",
     }
 })
@@ -33,11 +33,7 @@ local handlers = {
     ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
-lspconfig.pylsp.setup {
-    capabilities = capabilities,
-    settings = { pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, }, }, },
-    handlers = handlers,
-}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.diagnostic.config({
     virtual_text = {
@@ -46,6 +42,22 @@ vim.diagnostic.config({
     float = { border = border },
 })
 
+lspconfig.pyright.setup {
+    capabilities = capabilities,
+    -- settings = {
+    --     pyright = {
+    --         plugins = {
+    --             pycodestyle = {
+    --                 ignore = { 'E501' },
+    --             },
+    --
+    --             mypy = { enabled = true },
+    --         },
+    --     },
+    -- },
+    handlers = handlers,
+}
+lspconfig.ruff.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.tsserver.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers, }
