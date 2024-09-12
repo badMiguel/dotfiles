@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p /home/miguel/backup_logs
+
 # Document
 
 SEM2="/home/miguel/Documents/"

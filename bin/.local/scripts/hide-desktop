@@ -7,8 +7,8 @@ hide_desktop() {
     set_visible_unfocused=$(i3-msg -t get_workspaces | jq -r '.[] | select(.visible == true and .focused==false) | .name')
     set_visible_focused=$(i3-msg -t get_workspaces | jq -r '.[] | select(.visible == true and .focused==true) | .name')
 
-    echo "$set_visible_focused" > $HOME/bin/.local/scripts/visible_focused.txt
-    echo "$set_visible_unfocused" > $HOME/bin/.local/scripts/visible_unfocused.txt
+    echo "$set_visible_focused" > /tmp/visible_focused.txt
+    echo "$set_visible_unfocused" > /tmp/visible_unfocused.txt
 
     i3-msg 'workspace 0; workspace 21'
 
@@ -21,8 +21,8 @@ if [[ -e $visible_focused && -e $visible_unfocused ]]; then
     for i in $set_visible; 
     do
         if [[ "$i" -ne "0" && "$i" -ne "21" ]]; then
-            rm $HOME/bin/.local/scripts/visible_focused.txt
-            rm $HOME/bin/.local/scripts/visible_unfocused.txt
+            rm /tmp/visible_focused.txt
+            rm /tmp/visible_unfocused.txt
 
             hide_desktop
         fi
@@ -31,8 +31,8 @@ if [[ -e $visible_focused && -e $visible_unfocused ]]; then
     i3-msg "workspace $(<"$visible_unfocused")"
     i3-msg "workspace $(<"$visible_focused")"
 
-    rm $HOME/bin/.local/scripts/visible_focused.txt
-    rm $HOME/bin/.local/scripts/visible_unfocused.txt
+    rm /tmp/visible_focused.txt
+    rm /tmp/visible_unfocused.txt
 else
     hide_desktop
 fi

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+$HOME/idea-IC-242.20224.419/bin/idea &

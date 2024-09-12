@@ -39,3 +39,4 @@ if [[ $TMUX ]]; then
 fi
 
 tmux attach-session -t $selected_name
+
