@@ -5,35 +5,6 @@ My beloved dotfiles. First time using linux and neovim after being heavily inspi
 ![my current riced setup](rice.jpeg)
 *My riced setup. (I have 2 monitors causing the gap)* 
 
-## My Favourite/Essential Linux Tools/Programs ( needed to be installed ):
-
-- [Neovim <33](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-- [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
-- [tmux](https://github.com/tmux/tmux/wiki/Installing)
-- [i3 windows manager](https://i3wm.org/)
-- [alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file)
-- [polybar](https://github.com/polybar/polybar/wiki/Configuration)
-- [mangohud](https://github.com/flightlessmango/MangoHud)
-- git and github cli (gh)
-- cava
-- calibre
-- TLDR
-- neofetch
-- btop
-- fzf
-- thunar
-- bat
-- ffmpeg
-- copyq
-- feh
-- redshift
-- flameshot
-- pavucontrol
-- dust
-- xcape
-- stow (still about to implement when i have the time)
-- openssh-server
-
 ## Icons 
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
