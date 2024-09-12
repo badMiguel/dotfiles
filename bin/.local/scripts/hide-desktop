@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-visible_focused="$HOME/bin/.local/scripts/visible_focused.txt"
-visible_unfocused="$HOME/bin/.local/scripts/visible_unfocused.txt"
+visible_focused="/tmp/visible_focused.txt"
+visible_unfocused="/tmp/visible_unfocused.txt"
 
 hide_desktop() {
     set_visible_unfocused=$(i3-msg -t get_workspaces | jq -r '.[] | select(.visible == true and .focused==false) | .name')
@@ -10,7 +10,7 @@ hide_desktop() {
     echo "$set_visible_focused" > /tmp/visible_focused.txt
     echo "$set_visible_unfocused" > /tmp/visible_unfocused.txt
 
-    i3-msg 'workspace 0; workspace 21'
+    i3-msg 'workspace 21; workspace 0'
 
     exit
 }
