@@ -12,7 +12,7 @@ v.expandtab = true
 
 v.smartindent = true
 
--- v.wrap = false
+v.wrap = false
 
 v.swapfile = false
 v.backup = false

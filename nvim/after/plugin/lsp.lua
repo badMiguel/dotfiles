@@ -5,14 +5,16 @@ local lspconfig = require("lspconfig")
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
-        "lua_ls",
-        "ruff",
         "pyright",
+        "ruff",
+        "lua_ls",
         "tsserver",
         "eslint",
         "html",
         "cssls",
         "bashls",
+        "jsonls",
+        "gopls",
     }
 })
 
@@ -44,26 +46,18 @@ vim.diagnostic.config({
 
 lspconfig.pyright.setup {
     capabilities = capabilities,
-    -- settings = {
-    --     pyright = {
-    --         plugins = {
-    --             pycodestyle = {
-    --                 ignore = { 'E501' },
-    --             },
-    --
-    --             mypy = { enabled = true },
-    --         },
-    --     },
-    -- },
+    -- settings = { pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, },
     handlers = handlers,
 }
-lspconfig.ruff.setup { capabilities = capabilities, handlers = handlers }
+lspconfig.ruff.setup {}
 lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.tsserver.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
+lspconfig.jsonls.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
+lspconfig.gopls.setup { capabilities = capabilities, handlers = handlers, }
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
