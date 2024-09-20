@@ -7,9 +7,8 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "pyright",
         "ruff",
+        "ts_ls",
         "lua_ls",
-        "tsserver",
-        "eslint",
         "html",
         "cssls",
         "bashls",
@@ -46,13 +45,27 @@ vim.diagnostic.config({
 
 lspconfig.pyright.setup {
     capabilities = capabilities,
-    -- settings = { pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, },
+    settings = {
+        python = {
+            analysis = {
+                diagnosticMode = "workspace",
+            }
+        }
+        -- pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, },
+    },
     handlers = handlers,
 }
 lspconfig.ruff.setup {}
+lspconfig.ts_ls.setup {
+    capabilities = capabilities,
+    handlers = handlers,
+    root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
+    on_attach = function(id, bufnr)
+        require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
+    end,
+
+}
 lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
-lspconfig.tsserver.setup { capabilities = capabilities, handlers = handlers, }
-lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.jsonls.setup { capabilities = capabilities, handlers = handlers, }
@@ -142,5 +155,7 @@ lspzero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
+
+lspzero.setup()
 
 lspzero.setup()

@@ -205,6 +205,11 @@ _G.packer_plugins = {
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/undotree",
@@ -219,6 +224,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["workspace-diagnostics.nvim"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/workspace-diagnostics.nvim",
+    url = "https://github.com/artemave/workspace-diagnostics.nvim"
   }
 }
 

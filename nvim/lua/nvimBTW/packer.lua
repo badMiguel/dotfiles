@@ -81,4 +81,10 @@ return require('packer').startup(function(use)
 
     -- color preview
     use 'norcalli/nvim-colorizer.lua'
+
+    -- trouble
+    use "folke/trouble.nvim"
+
+    -- workspace-diagnostic
+    use "artemave/workspace-diagnostics.nvim"
 end)
