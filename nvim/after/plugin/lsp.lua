@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
         "pyright",
         "ruff",
         "ts_ls",
+        "eslint",
         "lua_ls",
         "html",
         "cssls",
@@ -65,6 +66,7 @@ lspconfig.ts_ls.setup {
     end,
 
 }
+lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
