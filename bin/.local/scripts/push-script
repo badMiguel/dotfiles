@@ -2,5 +2,5 @@
 
 # for push in both github and bitbucket as i prefer github
 
-git push origin main
 git push bitbucket main
+git push origin main
