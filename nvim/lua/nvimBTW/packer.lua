@@ -84,4 +84,7 @@ return require('packer').startup(function(use)
 
     -- workspace-diagnostic
     use "artemave/workspace-diagnostics.nvim"
+
+    -- none-ls
+    use "nvimtools/none-ls.nvim"
 end)
