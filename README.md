@@ -3,38 +3,42 @@
 My beloved dotfiles. First time using linux and neovim after being heavily inspired by ThePrimeagen and I'm loving it.
 
 ![my current riced setup](rice.jpeg)
-*My riced setup. (I have 2 monitors causing the gap)* 
+_My riced setup. (I have 2 monitors causing the gap)_
 
-## Icons 
+## Icons
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
-   
+
 ## Mount them drives
 
 1. List available drives
+
 ```
 lsblk or sudo fdisk -l
 ```
 
 2. Make mmount point directory
+
 ```
 sudo mkdir -p /path/to/mount/
 ```
 
 3. Verify mount
+
 ```
 df -h
 ```
 
 4. Edit /etc/fstab to mount automatically on boot
+
 ```
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
 
-## Backup guide 
+## Backup guide
 
 [Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
-*still yet to do this* 
+_still yet to do this_
 
 ## GTK Dark Theme on i3
 
@@ -45,10 +49,12 @@ TLDR:
 Make a config file for xdg-desktop-portal i.e. $HOME/.config/xdg-desktop-portal/portals.conf
 
 add this config:
+
 ```
 [preferred]
 default=gtk;wlr
 ```
+
 then ....
 
 Add the following code to: ~/.config/gtk-3.0/settings.ini
@@ -65,33 +71,36 @@ My workaround:
 1. Sign in via Ubuntu rather than i3wm
 2. Set up your monitors in the settings
 3. Copy this display config to gdm3
+
 ```
 sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
 ```
 
 ## Issues
 
-### Booting Problems (so far experienced one booting problem) 
+### Booting Problems (so far experienced one booting problem)
 
-- nvidia persistence daemon failed
-    - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
-    - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
-    - Scroll to an option that says (recovery) at the end of the listing and press enter.
-    - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
-    - run sudo apt update, sudo apt upgrade
-    - run sudo apt-get install --reinstall ubuntu-desktop
-    - then sudo reboot
+-   nvidia persistence daemon failed
+    -   [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
+    -   On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
+    -   Scroll to an option that says (recovery) at the end of the listing and press enter.
+    -   Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
+    -   run sudo apt update, sudo apt upgrade
+    -   run sudo apt-get install --reinstall ubuntu-desktop
+    -   then sudo reboot
 
 ### Package Install Error
 
 E: The package <package-name> needs to be reinstalled, but I can't find an archive for it.
+
 ```
-sudo dpkg --remove --force-all <package-name> 
+sudo dpkg --remove --force-all <package-name>
 ```
 
 ## FOR LAPTOP
 
 **Add this for touchpad and other keybinds**
+
 ```
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -111,9 +120,11 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 ```
+
 **Enable one tap click for laptop**
 
 Add the following code in /etc/X11/xorg.conf.d/90-touchpad.conf
+
 ```
 Section "InputClass"
         Identifier "touchpad"
@@ -128,22 +139,29 @@ EndSection
 **Pinch to zoom in/out**
 
 Install dependencies:
+
 ```
 sudo apt install libinput-tools xdotool
 git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo make install
 ```
+
 If you encounter permissions problem:
+
 ```
 sudo gpasswd -a $USER input
 reboot
 ```
+
 Add the following to ~/.config/libinput-gestures.conf:
+
 ```gesture pinch in   xdotool key ctrl+minus
 gesture pinch out  xdotool key ctrl+plus
 ```
+
 To start the gestures:
+
 ```
 libinput-gestures-setup autostart #run automatically on the startup
 libinput-gestures-setup start
@@ -154,20 +172,24 @@ libinput-gestures-setup status #check if its running
 
 **Colors**
 
-Run echo $TERM 
+Run echo $TERM
 
 On tmux.conf add:
+
 ```
 set-option -a terminal-features '<change to $TERM value>:RGB'
 ```
+
 You can also set the $TERM varibale to your desired value e.g. "xterm-256color:RGB" on bashrc. On alacritty it's running 'alacritty' and I dont like the undercurl it gives.
+
 ```
 export TERM=xterm-256color
 ```
 
-**TMUX Sessioniser** 
+**TMUX Sessioniser**
 
 Add this code on .bashrc for tmux sessionizer to work
+
 ```bashrc
 function ctrl_f_search() {
     ~/bin/.local/scripts/tmux-sessionizer
@@ -179,8 +201,9 @@ bind -x '"\C-f": ctrl_f_search'
 **Plugins**
 
 You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
+
 ```
-git clone https://github.com/tmux-plugins/tpm.git <PATH>  
+git clone https://github.com/tmux-plugins/tpm.git <PATH>
 ```
 
 ## Neovim:
