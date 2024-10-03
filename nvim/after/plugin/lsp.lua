@@ -6,7 +6,6 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
         "pyright",
-        "ruff",
         "ts_ls",
         "lua_ls",
         "html",
@@ -55,7 +54,6 @@ lspconfig.pyright.setup {
     },
     handlers = handlers,
 }
-lspconfig.ruff.setup {}
 lspconfig.ts_ls.setup {
     capabilities = capabilities,
     handlers = handlers,

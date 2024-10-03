@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
     -- }
     --
     -- LSP
+
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -87,4 +88,5 @@ return require('packer').startup(function(use)
 
     -- none-ls
     use "nvimtools/none-ls.nvim"
+    use 'jay-babu/mason-null-ls.nvim'
 end)

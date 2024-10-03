@@ -1,5 +1,9 @@
 local null_ls = require("null-ls")
 
+require("mason-null-ls").setup({
+    ensure_installed = { "prettier", "black" }
+})
+
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettier.with({
@@ -13,5 +17,6 @@ null_ls.setup({
                 "--arrow-parens", "always",
             },
         }),
+        null_ls.builtins.formatting.black,
     },
 })
