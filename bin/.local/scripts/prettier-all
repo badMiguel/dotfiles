@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+prettier --write "**/*.{js,jsx,ts,tsx,md,css,scss,html}" 
+
