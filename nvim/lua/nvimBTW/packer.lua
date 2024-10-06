@@ -36,16 +36,15 @@ return require('packer').startup(function(use)
     -- for git
     use('tpope/vim-fugitive')
 
-    -- -- commenting
-    -- use {
-    --     'numToStr/Comment.nvim',
-    --     config = function()
-    --         require('Comment').setup()
-    --     end
-    -- }
-    --
-    -- LSP
+    -- commenting
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
+    -- LSP
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
