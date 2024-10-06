@@ -10,53 +10,49 @@ i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
 
 sleep 0.5 
 
+
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to down'
+i3-msg '[class="Alacritty" title="cava"] move container to down'
+i3-msg '[class="Alacritty" title="notes"] move container to up'
 
 sleep 0.5 
 
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to down'
+i3-msg '[class="Alacritty" title="cava"] move container to down'
+i3-msg '[class="Alacritty" title="notes"] move container to up'
 
 sleep 0.5 
 
-i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] move to workspace 11'
-i3-msg '[class="Alacritty" title="notes"] move container to down'
+i3-msg '[class="Alacritty" title="secondary"] move container to down'
+i3-msg '[class="Alacritty" title="cava"] move container to down'
 
 sleep 0.5 
 
 i3-msg '[class="Brave-browser" title="New Tab - Brave"] move to workspace 2'
+i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] move to workspace 11'
 
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to down'
 
 sleep 0.5
 
+i3-msg '[class="Alacritty" title="notes"] move container to up'
+
+sleep 0.5 
+
+i3-msg '[class="Alacritty" title="secondary"] move container to down'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
-i3-msg '[class="discord"] move container to up'
 
 sleep 0.5 
 
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to down'
+i3-msg '[class="Alacritty" title="cava"] move container to down'
 
 sleep 0.5
 
-i3-msg '[class="discord"] move container to up'
-
-sleep 0.5 
-
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to down'
-i3-msg 'workspace 4'
-
-sleep 0.5
-
-i3-msg '[class="Spotify"] resize set height 1100px'
+i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] resize set height 600px'
+i3-msg '[class="Alacritty" title="secondary"] resize set height 600px'
+i3-msg '[class="Alacritty" title="cava"] resize set height 200px'
 i3-msg '[class="Alacritty" title="notes"] split horizontally'
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
 
 sleep 0.5
 
 i3-msg 'focus output DP-0; workspace 1'
-

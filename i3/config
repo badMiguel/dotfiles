@@ -72,7 +72,7 @@ gaps inner 15
 workspace 1 gaps left 400
 
 # kill steam package install which causes problem on automation
-exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
+# exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
 
 # focus on primary monitor when reloading
 exec --no-startup-id i3-msg 'focus output $pm'
