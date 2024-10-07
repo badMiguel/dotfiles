@@ -2,7 +2,7 @@
 
 My beloved dotfiles. First time using linux and neovim after being heavily inspired by ThePrimeagen and I'm loving it.
 
-![my current riced setup](dot.png)
+![my current riced setup](rice.png)
 _My riced setup. (I have 2 monitors causing the gap)_
 
 ## Icons
