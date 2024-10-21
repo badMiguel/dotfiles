@@ -72,7 +72,7 @@ gaps inner 15
 workspace 1 gaps left 400
 
 # kill steam package install which causes problem on automation
-# exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
+exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
 
 # focus on primary monitor when reloading
 exec --no-startup-id i3-msg 'focus output $pm'
@@ -83,9 +83,6 @@ exec --no-startup-id i3-msg 'xrdb -merge ~/.Xresources'
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled
 for_window [class="steam" title="Steam Settings"] floating enabled
-for_window [class="Thunar"] floating enabled
-for_window [class="Thunar"] resize set 1200 1000
-for_window [class="Thunar"] move position center
 for_window [class="gnome-calculator"] floating enabled
 for_window [class="Display-im6.q16"] floating enabled
 for_window [class="feh"] floating enabled
@@ -99,3 +96,12 @@ for_window [class="gnome-calendar"] floating enabled
 for_window [class="Blueman-manager"] floating enabled
 for_window [class="PacketTracer"] floating enabled
 for_window [class="firefox" title="Library"] floating enabled
+
+for_window [class="Alacritty" title="notes"] floating enabled
+for_window [class="Alacritty" title="notes"] resize set 1200 1000
+for_window [class="Alacritty" title="notes"] move position center
+for_window [class="Alacritty" title="notes"] move container to output $pm
+
+for_window [class="Thunar"] floating enabled
+for_window [class="Thunar"] resize set 1200 1000
+for_window [class="Thunar"] move position center
