@@ -13,13 +13,13 @@ sleep 0.5
 
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to up'
+# i3-msg '[class="Alacritty" title="notes"] move container to up'
 
 sleep 0.5 
 
 i3-msg '[class="Alacritty" title="secondary"] move container to down'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
-i3-msg '[class="Alacritty" title="notes"] move container to up'
+# i3-msg '[class="Alacritty" title="notes"] move container to up'
 
 sleep 0.5 
 
@@ -34,7 +34,7 @@ i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] move to worksp
 
 sleep 0.5
 
-i3-msg '[class="Alacritty" title="notes"] move container to up'
+# i3-msg '[class="Alacritty" title="notes"] move container to up'
 
 sleep 0.5 
 
@@ -49,9 +49,14 @@ i3-msg '[class="Alacritty" title="cava"] move container to down'
 sleep 0.5
 
 i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] resize set height 600px'
-i3-msg '[class="Alacritty" title="secondary"] resize set height 600px'
 i3-msg '[class="Alacritty" title="cava"] resize set height 200px'
-i3-msg '[class="Alacritty" title="notes"] split horizontally'
+i3-msg '[class="Alacritty" title="secondary"] resize set height 700px'
+# i3-msg '[class="Alacritty" title="notes"] split horizontally'
+
+sleep 0.5 
+
+i3-msg '[class="Alacritty" title="secondary"] move container to down'
+i3-msg '[class="Alacritty" title="cava"] move container to down'
 
 sleep 0.5
 
