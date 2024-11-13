@@ -1,10 +1,10 @@
 include $HOME/.config/i3/workspaces.conf
-include $HOME/.config/i3/startup.conf
+# include $HOME/.config/i3/startup.conf
 include $HOME/.config/i3/remap.conf
 include $HOME/.config/i3/rose-pine.conf
 
 # xrandr for screens
-exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 100.00 --rotate left 
+exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 100.00 --pos 2560x-200 --rotate left 
 
 # set monitors
 set $pm DP-0
