@@ -97,6 +97,21 @@ E: The package <package-name> needs to be reinstalled, but I can't find an archi
 sudo dpkg --remove --force-all <package-name>
 ```
 
+### Connect Controller via Bluetooth
+
+```
+# Disconnect your gamepad with blueman and remove the device
+bluetoothctl
+scan on
+devices
+# copy the MAC of the device that you want to pair
+pair MAC_ADDRESS
+trust MAC_ADDRESS
+connect MAC_ADDRESS
+```
+
+[source](https://github.com/bluez/bluez/issues/673#issuecomment-1849132576)
+
 ## FOR LAPTOP
 
 **Add this for touchpad and other keybinds**
