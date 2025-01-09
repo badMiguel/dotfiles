@@ -1,8 +1,8 @@
 # Welcome
 
-## times i broke and reinstalled linux
+### times i broke and reinstalled linux
 
-### 3
+#### 3
 
 ![my current riced setup](rice.png)
 _My riced setup. (I have 2 monitors causing the gap)_
