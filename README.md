@@ -205,12 +205,25 @@ export TERM=xterm-256color
 
 Add this code on .bashrc for tmux sessionizer to work
 
-```bashrc
-function ctrl_f_search() {
-    ~/bin/.local/scripts/tmux-sessionizer
+- For bash
+```bash
+function ctrl_f_search() {~~
+    /bin/.local/scripts/tmux-sessionizer
 }
 
 bind -x '"\C-f": ctrl_f_search'
+```
+
+-For zsh
+```bash
+bindkey -s "^F" "tmux-sessionizer\n"
+```
+
+*Note to self*
+
+To change default shell:
+```bash
+chsh -s $(which zsh)
 ```
 
 **Plugins**
