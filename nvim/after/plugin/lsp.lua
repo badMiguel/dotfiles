@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "pyright",
         -- "pylsp",
+        "eslint",
         "ts_ls",
         "lua_ls",
         "html",
@@ -61,6 +62,7 @@ lspconfig.ts_ls.setup {
         require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
     end,
 }
+lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
 lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
 lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
@@ -78,7 +80,7 @@ cmp.setup({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-e>'] = cmp.mapping.abort(),
-        -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
     sources = cmp.config.sources({
