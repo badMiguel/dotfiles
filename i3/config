@@ -1,5 +1,5 @@
 include $HOME/.config/i3/workspaces.conf
-# include $HOME/.config/i3/startup.conf
+include $HOME/.config/i3/startup.conf
 include $HOME/.config/i3/remap.conf
 include $HOME/.config/i3/rose-pine.conf
 
@@ -73,6 +73,9 @@ workspace 1 gaps left 400
 
 # kill steam package install which causes problem on automation
 exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
+
+# move discord
+exec --no-startup-id ~/bin/.local/scripts/move-discord
 
 # focus on primary monitor when reloading
 exec --no-startup-id i3-msg 'focus output $pm'
