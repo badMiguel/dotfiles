@@ -36,11 +36,11 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = "monospace:pixelsize=13;0"
-font-1 = "FiraCode Nerd Font:pixelsize=13;0"
+font-0 = "CaskaydiaMonoNerdFont:pixelsize=13;0"
+font-1 = "CaskaydiaMonoNerdFont:pixelsize=13;0"
 
 modules-left = xworkspaces i3
-modules-right = systray memory cpu wlan pulseaudio date time
+modules-right = systray memory cpu wlan eth pulseaudio date time
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -110,13 +110,12 @@ label = %percentage_used:2%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU"
+format-prefix = "CPU "
 label = %percentage:2%%
 
 [network-base]
 type = internal/network
 interval = 5
-format-connected = <ramp-signal> <label-connected>
 format-disconnected = <label-disconnected>
 label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 
@@ -132,11 +131,12 @@ ramp-signal-4 = 󰤨
 inherit = network-base
 interface-type = wireless
 label-connected = %essid%  %netspeed% 
+format-connected = <ramp-signal> <label-connected>
 
 [module/eth]
 inherit = network-base
 interface-type = wired
-label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+label-connected =   %netspeed% %{F#F1C674}%ifname%%{F-}
 
 [module/time]
 format =   <label>
