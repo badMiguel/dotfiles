@@ -1,11 +1,28 @@
 #!/usr/bin/env bash
+switch_to() {
+    if [[ -z $TMUX ]]; then
+        tmux attach-session -t $1
+    else
+        tmux switch-client -t $1
+    fi
+}
+
+has_session() {
+    tmux list-sessions | grep -q "^$1:"
+}
+
+hydrate() {
+    if [ -f $2/.tmux-sessionizer ]; then
+        tmux send-keys -t $1 "source $2/.tmux-sessionizer" c-M
+    elif [ -f $HOME/.tmux-sessionizer ]; then
+        tmux send-keys -t $1 "source $HOME/.tmux-sessionizer" c-M
+    fi
+}
 
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    # selected=$(find ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" | fzf)
-    selected=$(find /home/ ~/ ~/Documents/ ~/Documents/sem2/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" -not \( -path "$HOME/.config/Code" -prune \) | fzf)
-
+    selected=$(find /home/ ~/ ~/Documents/ ~/Documents/code/ ~/bin/.local/ ~/.config/ ~/Documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" -not \( -path "$HOME/.config/Code" -prune \) | fzf)
 fi
 
 if [[ -z $selected ]]; then
@@ -15,28 +32,15 @@ fi
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-if tmux has-session -t "$selected_name" 2>/dev/null; then
-    if [[ $TMUX ]]; then 
-        tmux switch-client -t $selected_name
-        exit 0
-    fi
-
-    tmux attach-session -t "$selected_name"
-    exit 0
-fi
-
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -ds $selected_name -c $selected
-fi
-
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-fi
-
-if [[ $TMUX ]]; then 
-    tmux switch-client -t $selected_name
+    tmux new-session -s $selected_name -c $selected
+    hydrate $selected_name $selected
     exit 0
 fi
 
-tmux attach-session -t $selected_name
+if ! has_session $selected_name; then
+    tmux new-session -ds $selected_name -c $selected
+    hydrate $selected_name $selected
+fi
 
+switch_to $selected_name

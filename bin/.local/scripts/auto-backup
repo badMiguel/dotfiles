@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# !/usr/bin/env bash
 
 mkdir -p /home/miguel/backup_logs
 
@@ -11,8 +11,8 @@ SEM2_PATH_2="/mnt/backup/backup/documents"
 
 SEM2_LOG_PATH="/home/miguel/backup_logs/documents.log"
 
-rsync -avh "$SEM2" "$SEM2_PATH_1" >> "$SEM2_LOG_PATH" 2>&1
-rsync -avh "$SEM2" "$SEM2_PATH_2" >> "$SEM2_LOG_PATH" 2>&1
+rsync -avhz "$SEM2" "$SEM2_PATH_1" >> "$SEM2_LOG_PATH" 2>&1
+rsync -avhz "$SEM2" "$SEM2_PATH_2" >> "$SEM2_LOG_PATH" 2>&1
 
 # Pictures
 
@@ -23,8 +23,8 @@ PICTURES_PATH_2="/mnt/backup/backup/pictures"
 
 PICTURES_LOG_PATH="/home/miguel/backup_logs/pictures_backup.log"
 
-rsync -avh "$PICTURES" "$PICTURES_PATH_1" >> "$PICTURES_LOG_PATH" 2>&1
-rsync -avh "$PICTURES" "$PICTURES_PATH_2" >> "$PICTURES_LOG_PATH" 2>&1
+rsync -avhz "$PICTURES" "$PICTURES_PATH_1" >> "$PICTURES_LOG_PATH" 2>&1
+rsync -avhz "$PICTURES" "$PICTURES_PATH_2" >> "$PICTURES_LOG_PATH" 2>&1
 
 # Videos
 
@@ -35,8 +35,8 @@ VIDEOS_PATH_2="/mnt/backup/backup/videos"
 
 VIDEOS_LOG_PATH="/home/miguel/backup_logs/videos_backup.log"
 
-rsync -avh "$VIDEOS" "$VIDEOS_PATH_1" >> "$VIDEOS_LOG_PATH" 2>&1
-rsync -avh "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
+rsync -avhz "$VIDEOS" "$VIDEOS_PATH_1" >> "$VIDEOS_LOG_PATH" 2>&1
+rsync -avhz "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
 
 # Downloads
 
@@ -47,8 +47,8 @@ DOWNLOADS_PATH_2="/mnt/backup/backup/downloads"
 
 DOWNLOADS_LOG_PATH="/home/miguel/backup_logs/downloads_backup.log"
 
-rsync -avh "$DOWNLOADS" "$DOWNLOADS_PATH_1" >> "$DOWNLOADS_LOG_PATH" 2>&1
-rsync -avh "$DOWNLOADS" "$DOWNLOADS_PATH_2" >> "$DOWNLOADS_LOG_PATH" 2>&1
+rsync -avhz "$DOWNLOADS" "$DOWNLOADS_PATH_1" >> "$DOWNLOADS_LOG_PATH" 2>&1
+rsync -avhz "$DOWNLOADS" "$DOWNLOADS_PATH_2" >> "$DOWNLOADS_LOG_PATH" 2>&1
 
 # Scripts
 
@@ -59,8 +59,8 @@ SCRIPTS_PATH_2="/mnt/backup/backup/scripts"
 
 SCRIPTS_LOG_PATH="/home/miguel/backup_logs/scripts_backup.log"
 
-rsync -avh "$SCRIPTS" "$SCRIPTS_PATH_1" >> "$SCRIPTS_LOG_PATH" 2>&1
-rsync -avh "$SCRIPTS" "$SCRIPTS_PATH_2" >> "$SCRIPTS_LOG_PATH" 2>&1
+rsync -avhz "$SCRIPTS" "$SCRIPTS_PATH_1" >> "$SCRIPTS_LOG_PATH" 2>&1
+rsync -avhz "$SCRIPTS" "$SCRIPTS_PATH_2" >> "$SCRIPTS_LOG_PATH" 2>&1
 
 # .config
 
@@ -71,24 +71,24 @@ CONFIG_PATH_2="/mnt/backup/backup/"
 
 CONFIG_LOG_PATH="/home/miguel/backup_logs/config_backup.log"
 
-rsync -avh "$CONFIG" "$CONFIG_PATH_1" >> "$CONFIG_LOG_PATH" 2>&1
-rsync -avh "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
+rsync -avhz "$CONFIG" "$CONFIG_PATH_1" >> "$CONFIG_LOG_PATH" 2>&1
+rsync -avhz "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
 
 # bash config
 
-BASHRC="/home/miguel/.bashrc"
-BASH_HISTORY="/home/miguel/.bash_history"
+BASHRC="/home/miguel/.zshrc"
+BASH_HISTORY="/home/miguel/.zsh_history"
 
-BASHRC_PATH_1="/home/miguel/backup/bash"
-BASHRC_PATH_2="/mnt/backup/backup/bash"
+BASHRC_PATH_1="/home/miguel/backup/zsh"
+BASHRC_PATH_2="/mnt/backup/backup/zsh"
 
-BASHRC_LOG_PATH="/home/miguel/backup_logs/bashrc_backup.log"
-BASH_HISTORY_LOG_PATH="/home/miguel/backup_logs/bash_history_backup.log"
+BASHRC_LOG_PATH="/home/miguel/backup_logs/zshrc_backup.log"
+BASH_HISTORY_LOG_PATH="/home/miguel/backup_logs/zsh_history_backup.log"
 
 # bashrc
-rsync -avh "$BASHRC" "$BASHRC_PATH_1" >> "$BASHRC_LOG_PATH" 2>&1
-rsync -avh "$BASHRC" "$BASHRC_PATH_2" >> "$BASHRC_LOG_PATH" 2>&1
+rsync -avhz "$BASHRC" "$BASHRC_PATH_1" >> "$BASHRC_LOG_PATH" 2>&1
+rsync -avhz "$BASHRC" "$BASHRC_PATH_2" >> "$BASHRC_LOG_PATH" 2>&1
 
 # bash history
-rsync -avh "$BASH_HISTORY" "$BASHRC_PATH_1" >> "$BASH_HISTORY_LOG_PATH" 2>&1
-rsync -avh "$BASH_HISTORY" "$BASHRC_PATH_2" >> "$BASH_HISTORY_LOG_PATH" 2>&1
+rsync -avhz "$BASH_HISTORY" "$BASHRC_PATH_1" >> "$BASH_HISTORY_LOG_PATH" 2>&1
+rsync -avhz "$BASH_HISTORY" "$BASHRC_PATH_2" >> "$BASH_HISTORY_LOG_PATH" 2>&1

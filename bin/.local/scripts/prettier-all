@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-prettier --write "**/*.{js,jsx,ts,tsx,md,css,scss,html}" 
+prettier --write "**/*.{js,jsx,ts,tsx,md,css,scss,html}" --config "$HOME/.config/prettier/.prettierrc"
 
