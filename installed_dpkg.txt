@@ -39,3 +39,4 @@ openssh-server
 rofi
 polybar
 picom
+zsh
