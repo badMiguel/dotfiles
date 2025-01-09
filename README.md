@@ -214,7 +214,7 @@ function ctrl_f_search() {~~
 bind -x '"\C-f": ctrl_f_search'
 ```
 
--For zsh
+- For zsh
 ```bash
 bindkey -s "^F" "tmux-sessionizer\n"
 ```
