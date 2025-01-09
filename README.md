@@ -1,6 +1,8 @@
 # Welcome
 
-My beloved dotfiles. First time using linux and neovim after being heavily inspired by ThePrimeagen and I'm loving it.
+## times i broke and reinstalled linux
+
+### 3
 
 ![my current riced setup](rice.png)
 _My riced setup. (I have 2 monitors causing the gap)_
@@ -205,7 +207,8 @@ export TERM=xterm-256color
 
 Add this code on .bashrc for tmux sessionizer to work
 
-- For bash
+-   For bash
+
 ```bash
 function ctrl_f_search() {~~
     /bin/.local/scripts/tmux-sessionizer
@@ -214,14 +217,16 @@ function ctrl_f_search() {~~
 bind -x '"\C-f": ctrl_f_search'
 ```
 
-- For zsh
+-   For zsh
+
 ```bash
 bindkey -s "^F" "tmux-sessionizer\n"
 ```
 
-*Note to self*
+_Note to self_
 
 To change default shell:
+
 ```bash
 chsh -s $(which zsh)
 ```
