@@ -40,3 +40,4 @@ rofi
 polybar
 picom
 zsh
+mangohud
