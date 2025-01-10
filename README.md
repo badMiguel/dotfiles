@@ -64,6 +64,28 @@ Add the following code to: ~/.config/gtk-3.0/settings.ini
 gtk-application-prefer-dark-theme=1
 ```
 
+## Setting up Cron Job Basics
+
+Sytnax:
+
+```bash
+crontab -e
+
+# inside crontab (note * represents every possible value)
+minute hour date month week path/to/script
+```
+
+If the script needs to be sudo, add sudo in front of the path to scripts. 
+
+To not show a prompt, edit sudoers:
+
+```bash
+sudo visudo
+
+# inside visudo, replace username with your username duh
+username ALL=(ALL) NOPASSWD: /path/to/script/
+```
+
 ## Multi-Monitor Setup on Login
 
 My workaround:
@@ -240,7 +262,3 @@ git clone https://github.com/tmux-plugins/tpm.git <PATH>
 ## Neovim:
 
 I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
-
-## Miscs
-
-iykyk @nClientDownloadEnableHTTP2PlatformLinux 0
