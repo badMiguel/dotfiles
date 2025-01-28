@@ -41,3 +41,5 @@ polybar
 picom
 zsh
 mangohud
+keepassxc
+cheese
