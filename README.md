@@ -134,6 +134,15 @@ connect MAC_ADDRESS
 
 [source](https://github.com/bluez/bluez/issues/673#issuecomment-1849132576)
 
+### Get Qt5 Apps To Use Native Gtk+ Style
+
+```
+sudo apt install qt5-style-plugins
+echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
+```
+
+[source]([https://github.com/bluez/bluez/issues/673#issuecomment-1849132576](https://www.linuxuprising.com/2018/05/get-qt5-apps-to-use-native-gtk-style-in.html))
+
 ## FOR LAPTOP
 
 **Add this for touchpad and other keybinds**
