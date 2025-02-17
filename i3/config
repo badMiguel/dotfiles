@@ -27,7 +27,8 @@ default_border pixel 1
 default_floating_border normal
 
 # set bg 
-exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/cherry_blossom_flipped.png
+exec_always --no-startup-id feh --bg-scale ~/Documents/background/bridge.png  ~/Documents/background/bridge-right.png
+# exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/cherry_blossom_flipped.png
 
 # font 
 font pango:monoscape 10
@@ -39,7 +40,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 # auto lock screen
-exec --no-startup-id xautolock -detectsleep -time 30 -locker "i3lock -c 000000"
+exec --no-startup-id xautolock -detectsleep -time 60 -locker "i3lock -c 000000"
 
 # use nm-applet to manage network with GUI
 exec --no-startup-id nm-applet
@@ -100,11 +101,16 @@ for_window [class="Blueman-manager"] floating enabled
 for_window [class="PacketTracer"] floating enabled
 for_window [class="firefox" title="Library"] floating enabled
 
+for_window [class="KeePassXC"] floating enabled
+for_window [class="KeePassXC"] resize set 1000 800
+for_window [class="KeePassXC"] move position center
+for_window [class="KeePassXC"] move container to output $pm
+
 for_window [class="Alacritty" title="notes"] floating enabled
 for_window [class="Alacritty" title="notes"] resize set 1200 1000
 for_window [class="Alacritty" title="notes"] move position center
 for_window [class="Alacritty" title="notes"] move container to output $pm
 
-for_window [class="Thunar"] floating enabled
-for_window [class="Thunar"] resize set 1200 1000
-for_window [class="Thunar"] move position center
+for_window [class="Nemo"] floating enabled
+for_window [class="Nemo"] resize set 1200 1000
+for_window [class="Nemo"] move position center
