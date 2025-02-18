@@ -9,6 +9,14 @@ _My riced setup. (I have 2 monitors causing the gap)_
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
 
+## GPG Key Issue
+
+```
+rm -r /etc/pacman.d/gnupg
+pacman-key --init
+pacman-key --populate archlinux
+```
+
 ## Mount them drives
 
 1. List available drives
