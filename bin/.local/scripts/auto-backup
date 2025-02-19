@@ -86,9 +86,9 @@ ZSHRC_LOG_PATH="/home/miguel/backup_logs/zshrc_backup.log"
 ZSH_HISTORY_LOG_PATH="/home/miguel/backup_logs/zsh_history_backup.log"
 
 # zshrc
-sudo rsync -avhz "$ZSHRC" "$ZSHRC_PATH_1" >> "$ZSHRC_LOG_PATH" 2>&1
-sudo rsync -avhz "$ZSHRC" "$ZSHRC_PATH_2" >> "$ZSHRC_LOG_PATH" 2>&1
+rsync -avhz "$ZSHRC" "$ZSHRC_PATH_1" >> "$ZSHRC_LOG_PATH" 2>&1
+rsync -avhz "$ZSHRC" "$ZSHRC_PATH_2" >> "$ZSHRC_LOG_PATH" 2>&1
 
 # bash history
-sudo rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_1" >> "$ZSH_HISTORY_LOG_PATH" 2>&1
-sudo rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_2" >> "$ZSH_HISTORY_LOG_PATH" 2>&1
+rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_1" >> "$ZSH_HISTORY_LOG_PATH" 2>&1
+rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_2" >> "$ZSH_HISTORY_LOG_PATH" 2>&1

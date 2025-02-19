@@ -12,7 +12,7 @@
 	red: #eb6f92;
 	yel: #f6c177;
 
-	font: "monospace 13";
+	font: "CaskaydiaMonoNerdFont 14";
 
 	foreground: @fgd;
 	background: @bg;

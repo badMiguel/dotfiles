@@ -1,5 +1,5 @@
 configuration{
-    modi: "run";
+    modi: "run,drun";
     show-icons: false;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
@@ -7,6 +7,7 @@ configuration{
     disable-history: false;
     hide-scrollbar: true;
     display-run: " 💻 ";
+    display-drun: " 💻 ";
 }
 
 @theme "rosepine"
