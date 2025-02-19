@@ -48,6 +48,12 @@ _still yet to do this_
 
 ## GTK Dark Theme on i3
 
+### Arch
+
+Followed the [wiki](https://wiki.archlinux.org/title/Dark_mode_switching#:~:text=Toolkits-,GTK,has%20the%20variant%20Adwaita%2Ddark%20.)
+
+### Ubuntu
+
 Followed this [github post](https://github.com/i3/i3/discussions/5896#discussioncomment-8556941)
 
 TLDR:
