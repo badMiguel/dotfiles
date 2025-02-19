@@ -27,8 +27,8 @@ default_border pixel 1
 default_floating_border normal
 
 # set bg 
-exec_always --no-startup-id feh --bg-scale ~/Documents/background/bridge.png  ~/Documents/background/bridge-right.png
-# exec_always --no-startup-id feh --bg-scale --no-xinerama ~/Documents/background/cherry_blossom_flipped.png
+exec_always --no-startup-id feh --bg-scale ~/documents/background/bridge.png  ~/documents/background/bridge-right.png
+# exec_always --no-startup-id feh --bg-scale --no-xinerama ~/documents/background/cherry_blossom_flipped.png
 
 # font 
 font pango:monoscape 10
@@ -81,7 +81,7 @@ exec --no-startup-id ~/bin/.local/scripts/move-discord
 # focus on primary monitor when reloading
 exec --no-startup-id i3-msg 'focus output $pm'
 
-# focus on primary monitor when reloading
+# change cursor size
 exec --no-startup-id i3-msg 'xrdb -merge ~/.Xresources'
 
 # floating windows
