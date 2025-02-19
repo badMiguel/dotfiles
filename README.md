@@ -1,13 +1,19 @@
 # Welcome
 
-### times i broke and reinstalled linux: 3
-
 ![my current riced setup](rice.png)
 _My riced setup. (I have 2 monitors causing the gap)_
 
 ## Icons
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
+
+## GPG Key Issue
+
+```
+rm -r /etc/pacman.d/gnupg
+pacman-key --init
+pacman-key --populate archlinux
+```
 
 ## Mount them drives
 
@@ -64,7 +70,44 @@ Add the following code to: ~/.config/gtk-3.0/settings.ini
 gtk-application-prefer-dark-theme=1
 ```
 
-## Setting up Cron Job Basics
+## Task Scheduler
+
+### systemd/Timers
+
+Follow the [wiki](https://wiki.archlinux.org/title/Systemd/Timers)
+
+Create .service file
+```systemd
+/etc/systemd/system/task.service
+
+[Unit]
+Description=your-description
+
+[Service]
+ExecStart=/path/to/script
+```
+
+Create .time file
+```systemd
+/etc/systemd/system/task.timer
+
+[Unit]
+Description=your-description
+
+[Timer]
+OnCalendar=*-*-* 22:00 (means everyday at 22:00:00)
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+Enable the service 
+```bash
+sudo systemctl enable task.timer
+```
+
+### Using Crontab (for Ubuntu)
 
 Sytnax:
 
