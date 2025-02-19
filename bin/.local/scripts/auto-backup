@@ -4,7 +4,7 @@ mkdir -p /home/miguel/backup_logs
 
 # Document
 
-SEM2="/home/miguel/Documents/"
+SEM2="/home/miguel/documents/"
 
 SEM2_PATH_1="/home/miguel/backup/documents"
 SEM2_PATH_2="/mnt/backup/backup/documents"
@@ -16,7 +16,7 @@ rsync -avhz "$SEM2" "$SEM2_PATH_2" >> "$SEM2_LOG_PATH" 2>&1
 
 # Pictures
 
-PICTURES="/home/miguel/Pictures/"
+PICTURES="/home/miguel/pictures/"
 
 PICTURES_PATH_1="/home/miguel/backup/pictures"
 PICTURES_PATH_2="/mnt/backup/backup/pictures"
@@ -28,7 +28,7 @@ rsync -avhz "$PICTURES" "$PICTURES_PATH_2" >> "$PICTURES_LOG_PATH" 2>&1
 
 # Videos
 
-VIDEOS="/home/miguel/Videos/"
+VIDEOS="/home/miguel/videos/"
 
 VIDEOS_PATH_1="/home/miguel/backup/videos"
 VIDEOS_PATH_2="/mnt/backup/backup/videos"
@@ -40,7 +40,7 @@ rsync -avhz "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
 
 # Downloads
 
-DOWNLOADS="/home/miguel/Downloads/"
+DOWNLOADS="/home/miguel/downloads/"
 
 DOWNLOADS_PATH_1="/home/miguel/backup/downloads"
 DOWNLOADS_PATH_2="/mnt/backup/backup/downloads"
@@ -76,19 +76,19 @@ rsync -avhz "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
 
 # bash config
 
-BASHRC="/home/miguel/.zshrc"
-BASH_HISTORY="/home/miguel/.zsh_history"
+ZSHRC="/home/miguel/.zshrc"
+ZSH_HISTORY="/home/miguel/.zsh_history"
 
-BASHRC_PATH_1="/home/miguel/backup/zsh"
-BASHRC_PATH_2="/mnt/backup/backup/zsh"
+ZSHRC_PATH_1="/home/miguel/backup/zsh"
+ZSHRC_PATH_2="/mnt/backup/backup/zsh"
 
-BASHRC_LOG_PATH="/home/miguel/backup_logs/zshrc_backup.log"
-BASH_HISTORY_LOG_PATH="/home/miguel/backup_logs/zsh_history_backup.log"
+ZSHRC_LOG_PATH="/home/miguel/backup_logs/zshrc_backup.log"
+ZSH_HISTORY_LOG_PATH="/home/miguel/backup_logs/zsh_history_backup.log"
 
-# bashrc
-rsync -avhz "$BASHRC" "$BASHRC_PATH_1" >> "$BASHRC_LOG_PATH" 2>&1
-rsync -avhz "$BASHRC" "$BASHRC_PATH_2" >> "$BASHRC_LOG_PATH" 2>&1
+# zshrc
+sudo rsync -avhz "$ZSHRC" "$ZSHRC_PATH_1" >> "$ZSHRC_LOG_PATH" 2>&1
+sudo rsync -avhz "$ZSHRC" "$ZSHRC_PATH_2" >> "$ZSHRC_LOG_PATH" 2>&1
 
 # bash history
-rsync -avhz "$BASH_HISTORY" "$BASHRC_PATH_1" >> "$BASH_HISTORY_LOG_PATH" 2>&1
-rsync -avhz "$BASH_HISTORY" "$BASHRC_PATH_2" >> "$BASH_HISTORY_LOG_PATH" 2>&1
+sudo rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_1" >> "$ZSH_HISTORY_LOG_PATH" 2>&1
+sudo rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_2" >> "$ZSH_HISTORY_LOG_PATH" 2>&1

@@ -7,23 +7,6 @@ i3-msg restart
 sleep 6
 
 i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
-
-sleep 0.5 
-
-
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="cava"] move container to down'
-# i3-msg '[class="Alacritty" title="notes"] move container to up'
-
-sleep 0.5 
-
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="cava"] move container to down'
-# i3-msg '[class="Alacritty" title="notes"] move container to up'
-
-sleep 0.5 
-
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
 
 sleep 0.5 
@@ -31,32 +14,19 @@ sleep 0.5
 i3-msg '[class="Brave-browser" title="New Tab - Brave"] move to workspace 2'
 i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] move to workspace 11'
 
-
-sleep 0.5
-
-# i3-msg '[class="Alacritty" title="notes"] move container to up'
-
-sleep 0.5 
-
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="cava"] move container to down'
-
-sleep 0.5 
-
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="cava"] move container to down'
-
 sleep 0.5
 
 i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] resize set height 600px'
 i3-msg '[class="Alacritty" title="cava"] resize set height 200px'
 i3-msg '[class="Alacritty" title="secondary"] resize set height 700px'
-# i3-msg '[class="Alacritty" title="notes"] split horizontally'
 
 sleep 0.5 
 
-i3-msg '[class="Alacritty" title="secondary"] move container to down'
-i3-msg '[class="Alacritty" title="cava"] move container to down'
+i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] move container to up'
+
+sleep 0.5 
+
+i3-msg '[class="Google-chrome" title="Messenger - Google Chrome"] move container to up'
 
 sleep 0.5
 
