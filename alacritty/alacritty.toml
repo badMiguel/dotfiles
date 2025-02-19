@@ -1,22 +1,26 @@
-import = [
-    "~/.config/alacritty/rose-pine.toml",
-    # "~/.config/alacritty/rose-pine-moon.toml",
-    # "~/.config/alacritty/rose-pine-dawn.toml",
-]
 
 [window]
 padding = { x = 15, y = 15 }
 opacity = 0.95
-blur = true
+# blur = true
 
 [scrolling]
 history = 100000
 multiplier = 3
 
 [font]
-size = 13
-normal = { family = "monospace", style = "Regular" }
+size = 13.5
+# normal = { family = "monospace", style = "Regular" }
+# normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
+normal = { family = "CaskaydiaMonoNerdFont", style = "Regular" }
 bold = { style = "Bold" }
-italic = { style = "Italic" }
-bold_italic = { style = "Bold Italic" }
-offset = { y = 2 }
+italic = { style = "Regular" }
+bold_italic = { style = "Bold" }
+offset = { y = 3 }
+
+[general]
+import = [
+    "~/.config/alacritty/rose-pine.toml",
+    # "~/.config/alacritty/rose-pine-moon.toml",
+    # "~/.config/alacritty/rose-pine-dawn.toml",
+]
