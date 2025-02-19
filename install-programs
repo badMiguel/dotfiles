@@ -2,7 +2,7 @@
 sudo pacman -Syu
 
 sudo pacman -S --noconfirm \
-    ttf-cascadia-mono-nerd ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols-mono noto-fonts-emoji \
+    ttf-cascadia-mono-nerd ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols-mono noto-fonts-emoji noto-fonts-cjk \
 	git \
 	tmux \
 	alacritty \
