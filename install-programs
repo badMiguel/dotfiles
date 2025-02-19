@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+sudo pacman -Syu
+
+sudo pacman -S --noconfirm \
+    ttf-cascadia-mono-nerd ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols-mono noto-fonts-emoji \
+	git \
+	tmux \
+	alacritty \
+	neovim \
+	nodejs npm \
+	python3 python-pip python-virtualenv \
+	gcc \
+	github-cli \
+	feh \
+	copyq xclip \
+	gparted \
+	ripgrep \
+	lxappearance \
+	gnome-calendar gnome-calculator  \
+	libreoffice-fresh \
+	tldr \
+	neofetch \
+	btop \
+	fzf \
+	nemo \
+	bat \
+	redshift \
+	flameshot \
+	pavucontrol pulseaudio \
+	xcape \
+	openssh \
+	rofi \
+	polybar \
+	picom \
+	mangohud \
+	keepassxc \
+    dunst \
+    cheese \
+    gtk3 
