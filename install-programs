@@ -8,7 +8,7 @@ sudo pacman -S --noconfirm \
     blueman bluez bluez-utils \
     alsa-lib alsa-firmware alsa-utils pavucontrol pipewire pipewire-audio pipewire-pulse \
     ttf-cascadia-mono-nerd ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols-mono noto-fonts-emoji noto-fonts-cjk \
-	git tmux alacritty neovim github-cli \
+	git tmux alacritty neovim github-cli openssh \
 	nodejs npm \
 	python3 python-pip python-virtualenv \
 	gcc \
@@ -23,7 +23,6 @@ sudo pacman -S --noconfirm \
 	redshift \
 	flameshot \
 	xcape \
-	openssh \
 	rofi \
 	polybar \
 	picom \
@@ -31,3 +30,4 @@ sudo pacman -S --noconfirm \
 	keepassxc \
     dunst \
     cheese \
+    thunderbird discord steam spotify-launcher \
