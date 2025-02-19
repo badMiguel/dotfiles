@@ -72,7 +72,44 @@ Add the following code to: ~/.config/gtk-3.0/settings.ini
 gtk-application-prefer-dark-theme=1
 ```
 
-## Setting up Cron Job Basics
+## Task Scheduler
+
+### systemd/Timers
+
+Follow the [wiki](https://wiki.archlinux.org/title/Systemd/Timers)
+
+Create .service file
+```systemd
+/etc/systemd/system/task.service
+
+[Unit]
+Description=your-description
+
+[Service]
+ExecStart=/path/to/script
+```
+
+Create .time file
+```systemd
+/etc/systemd/system/task.timer
+
+[Unit]
+Description=your-description
+
+[Timer]
+OnCalendar=*-*-* 22:00 (means everyday at 22:00:00)
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+Enable the service 
+```bash
+sudo systemctl enable task.timer
+```
+
+### Using Crontab (for Ubuntu)
 
 Sytnax:
 
