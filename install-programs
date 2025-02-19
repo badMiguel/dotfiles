@@ -2,31 +2,26 @@
 sudo pacman -Syu
 
 sudo pacman -S --noconfirm \
+    base-devel \
+    network-manager-applet \
+    gnome-themes-extra gtk3 lxappearance \
+    blueman bluez bluez-utils \
+    alsa-lib alsa-firmware alsa-utils pavucontrol pipewire pipewire-audio pipewire-pulse \
     ttf-cascadia-mono-nerd ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols-mono noto-fonts-emoji noto-fonts-cjk \
-	git \
-	tmux \
-	alacritty \
-	neovim \
+	git tmux alacritty neovim github-cli \
 	nodejs npm \
 	python3 python-pip python-virtualenv \
 	gcc \
-	github-cli \
-	feh \
+	feh vlc \
 	copyq xclip \
 	gparted \
 	ripgrep \
-	lxappearance \
 	gnome-calendar gnome-calculator  \
 	libreoffice-fresh \
-	tldr \
-	neofetch \
-	btop \
-	fzf \
+	tldr neofetch btop fzf bat \
 	nemo \
-	bat \
 	redshift \
 	flameshot \
-	pavucontrol pulseaudio \
 	xcape \
 	openssh \
 	rofi \
@@ -36,4 +31,3 @@ sudo pacman -S --noconfirm \
 	keepassxc \
     dunst \
     cheese \
-    gtk3 
