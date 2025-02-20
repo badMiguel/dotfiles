@@ -31,3 +31,4 @@ sudo pacman -S --noconfirm \
     dunst \
     cheese \
     thunderbird discord steam spotify-launcher \
+    obs-studio \

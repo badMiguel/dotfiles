@@ -1,4 +1,4 @@
-# !/usr/bin/env bash
+#!/usr/bin/env bash
 
 mkdir -p /home/miguel/backup_logs
 
