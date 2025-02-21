@@ -48,33 +48,20 @@ _still yet to do this_
 
 ## GTK Dark Theme on i3
 
-### Arch
+Cleanest way I managed to set up dark mode is to download a theme and use lxappearance
+to manage them. This will generate ~/.gtkrc-2.0 and ~/.config/gtk-3.0/settings.ini.
+However, changing cursor theme in lxappearance does not work for me.
 
-Followed the [wiki](https://wiki.archlinux.org/title/Dark_mode_switching#:~:text=Toolkits-,GTK,has%20the%20variant%20Adwaita%2Ddark%20.)
-
-### Ubuntu
-
-Followed this [github post](https://github.com/i3/i3/discussions/5896#discussioncomment-8556941)
-
-TLDR:
-
-Make a config file for xdg-desktop-portal i.e. $HOME/.config/xdg-desktop-portal/portals.conf
-
-add this config:
-
+To change the mouse cursor, I made an ~/.Xresources file:
 ```
-[preferred]
-default=gtk;wlr
+Xcursor.theme: theme-here
+Xcursor.size: size
 ```
+You can get the cursor theme name by first setting it up on lxappearance, then open
+~/.gtkrc-2.0 and copy the gtk-cursor-theme-name.
 
-then ....
-
-Add the following code to: ~/.config/gtk-3.0/settings.ini
-
-```
-[Settings]
-gtk-application-prefer-dark-theme=1
-```
+More information about [GTK](https://wiki.archlinux.org/title/GTK#Theme_not_applied_to_root_applications)
+and [dark mode switching](https://wiki.archlinux.org/title/Dark_mode_switching#:~:text=Toolkits-,GTK,has%20the%20variant%20Adwaita%2Ddark%20.)
 
 ## Task Scheduler
 
@@ -83,6 +70,7 @@ gtk-application-prefer-dark-theme=1
 Follow the [wiki](https://wiki.archlinux.org/title/Systemd/Timers)
 
 Create .service file
+
 ```systemd
 /etc/systemd/system/task.service
 
@@ -94,6 +82,7 @@ ExecStart=/path/to/script
 ```
 
 Create .time file
+
 ```systemd
 /etc/systemd/system/task.timer
 
@@ -108,7 +97,8 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-Enable the service 
+Enable the service
+
 ```bash
 sudo systemctl enable task.timer
 ```
@@ -124,7 +114,7 @@ crontab -e
 minute hour date month week path/to/script
 ```
 
-If the script needs to be sudo, add sudo in front of the path to scripts. 
+If the script needs to be sudo, add sudo in front of the path to scripts.
 
 To not show a prompt, edit sudoers:
 
@@ -151,14 +141,14 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
 
 ### Booting Problems (so far experienced one booting problem)
 
--   nvidia persistence daemon failed
-    -   [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
-    -   On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
-    -   Scroll to an option that says (recovery) at the end of the listing and press enter.
-    -   Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
-    -   run sudo apt update, sudo apt upgrade
-    -   run sudo apt-get install --reinstall ubuntu-desktop
-    -   then sudo reboot
+- nvidia persistence daemon failed
+    - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
+    - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
+    - Scroll to an option that says (recovery) at the end of the listing and press enter.
+    - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
+    - run sudo apt update, sudo apt upgrade
+    - run sudo apt-get install --reinstall ubuntu-desktop
+    - then sudo reboot
 
 ### Package Install Error
 
@@ -190,7 +180,7 @@ sudo apt install qt5-style-plugins
 echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 ```
 
-[source]([https://github.com/bluez/bluez/issues/673#issuecomment-1849132576](https://www.linuxuprising.com/2018/05/get-qt5-apps-to-use-native-gtk-style-in.html))
+[source](<[https://github.com/bluez/bluez/issues/673#issuecomment-1849132576](https://www.linuxuprising.com/2018/05/get-qt5-apps-to-use-native-gtk-style-in.html)>)
 
 ## FOR LAPTOP
 
@@ -285,7 +275,7 @@ export TERM=xterm-256color
 
 Add this code on .bashrc for tmux sessionizer to work
 
--   For bash
+- For bash
 
 ```bash
 function ctrl_f_search() {~~
@@ -295,7 +285,7 @@ function ctrl_f_search() {~~
 bind -x '"\C-f": ctrl_f_search'
 ```
 
--   For zsh
+- For zsh
 
 ```bash
 bindkey -s "^F" "tmux-sessionizer\n"
