@@ -6,9 +6,9 @@ focused_workspace() {
 
 if [[ $(focused_workspace) == "HDMI-0" ]]; then
     # alacritty -o font.size=13 -o window.opacity=0.85
-    alacritty -o font.size=13 
+    alacritty -o font.size=12.5
 else
     alacritty --config-file ~/.config/alacritty/alacritty.toml
 fi
 
-
+echo $(focused_workspace)

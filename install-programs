@@ -16,7 +16,6 @@ sudo pacman -S --noconfirm \
 	copyq xclip \
 	gparted \
 	ripgrep \
-	gnome-calendar gnome-calculator  \
 	libreoffice-fresh \
 	tldr neofetch btop fzf bat jq \
 	nemo \

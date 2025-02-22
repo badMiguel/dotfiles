@@ -90,7 +90,7 @@ ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀
 ramp-volume-2 = 󰕾
 
-click-right = pavucontrol
+click-right = GTK_THEME=Dracula pavucontrol
 # ramp-volume-foreground = ${colors.primary}
 
 [module/memory]
