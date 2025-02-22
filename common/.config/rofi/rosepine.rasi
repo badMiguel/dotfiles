@@ -12,7 +12,7 @@
 	red: #eb6f92;
 	yel: #f6c177;
 
-	font: "CaskaydiaMonoNerdFont 14";
+	font: "CaskaydiaMonoNerdFont 13";
 
 	foreground: @fgd;
 	background: @bg;
@@ -27,20 +27,22 @@
 }
 
 #window {
-	background-color: @background;
-	border:           0;
-	border-radius:    0;
-	border-color:     @bordercolor;
-	padding:          20;
+	background-color:   @background;
+	border:             1px;
+	border-radius:      20px;
+	border-color:       @bordercolor;
+	padding:            10px;
+    width:              450px;
+    height:             420px;
 }
 #mainbox {
-	border:  0;
-	padding: 5;
+	border: 0;
+	padding: 0;
 }
 #message {
-	border:       1px 0px 0px ;
+	border:       0px ;
 	border-color: @separatorcolor;
-	padding:      1px ;
+	padding:      0px;
 }
 #textbox {
 	text-color: @foreground;
@@ -49,13 +51,16 @@
 	fixed-height: 0;
 	border:       0px ;
 	border-color: @bordercolor;
-	spacing:      2px ;
+	spacing:      0px ;
 	scrollbar:    false;
-	padding:      2px 0px 0px ;
+	padding:      0px 20px;
 }
 #element {
-	border:  0;
-	padding: 1px ;
+	border:  0px;
+	padding: 10px 15px;
+}
+#element-text{
+    vertical-align: 0.5;
 }
 #element.normal.normal {
 	background-color: @background;
@@ -72,6 +77,8 @@
 #element.selected.normal {
 	background-color: @selected-background;
 	text-color:       @foreground;
+    border-radius:    15px;
+    padding: 0px;
 }
 #element.selected.urgent {
 	background-color: @selected-urgent-background;
@@ -108,9 +115,11 @@
 	text-color:       @foreground;
 }
 #inputbar {
-	spacing:    0;
-	text-color: @foreground;
-	padding:    1px ;
+	spacing:        0;
+	text-color:     @foreground;
+	padding:        10px 10px 10px 10px ;
+    border:         0px;
+    border-radius:  0px;
 }
 #case-indicator {
 	spacing:    0;
@@ -125,11 +134,14 @@
 	text-color: @grn;
 }
 #inputbar {
-	children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+	children:       [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    border:         0 0 1px 0;
+    margin:         10px 20px;
+    padding:        10px 15px;
 }
 #textbox-prompt-colon {
 	expand:     false;
-	str:        ":";
+	str:        ">  ";
 	margin:     0px 0.3em 0em 0em;
 	text-color: @grn;
 }

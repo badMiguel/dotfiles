@@ -6,8 +6,8 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-run: " 💻 ";
-    display-drun: " 💻 ";
+    display-run: "";
+    display-drun: "";
 }
 
 @theme "rosepine"
