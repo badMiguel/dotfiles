@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+counter=0
+while [ $counter -lt 10 ]; do
+    i3-msg '[class="vesktop"] move to workspace 10'
+    ((counter++))
+    sleep 1
+done

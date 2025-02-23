@@ -82,8 +82,8 @@ exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
 # start copyq
 exec --no-startup-id copyq --start-server  && copyq hide
 
-# move discord
-exec --no-startup-id ~/bin/.local/scripts/move-discord
+# move vesktop
+exec --no-startup-id ~/bin/.local/scripts/move-vesktop
 
 # focus on primary monitor when reloading
 exec --no-startup-id i3-msg 'focus output $pm'
