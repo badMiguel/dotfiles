@@ -30,8 +30,9 @@ default_border pixel 1
 default_floating_border normal
 
 # set bg 
-exec_always --no-startup-id feh --bg-scale ~/documents/background/bridge.png  ~/documents/background/bridge-right.png
-# exec_always --no-startup-id feh --bg-scale --no-xinerama ~/documents/background/cherry_blossom_flipped.png
+# exec_always --no-startup-id feh --bg-scale ~/documents/background/city.png  ~/documents/background/city-right.png
+# exec_always --no-startup-id feh --bg-scale ~/documents/background/bridge.png  ~/documents/background/bridge-right.png
+exec_always --no-startup-id feh --bg-scale --no-xinerama ~/documents/background/cherry_blossom_flipped.png
 
 # font 
 font pango:monoscape 10
