@@ -16,6 +16,9 @@ set $mod Mod1
 # start picom
 exec --no-startup-id picom
 
+# start borders
+exec_always --no-startup-id $HOME/bin/.local/scripts/start-xborder
+
 # scale down monitor 2
 exec_always --no-startup-id xrandr --output $sm --dpi 90
 
@@ -70,6 +73,7 @@ exec_always --no-startup-id redshift -O 4800 -P -b 1
 
 # add gaps
 gaps inner 15
+gaps top 37
 workspace 1 gaps left 400
 
 # kill steam package install which causes problem on automation
