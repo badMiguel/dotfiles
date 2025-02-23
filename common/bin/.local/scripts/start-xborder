@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+killall xborders
+xborders -c $HOME/.config/xborder/config.json
