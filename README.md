@@ -53,10 +53,12 @@ to manage them. This will generate ~/.gtkrc-2.0 and ~/.config/gtk-3.0/settings.i
 However, changing cursor theme in lxappearance does not work for me.
 
 To change the mouse cursor, I made an ~/.Xresources file:
+
 ```
 Xcursor.theme: theme-here
 Xcursor.size: size
 ```
+
 You can get the cursor theme name by first setting it up on lxappearance, then open
 ~/.gtkrc-2.0 and copy the gtk-cursor-theme-name.
 
@@ -313,7 +315,18 @@ I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my
 
 ## Others
 
-LibreWolf Advanced Preferences (via about:config)
+#### LibreWolf Advanced Preferences (via about:config)
+
 ```
 browser.sessionstore.resume_from_crash = false
+```
+
+#### Spicetify Theme Cannot Be Found
+
+If you installed it from the AUR, themes was on a different dir.
+
+Create a symbolic link
+
+```bash
+ln -s /usr/share/spicetify-cli/Themes/* /home/miguel/.config/spicetify/Themes/
 ```
