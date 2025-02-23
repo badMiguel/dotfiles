@@ -310,3 +310,10 @@ git clone https://github.com/tmux-plugins/tpm.git <PATH>
 ## Neovim:
 
 I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
+
+## Others
+
+LibreWolf Advanced Preferences (via about:config)
+```
+browser.sessionstore.resume_from_crash = false
+```

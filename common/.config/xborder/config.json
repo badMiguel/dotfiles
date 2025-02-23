@@ -3,6 +3,5 @@
     "border-radius": 20,
     "border-width": 1.2,
     "border-mode": "outside",
-    "smart-hide-border": true,
     "disable-version-warning": true
 }
