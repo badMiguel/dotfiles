@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-sleep 2 
+sleep 1 
 
 i3-msg restart
 
-sleep 6
+sleep 2
 
 i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
