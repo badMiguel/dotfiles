@@ -18,8 +18,12 @@ disabled = #6e6a86
 bottom = false
 monitor = HDMI-0
 
-width = 100%
-height = 24pt
+width = 1050px
+height = 30pt
+offset-x = 15px
+offset-y = 5pt
+radius = 18
+override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -28,19 +32,20 @@ line-size = 3pt
 
 border-color = #00000000
 
-padding-left = 1
-padding-right = 2
+padding-left = 2
+padding-right = 3
 
 module-margin = 1
 
-separator = |
+;separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = "CaskaydiaMonoNerdFont:pixelsize=12;0"
-font-1 = "CaskaydiaMonoNerdFont:pixelsize=12;0"
+font-0 = "CaskaydiaMonoNerdFont:pixelsize=11;2"
+font-1 = "CaskaydiaMonoNerdFont:pixelsize=11;2"
 
 modules-left = xworkspaces 
-modules-right = wlan eth pulseaudio date time
+modules-center = date time 
+modules-right = wlan eth pulseaudio powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -49,11 +54,26 @@ enable-ipc = true
 
 wm-restack = i3
 
-[module/systray]
-type = internal/tray
+[module/powermenu]
+type = custom/menu
 
-format-margin = 8pt
-tray-spacing = 16pt
+format-foreground = ${colors.primary}
+
+label-open = ""
+label-open-font = 4
+label-close = "  "
+label-close-foreground = ${colors.alert}
+label-separator = ""
+#label-separator-foreground = ${colors.xcolor1}
+
+; reboot
+menu-0-1 = 
+menu-0-1-exec = systemctl reboot
+menu-0-1-foreground = ${colors.primary}
+; shutdown
+menu-0-0 = "  "
+menu-0-0-exec = systemctl poweroff
+menu-0-0-foreground = ${colors.primary}
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -93,20 +113,6 @@ ramp-volume-2 = 󰕾
 click-right = GTK_THEME=Dracula pavucontrol
 # ramp-volume-foreground = ${colors.primary}
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
-label = %percentage_used:2%%
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
-label = %percentage:2%%
-
 [network-base]
 type = internal/network
 interval = 5
@@ -124,29 +130,24 @@ ramp-signal-4 = 󰤨
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %essid%  %netspeed% 
+label-connected = %essid% %netspeed% 
 format-connected = <ramp-signal> <label-connected>
 
 [module/eth]
 inherit = network-base
 interface-type = wired
-label-connected =   %netspeed% %{F#F1C674}%ifname%%{F-}
+label-connected =   %netspeed%
 
 [module/time]
-format =   <label>
+format =   <label>
 type = internal/date
 interval = 1
 time = %H:%M
 label = %time%
 
 [module/date]
-format =   <label>
+format =   <label>
 type = internal/date
 interval = 1
 date = "%a, %b %d"
 label = %date%
-
-[settings]
-screenchange-reload = true
-pseudo-transparency = true
-

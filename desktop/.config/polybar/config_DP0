@@ -18,8 +18,12 @@ disabled = #6e6a86
 bottom = false
 monitor = DP-0
 
-width = 100%
-height = 24pt
+width = 2530px
+height = 30pt
+offset-x = 15px
+offset-y = 5pt
+radius = 18
+override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -28,19 +32,20 @@ line-size = 3pt
 
 border-color = #00000000
 
-padding-left = 1
-padding-right = 2
+padding-left = 2
+padding-right = 3
 
 module-margin = 1
 
-separator = |
+#separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = "CaskaydiaMonoNerdFont:pixelsize=13;0"
-font-1 = "CaskaydiaMonoNerdFont:pixelsize=13;0"
+font-0 = "CaskaydiaMonoNerdFont:pixelsize=12.5;2"
+font-1 = "CaskaydiaMonoNerdFont:pixelsize=12.5;2"
 
 modules-left = xworkspaces i3
-modules-right = systray memory cpu wlan eth pulseaudio date time
+modules-center = date time 
+modules-right = systray pulseaudio powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -52,8 +57,9 @@ wm-restack = i3
 [module/systray]
 type = internal/tray
 
-format-margin = 8pt
+#format-margin = 8pt
 tray-spacing = 16pt
+tray-size = 50%
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -73,6 +79,27 @@ label-urgent-padding = 1
 label-empty = %name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
+
+[module/powermenu]
+type = custom/menu
+
+format-foreground = ${colors.primary}
+
+label-open = ""
+label-open-font = 4
+label-close = "  "
+label-close-foreground = ${colors.alert}
+label-separator = ""
+#label-separator-foreground = ${colors.xcolor1}
+
+; reboot
+menu-0-1 = 
+menu-0-1-exec = systemctl reboot
+menu-0-1-foreground = ${colors.primary}
+; shutdown
+menu-0-0 = "  "
+menu-0-0-exec = systemctl poweroff
+menu-0-0-foreground = ${colors.primary}
 
 [module/i3]
 type = internal/i3
@@ -139,14 +166,14 @@ interface-type = wired
 label-connected =   %netspeed% %{F#F1C674}%ifname%%{F-}
 
 [module/time]
-format =   <label>
+format = <label>
 type = internal/date
 interval = 1
 time = %H:%M
 label = %time%
-
+#
 [module/date]
-format =   <label>
+format =   <label>
 type = internal/date
 interval = 1
 date = "%a, %b %d"
