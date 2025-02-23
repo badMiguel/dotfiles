@@ -30,5 +30,5 @@ sudo pacman -S --noconfirm \
 	keepassxc \
     dunst \
     cheese \
-    thunderbird discord steam spotify-launcher \
+    thunderbird steam \
     obs-studio \
