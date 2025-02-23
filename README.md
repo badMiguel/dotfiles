@@ -1,7 +1,6 @@
 # Welcome
 
-![my current riced setup](rice.png)
-_My riced setup. (I have 2 monitors causing the gap)_
+![my current riced setup](images/rice-2.png)
 
 ## Icons
 
