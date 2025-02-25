@@ -1,0 +1,29 @@
+# User configuration
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
+
+# fzf
+export FZF_DEFAULT_OPTS="--color=bg+:-1,bg:-1,spinner:178,hl:33,fg:252,header:29,info:136,pointer:230,marker:230,fg+:229,prompt:229,hl+:33"
+export FZF_DEFAULT_OPTS="
+	--color=bg+:#393552,hl+:#ea9a97
+	--color=border:#44415a,header:#3e8fb0,gutter:#232136
+	--color=spinner:#f6c177,info:#9ccfd8
+	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+
+# tmux-sessionizer
+bindkey -s "^F" "tmux-sessionizer\n"
+
+# PATHS
+export PATH=$PATH:/opt/nvim-linux64/bin
+export PATH=$PATH:/home/miguel/bin/.local/scripts
+
+export TERM=xterm-256color
+export EDITOR=nvim
+export VISUAL=nvim
+
+# ALIASES
+alias bat='batcat'
+alias activate='source ./env/bin/activate'
+alias vim='nvim'
+alias sudo='sudo '
