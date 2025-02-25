@@ -233,25 +233,19 @@ EndSection
 Install dependencies:
 
 ```
-sudo apt install libinput-tools xdotool
+sudo apt install libinput xdotool
 yay -S libinput-gestures-git
-
-# for ubuntu
-git clone https://github.com/bulletmark/libinput-gestures.git
-cd libinput-gestures
-sudo make install
 ```
 
-If you encounter permissions problem:
-
+Make sure user is in input group
 ```
-sudo gpasswd -a $USER input
-reboot
+sudo usermod -aG input <username>
 ```
 
 Add the following to ~/.config/libinput-gestures.conf:
 
-```gesture pinch in   xdotool key ctrl+minus
+```bash
+gesture pinch in   xdotool key ctrl+minus
 gesture pinch out  xdotool key ctrl+plus
 ```
 
@@ -262,6 +256,8 @@ libinput-gestures-setup autostart #run automatically on the startup
 libinput-gestures-setup start
 libinput-gestures-setup status #check if its running
 ```
+
+Try restarting along the way if libinput-gestures-setup can't start
 
 ### TMUX
 
