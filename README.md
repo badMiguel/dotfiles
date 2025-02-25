@@ -259,6 +259,8 @@ libinput-gestures-setup status #check if its running
 
 Try restarting along the way if libinput-gestures-setup can't start
 
+Check more information on [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
+
 ### TMUX
 
 **Colors**
