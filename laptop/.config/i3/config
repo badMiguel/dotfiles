@@ -63,6 +63,7 @@ exec --no-startup-id ~/bin/.local/scripts/key-remap
 exec_always --no-startup-id redshift -O 4800 -P
 
 # add gaps
+gaps top 37
 gaps inner 15
 
 # start copyq
