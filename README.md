@@ -234,6 +234,9 @@ Install dependencies:
 
 ```
 sudo apt install libinput-tools xdotool
+yay -S libinput-gestures-git
+
+# for ubuntu
 git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo make install
