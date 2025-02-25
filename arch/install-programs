@@ -3,6 +3,7 @@ sudo pacman -Syu
 
 sudo pacman -S --noconfirm \
     base-devel \
+    grub os-prober efibootmgr \
     network-manager-applet \
     gnome-themes-extra gtk3 lxappearance \
     blueman bluez bluez-utils \
@@ -23,8 +24,10 @@ sudo pacman -S --noconfirm \
 	flameshot \
     calcurse \
 	xcape \
-	rofi \
-	polybar \
+	i3-wm i3lock rofi polybar \
+    tmux \
+    neovim \
+    zsh \
 	picom \
 	mangohud \
 	keepassxc \
