@@ -238,6 +238,7 @@ yay -S libinput-gestures-git
 ```
 
 Make sure user is in input group
+
 ```
 sudo usermod -aG input <username>
 ```
@@ -260,6 +261,19 @@ libinput-gestures-setup status #check if its running
 Try restarting along the way if libinput-gestures-setup can't start
 
 Check more information on [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
+
+**Reverse Touchpad Scroll (Natural Scrolling)**
+
+Add the following to /etc/X11/xorg.conf.d/30-libinput.conf then restart
+
+```conf
+Section "InputClass"
+    Identifier "libinput touchpad"
+    Driver "libinput"
+    Option "Tapping" "on"
+    Option "NaturalScrolling" "false"
+EndSection
+```
 
 ### TMUX
 
