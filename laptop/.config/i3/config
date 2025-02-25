@@ -1,5 +1,4 @@
 include $HOME/.config/i3/workspaces.conf
-# include $HOME/.config/i3/startup.conf
 include $HOME/.config/i3/remap.conf
 include $HOME/.config/i3/rose-pine.conf
 
@@ -12,6 +11,9 @@ set $mod Mod1
 # start picom
 exec --no-startup-id picom
 
+# start borders
+exec_always --no-startup-id $HOME/bin/.local/scripts/start-xborder
+
 # start dunst
 exec_always --no-startup-id dunst 
 
@@ -20,7 +22,7 @@ default_border pixel 1
 default_floating_border normal
 
 # set bg 
-exec_always --no-startup-id feh --bg-fill ~/Documents/background/cherry_blossom_flipped.png
+exec_always --no-startup-id feh --bg-fill ~/documents/background/cherry_blossom_flipped.png
 
 # font 
 font pango:CaskaydiaMonoNerdFont 10
@@ -31,8 +33,14 @@ exec --no-startup-id dex --autostart --environment i3
 # Uses xss-lock to manage screen locking before the system suspends and uses i3lock to lock the screen
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c -e -f 000000 --nofork
 
+# auto lock screen
+exec --no-startup-id xautolock -detectsleep -time 60 -locker "i3lock -c -e -f 000000"
+
 # use nm-applet to manage network with GUI
 exec --no-startup-id nm-applet
+
+# use blueman-applet for bluetooth
+exec --no-startup-id blueman-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -45,35 +53,50 @@ tiling_drag modifier titlebar
 focus_follows_mouse no 
 
 # status bar
-exec_always --no-startup-id killall polybar; polybar 
-
-# auto lock screen
-exec --no-startup-id xautolock -detectsleep -time 1800 -locker "i3lock -c -e -f 000000"
-
-# night light
-exec_always --no-startup-id redshift -O 4800 -P
+exec_always --no-startup-id killall polybar
+exec_always --no-startup-id ~/.config/polybar/launch
 
 # set custom key binding
 exec --no-startup-id ~/bin/.local/scripts/key-remap
 
+# night light
+exec_always --no-startup-id redshift -O 4800 -P
+
 # add gaps
 gaps inner 15
+
+# start copyq
+exec --no-startup-id copyq --start-server  && copyq hide
 
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled
 for_window [class="steam" title="Steam Settings"] floating enabled
-for_window [class="Thunar"] floating enabled
-for_window [class="Thunar"] resize set 1200 1000
-for_window [class="Thunar"] move position center
 for_window [class="gnome-calculator"] floating enabled
 for_window [class="Display-im6.q16"] floating enabled
 for_window [class="feh"] floating enabled
 for_window [class="Totem"] floating enabled
 for_window [class="Gpick"] floating enabled
 for_window [class="Pavucontrol"] floating enabled
+for_window [class="Emulator"] floating enabled
 for_window [class="copyq"] floating enabled
 for_window [class="org.gnome.clocks"] floating enabled
 for_window [class="gnome-calendar"] floating enabled
 for_window [class="Blueman-manager"] floating enabled
 for_window [class="PacketTracer"] floating enabled
 for_window [class="firefox" title="Library"] floating enabled
+for_window [class="pavucontrol"] floating enabled
+
+for_window [class="KeePassXC"] floating enabled
+for_window [class="KeePassXC"] resize set 1000 800
+for_window [class="KeePassXC"] move position center
+for_window [class="KeePassXC"] move container to output $pm
+
+for_window [class="Alacritty" title="calendar"] floating enabled
+for_window [class="Alacritty" title="calendar"] resize set 1200 1000
+for_window [class="Alacritty" title="calendar"] move position center
+for_window [class="Alacritty" title="calendar"] move container to output $pm
+
+for_window [class="Nemo"] floating enabled
+for_window [class="Nemo"] resize set 1200 1000
+for_window [class="Nemo"] move position center
+
