@@ -13,6 +13,7 @@ sudo pacman -S --noconfirm \
 	nodejs npm \
 	python3 python-pip python-virtualenv \
 	gcc \
+    stow \
 	feh vlc \
 	copyq xclip \
 	gparted \

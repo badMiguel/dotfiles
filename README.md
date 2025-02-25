@@ -14,6 +14,12 @@ pacman-key --init
 pacman-key --populate archlinux
 ```
 
+## Create Live ISO
+
+```bash
+sudo dd if=/path/to/.iso of=/usb/path bs=1M status=progress
+```
+
 ## Mount them drives
 
 1. List available drives
