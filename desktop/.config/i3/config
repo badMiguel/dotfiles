@@ -41,10 +41,10 @@ font pango:monoscape 10
 exec --no-startup-id dex --autostart --environment i3
 
 # Uses xss-lock to manage screen locking before the system suspends and uses i3lock to lock the screen
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -nefc 000000 --nofork
 
 # auto lock screen
-exec --no-startup-id xautolock -detectsleep -time 60 -locker "i3lock -c 000000"
+exec --no-startup-id xautolock -detectsleep -time 60 -locker "i3lock -nefc 000000"
 
 # use nm-applet to manage network with GUI
 exec --no-startup-id nm-applet
