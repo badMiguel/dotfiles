@@ -25,7 +25,7 @@ sudo pacman -S --noconfirm \
 	flameshot \
     calcurse \
 	xcape \
-	i3-wm i3lock rofi polybar xss-lock \
+	i3-wm i3lock rofi polybar xss-lock xautolock \
     tmux \
     neovim \
     zsh \
