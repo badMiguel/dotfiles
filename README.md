@@ -301,6 +301,32 @@ EndSection
 /etc/tlp.conf L0563: DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT="wifi"
 ```
 
+**ACPI events**
+
+Edit /etc/systemd/logind.conf to change what action will be done on an event
+
+View [arch wiki](https://wiki.archlinux.org/title/Power_management#ACPI_events) for more info
+
+**Hibernate Guide**
+
+Add resume hook in /etc/mkinitcpio.conf (should be after encrypt)
+
+```
+HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block encrypt filesystems resume fsck)
+```
+
+Add resume=_swap_device_ in kernel parameter
+
+```
+/etc/default/grub
+
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=8e44fc05-1c7b-45ed-bf7b-d8fe565fb278"
+```
+
+Then regenerate grub config.
+
+View [arch wiki](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation) for more info
+
 ### TMUX
 
 **Colors**
