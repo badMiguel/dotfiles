@@ -9,7 +9,7 @@ history = 100000
 multiplier = 3
 
 [font]
-size = 10.5
+size = 9 
 # normal = { family = "monospace", style = "Regular" }
 # normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
 normal = { family = "CaskaydiaMonoNerdFont", style = "Regular" }
