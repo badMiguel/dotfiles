@@ -40,12 +40,12 @@ module-margin = 1
 #separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = "CaskaydiaMonoNerdFont:pixelsize=12.5;2"
-font-1 = "CaskaydiaMonoNerdFont:pixelsize=12.5;2"
+font-0 = "CaskaydiaMonoNerdFont:pixelsize=12;3"
+font-1 = "CaskaydiaMonoNerdFont:pixelsize=12;3"
 
 modules-left = xworkspaces i3
 modules-center = date time 
-modules-right = systray pulseaudio brightness powermenu
+modules-right = systray pulseaudio temperature brightness powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -59,7 +59,7 @@ type = internal/tray
 
 #format-margin = 8pt
 tray-spacing = 16pt
-tray-size = 50%
+tray-size = 40%
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -80,6 +80,29 @@ label-empty = %name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
 
+[module/temperature]
+type = custom/menu
+format-foreground = ${colors.foreground}
+
+label-open = ""
+label-open-font = 4
+label-close = "    "
+label-close-foreground = ${colors.alert}
+label-separator = ""
+
+; low
+menu-0-0 = "   "
+menu-0-0-exec = $HOME/bin/.local/scripts/pc-change-temperature 4800
+menu-0-0-foreground = ${colors.foreground}
+; mid
+menu-0-1 = "  "
+menu-0-1-exec = $HOME/bin/.local/scripts/pc-change-temperature 4000
+menu-0-1-foreground = ${colors.foreground}
+; high
+menu-0-2 = "  "
+menu-0-2-exec = $HOME/bin/.local/scripts/pc-change-temperature 3200
+menu-0-2-foreground = ${colors.foreground}
+
 [module/brightness]
 type = custom/menu
 format-foreground = ${colors.foreground}
@@ -92,15 +115,15 @@ label-separator = ""
 
 ; high
 menu-0-0 = "󰃠  "
-menu-0-0-exec = redshift -x
+menu-0-0-exec = $HOME/bin/.local/scripts/pc-change-brightness 1
 menu-0-0-foreground = ${colors.foreground}
 ; mid
 menu-0-1 = "󰃟  "
-menu-0-1-exec = redshift -O 4800 -P -b 1
+menu-0-1-exec = $HOME/bin/.local/scripts/pc-change-brightness 0.8
 menu-0-1-foreground = ${colors.foreground}
 ; low
 menu-0-2 = "󰃞  "
-menu-0-2-exec = redshift -O 3000 -P -b 0.6
+menu-0-2-exec = $HOME/bin/.local/scripts/pc-change-brightness 0.6
 menu-0-2-foreground = ${colors.foreground}
 
 [module/powermenu]

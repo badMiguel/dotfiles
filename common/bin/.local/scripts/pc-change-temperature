@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+curr_bright="/tmp/curr_bright"
+
+if [ -e $curr_bright ]; then 
+    redshift -O $1 -P -b $(<$curr_bright)
+    echo $1 > /tmp/curr_temp
+else
+    redshift -O $1 -P -b 1 
+    echo $1 > /tmp/curr_temp
+fi 
+
+
