@@ -1,25 +1,3 @@
 
-2024/10/10 (22:56:05) | ===> btop++ v.1.3.0
-2024/10/10 (22:56:05) | ERROR: Exception during Config::unlock() : unordered_map::at
-
-2025/02/11 (06:46:30) | ===> btop++ v.1.3.0
-2025/02/11 (06:46:30) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
-2025/02/11 (06:46:30) | ERROR: Couldn't determine terminal size of "/dev/tty"!
-
-2025/02/20 (00:55:20) | ===> btop++ v.1.4.0
-2025/02/20 (00:55:20) | WARNING: Failed to get disk/partition stats for mount "/mnt/backup" with statvfs error code: 2. Ignoring...
-
-2025/02/20 (19:11:34) | ===> btop++ v.1.4.0
-2025/02/20 (19:11:34) | WARNING: Failed to get disk/partition stats for mount "/mnt/backup" with statvfs error code: 2. Ignoring...
-
-2025/02/22 (00:36:32) | ===> btop++ v.1.4.0
-2025/02/22 (00:36:32) | WARNING: Failed to join _runner thread on exit!
-
-2025/02/22 (11:09:06) | ===> btop++ v.1.4.0
-2025/02/22 (11:09:06) | WARNING: Failed to join _runner thread on exit!
-
-2025/02/22 (15:09:33) | ===> btop++ v.1.4.0
-2025/02/22 (15:09:33) | WARNING: Failed to join _runner thread on exit!
-
-2025/02/22 (15:10:17) | ===> btop++ v.1.4.0
-2025/02/22 (15:10:17) | WARNING: Failed to join _runner thread on exit!
+2025/02/27 (03:45:06) | ===> btop++ v.1.4.0
+2025/02/27 (03:45:06) | WARNING: Intel GPU: Failed to initialize PMU
