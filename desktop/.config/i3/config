@@ -80,9 +80,6 @@ workspace 1 gaps left 400
 # kill steam package install which causes problem on automation
 exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
 
-# start copyq
-exec --no-startup-id copyq --start-server  && copyq hide
-
 # move vesktop
 exec --no-startup-id ~/bin/.local/scripts/move-vesktop
 

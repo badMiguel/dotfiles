@@ -6,11 +6,13 @@ i3-msg restart
 
 sleep 2
 
+copyq --start-server 
 i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
 
 sleep 0.5 
 
+copyq hide
 i3-msg '[class="Brave-browser" title="New Tab - Brave"] move to workspace 2'
 i3-msg '[class="LibreWolf"] move to workspace 11'
 

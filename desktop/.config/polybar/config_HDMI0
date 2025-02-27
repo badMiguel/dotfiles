@@ -40,8 +40,8 @@ module-margin = 1
 ;separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = "CaskaydiaMonoNerdFont:pixelsize=11;2"
-font-1 = "CaskaydiaMonoNerdFont:pixelsize=11;2"
+font-0 = "CaskaydiaMonoNerdFont:pixelsize=10.5;2"
+font-1 = "CaskaydiaMonoNerdFont:pixelsize=10.5;2"
 
 modules-left = xworkspaces 
 modules-center = date time 
