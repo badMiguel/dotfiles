@@ -14,3 +14,4 @@ youtube-music-bin
 spicetify-cli spicetify-themes-git spicetify-marketplace-bin
 vesktop vencord
 nvim-lazy
+tmux-plugin-manager
