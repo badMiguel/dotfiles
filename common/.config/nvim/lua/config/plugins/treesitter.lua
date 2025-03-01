@@ -2,11 +2,11 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-context',
-     build = ':TSUpdate',
-     config = function() 
-         require 'nvim-treesitter.configs'.setup {
+    build = ':TSUpdate',
+    config = function()
+        require 'nvim-treesitter.configs'.setup {
             -- A list of parser names, or "all" (the five listed parsers should always be installed)
-            ensure_installed = { "html", "css", "javascript", "python", "typescript", "c", "sql", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline"},
+            ensure_installed = { "html", "css", "javascript", "python", "typescript", "c", "sql", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -26,5 +26,5 @@ return {
         }
 
         require 'treesitter-context'.setup()
-     end
+    end
 }
