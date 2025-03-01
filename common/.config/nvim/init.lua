@@ -1,4 +1,4 @@
-require("nvimBTW")
+require("config")
 
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
@@ -11,3 +11,4 @@ vim.api.nvim_exec([[
     autocmd FileType netrw setlocal relativenumber
   augroup END
 ]], false)
+

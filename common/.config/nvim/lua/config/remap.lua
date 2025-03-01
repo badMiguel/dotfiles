@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 local keymap = vim.api.nvim_set_keymap
@@ -50,3 +49,4 @@ v("n", "<leader>.", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 v("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- v("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
