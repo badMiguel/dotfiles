@@ -375,15 +375,12 @@ chsh -s $(which zsh)
 
 **Plugins**
 
-You need tmux plugin manager to install plugins for tmux. **Remember to specify which folder you save it**
+You need tmux plugin manager to install plugins for tmux. 
 
-```
-git clone https://github.com/tmux-plugins/tpm.git <PATH>
-```
 
 ## Neovim:
 
-I am using [packer.nvim](https://github.com/wbthomason/packer.nvim) to handle my plugins. You need to clone it first before being able to install plugins.
+I am using [lazy.nvim](https://github.com/folke/lazy.nvim) to handle my plugins.
 
 ## Others
 
