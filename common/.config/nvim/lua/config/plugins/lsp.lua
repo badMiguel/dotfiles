@@ -159,7 +159,14 @@ return {
             },
         })
 
-        require("fidget").setup({})
+        require("fidget").setup({
+            notification = {
+                window = {
+                    winblend = 0,
+                }
+            }
+
+        })
 
         vim.api.nvim_create_autocmd('LspAttach', {
             callback = function(e)
