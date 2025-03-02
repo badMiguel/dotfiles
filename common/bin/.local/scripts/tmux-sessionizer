@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Credits to ThePrimeagen for the best script ever
+# https://github.com/ThePrimeagen/tmux-sessionizer
+
 switch_to() {
     if [[ -z $TMUX ]]; then
         tmux attach-session -t $1
