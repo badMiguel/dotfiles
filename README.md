@@ -281,24 +281,24 @@ EndSection
 --- TLP 1.8.0 --------------------------------------------
 
 +++ Configured Settings (only differences to defaults):
+/etc/tlp.conf L0149: CPU_ENERGY_PERF_POLICY_ON_AC="performance"
+/etc/tlp.conf L0150: CPU_ENERGY_PERF_POLICY_ON_BAT="power"
 /etc/tlp.conf L0100: CPU_DRIVER_OPMODE_ON_AC="active"
 /etc/tlp.conf L0101: CPU_DRIVER_OPMODE_ON_BAT="active"
 /etc/tlp.conf L0119: CPU_SCALING_GOVERNOR_ON_AC="performance"
 /etc/tlp.conf L0120: CPU_SCALING_GOVERNOR_ON_BAT="powersave"
 /etc/tlp.conf L0159: CPU_MAX_PERF_ON_AC="100"
-/etc/tlp.conf L0161: CPU_MAX_PERF_ON_BAT="80"
+/etc/tlp.conf L0161: CPU_MAX_PERF_ON_BAT="65"
 /etc/tlp.conf L0170: CPU_BOOST_ON_AC="1"
 /etc/tlp.conf L0171: CPU_BOOST_ON_BAT="0"
 /etc/tlp.conf L0181: CPU_HWP_DYN_BOOST_ON_AC="1"
 /etc/tlp.conf L0182: CPU_HWP_DYN_BOOST_ON_BAT="0"
 /etc/tlp.conf L0198: PLATFORM_PROFILE_ON_AC="performance"
 /etc/tlp.conf L0199: PLATFORM_PROFILE_ON_BAT="low-power"
-/etc/tlp.conf L0530: START_CHARGE_THRESH_BAT0="75"
-/etc/tlp.conf L0532: STOP_CHARGE_THRESH_BAT0="80"
-/etc/tlp.conf L0556: DEVICES_TO_DISABLE_ON_LAN_CONNECT="wifi"
-/etc/tlp.conf L0557: DEVICES_TO_DISABLE_ON_WIFI_CONNECT="wwan"
-/etc/tlp.conf L0562: DEVICES_TO_ENABLE_ON_LAN_DISCONNECT="wifi"
-/etc/tlp.conf L0563: DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT="wifi"
+/etc/tlp.conf L0493: DEVICES_TO_ENABLE_ON_AC="bluetooth nfc wifi wwan"
+/etc/tlp.conf L0504: DEVICES_TO_DISABLE_ON_BAT_NOT_IN_USE="bluetooth nfc wifi wwan"
+/etc/tlp.conf L0530: START_CHARGE_THRESH_BAT0="80"
+/etc/tlp.conf L0532: STOP_CHARGE_THRESH_BAT0="85"
 ```
 
 **ACPI events**
@@ -375,8 +375,7 @@ chsh -s $(which zsh)
 
 **Plugins**
 
-You need tmux plugin manager to install plugins for tmux. 
-
+You need tmux plugin manager to install plugins for tmux.
 
 ## Neovim:
 
