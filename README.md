@@ -327,6 +327,10 @@ Then regenerate grub config.
 
 View [arch wiki](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation) for more info
 
+**Sound**
+
+Make sure sof-firmware is installed on top of pipewire/alsa
+
 ### TMUX
 
 **Colors**
