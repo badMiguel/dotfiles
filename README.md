@@ -46,10 +46,15 @@ df -h
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
 
-## Backup guide
+## Backup 
 
-[Backup guide](https://ubuntuforums.org/showthread.php?t=35087)
-_still yet to do this_
+I use rsync for my backups and setup a systemd.timer (previously cron job) to automate backup
+
+```
+# go to rsync flags
+
+rsync -avhz --info=progress2 --partial --delete (optional)
+```
 
 ## GTK Dark Theme on i3
 
