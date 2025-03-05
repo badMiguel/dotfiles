@@ -1,16 +1,14 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        dependencies = {
-        },
 
         config = function()
             local lspconfig = require("lspconfig")
             local handlers = {
-                ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-                ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+                ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
             }
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             lspconfig.pyright.setup {
                 capabilities = capabilities,
@@ -19,7 +17,7 @@ return {
             }
             -- lspconfig.pylsp.setup {
             --     capabilities = capabilities,
-            --     pylsp = { plugins = { pycodestyle = { ignore = { 'E501' }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, },
+            --     pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, },
             --     handlers = handlers,
             -- }
             lspconfig.ts_ls.setup {
@@ -75,31 +73,31 @@ return {
     },
 
     {
-        'hrsh7th/nvim-cmp',
+        "hrsh7th/nvim-cmp",
         config = function()
             -- Auto completions
-            local cmp = require('cmp')
+            local cmp = require("cmp")
             local lspkind = require("lspkind")
 
             cmp.setup({
                 mapping = cmp.mapping.preset.insert({
-                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                    ["<C-e>"] = cmp.mapping.abort(),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-Space>"] = cmp.mapping.complete(),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
                 }, {
-                    { name = 'buffer' },
+                    { name = "buffer" },
                 }),
 
                 -- snippets
                 snippet = {
                     expand = function(args)
-                        require('luasnip').lsp_expand(args.body);
+                        require("luasnip").lsp_expand(args.body);
                     end,
                 },
 
@@ -111,9 +109,9 @@ return {
 
                 formatting = {
                     format = lspkind.cmp_format({
-                        mode = 'symbol_text',
+                        mode = "symbol_text",
                         maxwidth = 15,
-                        ellipsis_char = '...',
+                        ellipsis_char = "...",
                         symbol_map = {
                             Text = "文",
                             Method = "方",
@@ -146,12 +144,16 @@ return {
             })
         end
     },
-    { 'hrsh7th/cmp-nvim-lsp',     lazy = true },
-    { 'hrsh7th/cmp-buffer',       lazy = true },
-    { 'hrsh7th/cmp-path',         lazy = true },
-    { 'hrsh7th/cmp-cmdline',      lazy = true },
-    { 'onsails/lspkind.nvim',     lazy = true },
-
-    { 'L3MON4D3/LuaSnip',         lazy = true },
-    { 'saadparwaiz1/cmp_luasnip', lazy = true }
+    { "hrsh7th/cmp-nvim-lsp", lazy = true },
+    { "hrsh7th/cmp-buffer",   lazy = true },
+    { "hrsh7th/cmp-path",     lazy = true },
+    { "hrsh7th/cmp-cmdline",  lazy = true },
+    { "onsails/lspkind.nvim", lazy = true },
+    {
+        "L3MON4D3/LuaSnip",
+        lazy = true,
+        version = "v2.*",
+        build = "make install_jsregexp",
+    },
+    { "saadparwaiz1/cmp_luasnip", lazy = true }
 }
