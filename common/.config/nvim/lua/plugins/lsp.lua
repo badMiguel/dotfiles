@@ -35,8 +35,6 @@ return {
             lspconfig.jsonls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.gopls.setup { capabilities = capabilities, handlers = handlers, }
-
-            require("luasnip.loaders.from_vscode").lazy_load()
         end
     },
     { "artemave/workspace-diagnostics.nvim", lazy = true },
@@ -74,6 +72,7 @@ return {
 
     {
         "hrsh7th/nvim-cmp",
+        dependencies = { "saadparwaiz1/cmp_luasnip", },
         config = function()
             -- Auto completions
             local cmp = require("cmp")
@@ -144,6 +143,7 @@ return {
             })
         end
     },
+
     { "hrsh7th/cmp-nvim-lsp", lazy = true },
     { "hrsh7th/cmp-buffer",   lazy = true },
     { "hrsh7th/cmp-path",     lazy = true },
@@ -154,6 +154,9 @@ return {
         lazy = true,
         version = "v2.*",
         build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+        config = function()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end
     },
-    { "saadparwaiz1/cmp_luasnip", lazy = true }
 }
