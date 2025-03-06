@@ -10,31 +10,23 @@ return {
             }
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.pyright.setup {
-                capabilities = capabilities,
-                settings = { python = { analysis = { diagnosticMode = "workspace", } } },
-                handlers = handlers,
-            }
-            -- lspconfig.pylsp.setup {
-            --     capabilities = capabilities,
-            --     pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, },
-            --     handlers = handlers,
-            -- }
-            lspconfig.ts_ls.setup {
-                capabilities = capabilities,
-                handlers = handlers,
+            lspconfig.pyright.setup { capabilities = capabilities, handlers = handlers,
+                settings = { python = { analysis = { diagnosticMode = "workspace", } } }, }
+            -- lspconfig.pylsp.setup { capabilities = capabilities, handlers = handlers,
+            --     pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, }
+            lspconfig.ts_ls.setup { capabilities = capabilities, handlers = handlers,
                 root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
-                on_attach = function(id, bufnr)
+                on_attach = function(id, bufnr) -- loads all js/ts in buffer to get view diagnostics throughout project
                     require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
-                end,
-            }
+                end, }
             lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers }
             lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
             lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
-            lspconfig.jsonls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.gopls.setup { capabilities = capabilities, handlers = handlers, }
+            lspconfig.intelephense.setup { capabilities = capabilities, handlers = handlers,
+                root_dir = lspconfig.util.root_pattern("composer.json", ".git"), }
         end
     },
     { "artemave/workspace-diagnostics.nvim", lazy = true },
@@ -52,8 +44,8 @@ return {
                 "html",
                 "cssls",
                 "bashls",
-                "jsonls",
                 "gopls",
+                "intelephense",
             }
         }
     },
