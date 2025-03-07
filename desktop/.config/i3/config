@@ -112,8 +112,13 @@ for_window [class="KeePassXC"] resize set 1000 800
 for_window [class="KeePassXC"] move position center
 for_window [class="KeePassXC"] move container to output $pm
 
+for_window [class="Alacritty" title="notes"] floating enabled
+for_window [class="Alacritty" title="notes"] resize set 1200 1000
+for_window [class="Alacritty" title="notes"] move position center
+for_window [class="Alacritty" title="notes"] move container to output $pm
+
 for_window [class="Alacritty" title="calendar"] floating enabled
-for_window [class="Alacritty" title="calendar"] resize set 1200 1000
+for_window [class="Alacritty" title="calendar"] resize set 800 600
 for_window [class="Alacritty" title="calendar"] move position center
 for_window [class="Alacritty" title="calendar"] move container to output $pm
 
