@@ -14,10 +14,20 @@ pacman-key --init
 pacman-key --populate archlinux
 ```
 
-## Create Live ISO
+## Burn ISO file to USB
 
 ```bash
 sudo dd if=/path/to/.iso of=/usb/path bs=1M status=progress
+```
+
+## Turn off IPv6
+
+I sometimes get error on cloning packages from [aur.archlinux.org](aur.archlinux.org). My workaround is disabling IPv6
+
+```bash
+# temporary
+
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 ```
 
 ## Mount them drives
