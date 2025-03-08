@@ -17,8 +17,7 @@ return {
                 }),
                 nls.builtins.formatting.black,
                 nls.builtins.formatting.gofumpt,
-                nls.builtins.formatting.pretty_php,
-            }
+                nls.builtins.formatting.phpcsfixer.with({ env = { PHP_CS_FIXER_IGNORE_ENV = "1" }, }) }
             -- followed syntax from:
             -- https://github.com/LazyVim/LazyVim/blob/ec5981dfb1222c3bf246d9bcaa713d5cfa486fbd/lua/lazyvim/plugins/extras/lsp/none-ls.lua#L4
         end
@@ -26,7 +25,7 @@ return {
     {
         'jay-babu/mason-null-ls.nvim',
         opts = {
-            ensure_installed = { "prettier", "black", "gofumpt", "pretty_php" }
+            ensure_installed = { "prettier", "black", "gofumpt", "phpcsfixer" }
         }
     }
 }
