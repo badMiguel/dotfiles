@@ -20,7 +20,7 @@ pacman-key --populate archlinux
 sudo dd if=/path/to/.iso of=/usb/path bs=1M status=progress
 ```
 
-# Turn off IPv6
+## Turn off IPv6
 
 I sometimes get error on cloning packages from [aur.archlinux.org](aur.archlinux.org). My workaround is disabling IPv6
 
