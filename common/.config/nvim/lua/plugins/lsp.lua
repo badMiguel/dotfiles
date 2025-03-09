@@ -21,7 +21,7 @@ return {
                 end, }
             lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers }
             lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
-            lspconfig.html.setup { capabilities = capabilities, handlers = handlers, }
+            lspconfig.html.setup { capabilities = capabilities, handlers = handlers, provideFormatter = true }
             lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.gopls.setup { capabilities = capabilities, handlers = handlers, }
