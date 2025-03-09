@@ -2,6 +2,14 @@ return {
     {
         'theprimeagen/harpoon',
         branch = 'harpoon2',
+        opts = {
+            settings = {
+                save_on_toggle = true,
+            },
+            float = {
+                border = "rounded",
+            }
+        },
         keys = {
             { "<leader>a", function() require("harpoon"):list():add() end, },
             { "<C-e>",     function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, },
