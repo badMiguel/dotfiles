@@ -10,24 +10,70 @@ return {
             }
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.pyright.setup { capabilities = capabilities, handlers = handlers,
-                settings = { python = { analysis = { diagnosticMode = "workspace", } } }, }
-            -- lspconfig.pylsp.setup { capabilities = capabilities, handlers = handlers,
-            --     pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, }
-            lspconfig.ts_ls.setup { capabilities = capabilities, handlers = handlers,
+            lspconfig.pyright.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+                settings = {
+                    python = {
+                        analysis = {
+                            diagnosticMode = "workspace",
+                        }
+                    }
+                },
+            }
+            -- lspconfig.pylsp.setup { capabilities = capabilities, handlers = handlers, pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, }
+
+            lspconfig.ts_ls.setup {
+                capabilities = capabilities,
+                handlers = handlers,
                 root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
-                on_attach = function(id, bufnr) -- loads all js/ts in buffer to get view diagnostics throughout project
+                on_attach = function(id, bufnr)
                     require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
-                end, }
-            lspconfig.eslint.setup { capabilities = capabilities, handlers = handlers }
-            lspconfig.lua_ls.setup { capabilities = capabilities, handlers = handlers }
-            lspconfig.html.setup { capabilities = capabilities, handlers = handlers, provideFormatter = true }
-            lspconfig.cssls.setup { capabilities = capabilities, handlers = handlers, }
-            lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
-            lspconfig.gopls.setup { capabilities = capabilities, handlers = handlers, }
+                end,
+            }
+
+            lspconfig.lua_ls.setup {
+                capabilities = capabilities,
+                handlers = handlers
+            }
+
+            lspconfig.html.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+                provideFormatter = true
+            }
+
+            lspconfig.cssls.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+            }
+
+            lspconfig.bashls.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+            }
+
+            lspconfig.gopls.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+            }
+
             lspconfig.intelephense.setup { capabilities = capabilities, handlers = handlers,
-                settings = { intelephense = { format = { enabled = false } } } }
-            lspconfig.phpactor.setup { capabilities = capabilities, handlers = handlers, }
+                settings = { intelephense = { format = { enabled = false } } },
+                on_attach = function(id, bufnr)
+                    require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
+                end,
+            }
+
+            lspconfig.phpactor.setup {
+                init_options = {
+                    ["language_server.diagnostics_on_update"] = false,
+                    ["language_server.diagnostics_on_open"] = false,
+                    ["language_server.diagnostics_on_save"] = false,
+                    ["language_server_phpstan.enabled"] = false,
+                    ["language_server_psalm.enabled"] = false,
+                }
+            }
         end
     },
     { "artemave/workspace-diagnostics.nvim", lazy = true },
@@ -39,7 +85,6 @@ return {
             ensure_installed = {
                 "pyright",
                 -- "pylsp",
-                "eslint",
                 "ts_ls",
                 "lua_ls",
                 "html",

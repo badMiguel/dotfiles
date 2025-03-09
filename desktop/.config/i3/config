@@ -75,7 +75,7 @@ exec_always --no-startup-id redshift -O 4800 -P -b 1
 # add gaps
 gaps inner 15
 gaps top 37
-workspace 1 gaps left 400
+# workspace 1 gaps left 400
 
 # kill steam package install which causes problem on automation
 exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
