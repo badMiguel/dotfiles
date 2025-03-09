@@ -34,8 +34,8 @@ VIDEOS_PATH_2="/mnt/backup/backup/videos"
 
 VIDEOS_LOG_PATH="/home/miguel/backup_logs/videos_backup.log"
 
-rsync -avhz --delete "$VIDEOS" "$VIDEOS_PATH_1" >> "$VIDEOS_LOG_PATH" 2>&1
-rsync -avhz --delete "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
+rsync -avhz --delete --exclude=steam "$VIDEOS" "$VIDEOS_PATH_1" >> "$VIDEOS_LOG_PATH" 2>&1
+rsync -avhz --delete --exclude=steam "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
 
 # Downloads
 
