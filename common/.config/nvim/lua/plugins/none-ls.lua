@@ -25,7 +25,7 @@ return {
     {
         'jay-babu/mason-null-ls.nvim',
         opts = {
-            ensure_installed = { "prettier", "black", "gofumpt", "phpcsfixer" }
+            ensure_installed = { "prettier", "black", "gofumpt", }
         }
     }
 }

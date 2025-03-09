@@ -26,8 +26,8 @@ return {
             lspconfig.bashls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.gopls.setup { capabilities = capabilities, handlers = handlers, }
             lspconfig.intelephense.setup { capabilities = capabilities, handlers = handlers,
-                root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
-                settings = { intelephense = { format = { braces = "k&r", } } } } -- "per" / "k&r"
+                settings = { intelephense = { format = { enabled = false } } } }
+            lspconfig.phpactor.setup { capabilities = capabilities, handlers = handlers, }
         end
     },
     { "artemave/workspace-diagnostics.nvim", lazy = true },
@@ -47,6 +47,7 @@ return {
                 "bashls",
                 "gopls",
                 "intelephense",
+                "phpactor",
             }
         }
     },
