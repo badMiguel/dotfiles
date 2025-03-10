@@ -138,7 +138,7 @@ minute hour date month week path/to/script
 
 If the script needs to be sudo, add sudo in front of the path to scripts.
 
-To not show a prompt, edit sudoers:
+### Run Script Without sudo
 
 ```bash
 sudo visudo
