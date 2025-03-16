@@ -10,6 +10,7 @@ sudo pacman -S --noconfirm \
     alsa-lib alsa-firmware alsa-utils pavucontrol pipewire pipewire-audio pipewire-pulse \
     ttf-cascadia-mono-nerd ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols-mono noto-fonts-emoji noto-fonts-cjk \
 	git tmux alacritty neovim github-cli openssh \
+    dosfstools \
 	nodejs npm \
 	python3 python-pip python-virtualenv \
 	gcc \
@@ -19,7 +20,7 @@ sudo pacman -S --noconfirm \
 	gparted \
 	ripgrep \
 	libreoffice-fresh \
-	tldr neofetch btop fzf bat jq \
+	neofetch btop fzf jq \
 	nemo \
 	redshift \
 	flameshot \
