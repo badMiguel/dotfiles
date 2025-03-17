@@ -22,12 +22,37 @@ sudo dd if=/path/to/.iso of=/usb/path bs=1M status=progress
 
 ## Turn off IPv6
 
-I sometimes get error on cloning packages from [aur.archlinux.org](aur.archlinux.org). My workaround is disabling IPv6
+I sometimes get error on cloning packages from [aur.archlinux.org](aur.archlinux.org).
+My workaround is disabling IPv6
 
 ```bash
 # temporary
 
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+```
+
+## Installing Windows AFTER Linux
+
+Whenerver I reinstall windows after linux, i get GPT corrupted issues.
+
+```bash
+gdisk /dev/nvmen1
+
+########## inside gdisk ##########
+v   # to verify disk, follow recommended action
+```
+
+**To backup GPT to a file**
+
+```bash
+sgdisk --backup=gpt-backup.img /dev/nvmen1
+```
+
+**To restore backup**
+
+```bash
+sgdisk --load-backup=gpt-backup.img /dev/nvmen1
+sudo partprobe /dev/nvmen1 # refresh partition table
 ```
 
 ## Mount them drives
@@ -56,9 +81,10 @@ df -h
 /dev/<sdXn>  /mnt/<your drive name>  <file system (listed on lsblk. windows is ntfs-3)>  <permissions. use "defaults" without quotes if you're not sure. gives rw access>  <fsck. check the disk on boot. 0=not checked>  <dump. how often filesystem is backed up. 0=not backed up>
 ```
 
-## Backup 
+## Backup
 
-I use rsync for my backups and setup a systemd.timer (previously cron job) to automate backup
+I use rsync for my backups and setup a systemd.timer (previously cron job) to
+automate backup
 
 ```
 # go to rsync flags
@@ -160,17 +186,6 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
 ```
 
 ## Issues
-
-### Booting Problems (so far experienced one booting problem)
-
-- nvidia persistence daemon failed
-    - [this guide worked](https://community.frame.work/t/solved-ubuntu-wont-boot-hangs-when-displaying-logs/29148)
-    - On Grub, go to Advanced Options for Ubuntu (might be called something a little different)
-    - Scroll to an option that says (recovery) at the end of the listing and press enter.
-    - Wait for the magenta screen with a list of options to show up, then select the option that says “root” and says something about going into a terminal or bash or something.
-    - run sudo apt update, sudo apt upgrade
-    - run sudo apt-get install --reinstall ubuntu-desktop
-    - then sudo reboot
 
 ### Package Install Error
 
