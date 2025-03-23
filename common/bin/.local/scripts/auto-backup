@@ -11,7 +11,7 @@ DOCUMENTS_PATH_2="/mnt/backup/backup/documents"
 DOCUMENTS_LOG_PATH="/home/miguel/backup_logs/documents.log"
 
 rsync -avhz --delete "$DOCUMENTS" "$DOCUMENTS_PATH_1" >> "$DOCUMENTS_LOG_PATH" 2>&1
-rsync -avhz --delete "$DOCUMENTS" "$DOCUMENTS_PATH_2" >> "$DOCUMENTS_LOG_PATH" 2>&1
+rsync -avhz "$DOCUMENTS" "$DOCUMENTS_PATH_2" >> "$DOCUMENTS_LOG_PATH" 2>&1
 
 # Pictures
 
@@ -23,7 +23,7 @@ PICTURES_PATH_2="/mnt/backup/backup/pictures"
 PICTURES_LOG_PATH="/home/miguel/backup_logs/pictures_backup.log"
 
 rsync -avhz --delete "$PICTURES" "$PICTURES_PATH_1" >> "$PICTURES_LOG_PATH" 2>&1
-rsync -avhz --delete "$PICTURES" "$PICTURES_PATH_2" >> "$PICTURES_LOG_PATH" 2>&1
+rsync -avhz "$PICTURES" "$PICTURES_PATH_2" >> "$PICTURES_LOG_PATH" 2>&1
 
 # Videos
 
@@ -35,7 +35,7 @@ VIDEOS_PATH_2="/mnt/backup/backup/videos"
 VIDEOS_LOG_PATH="/home/miguel/backup_logs/videos_backup.log"
 
 rsync -avhz --delete --exclude=steam "$VIDEOS" "$VIDEOS_PATH_1" >> "$VIDEOS_LOG_PATH" 2>&1
-rsync -avhz --delete --exclude=steam "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
+rsync -avhz --exclude=steam "$VIDEOS" "$VIDEOS_PATH_2" >> "$VIDEOS_LOG_PATH" 2>&1
 
 # Downloads
 
@@ -47,7 +47,7 @@ DOWNLOADS_PATH_2="/mnt/backup/backup/downloads"
 DOWNLOADS_LOG_PATH="/home/miguel/backup_logs/downloads_backup.log"
 
 rsync -avhz --delete "$DOWNLOADS" "$DOWNLOADS_PATH_1" >> "$DOWNLOADS_LOG_PATH" 2>&1
-rsync -avhz --delete "$DOWNLOADS" "$DOWNLOADS_PATH_2" >> "$DOWNLOADS_LOG_PATH" 2>&1
+rsync -avhz "$DOWNLOADS" "$DOWNLOADS_PATH_2" >> "$DOWNLOADS_LOG_PATH" 2>&1
 
 # Scripts
 
@@ -59,7 +59,7 @@ SCRIPTS_PATH_2="/mnt/backup/backup/scripts"
 SCRIPTS_LOG_PATH="/home/miguel/backup_logs/scripts_backup.log"
 
 rsync -avhz --delete "$SCRIPTS" "$SCRIPTS_PATH_1" >> "$SCRIPTS_LOG_PATH" 2>&1
-rsync -avhz --delete "$SCRIPTS" "$SCRIPTS_PATH_2" >> "$SCRIPTS_LOG_PATH" 2>&1
+rsync -avhz "$SCRIPTS" "$SCRIPTS_PATH_2" >> "$SCRIPTS_LOG_PATH" 2>&1
 
 # .config
 
@@ -71,7 +71,7 @@ CONFIG_PATH_2="/mnt/backup/backup/"
 CONFIG_LOG_PATH="/home/miguel/backup_logs/config_backup.log"
 
 rsync -avhz --delete "$CONFIG" "$CONFIG_PATH_1" >> "$CONFIG_LOG_PATH" 2>&1
-rsync -avhz --delete "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
+rsync -avhz "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
 
 # bash config
 
@@ -86,8 +86,8 @@ ZSH_HISTORY_LOG_PATH="/home/miguel/backup_logs/zsh_history_backup.log"
 
 # zshrc
 rsync -avhz --delete "$ZSHRC" "$ZSHRC_PATH_1" >> "$ZSHRC_LOG_PATH" 2>&1
-rsync -avhz --delete "$ZSHRC" "$ZSHRC_PATH_2" >> "$ZSHRC_LOG_PATH" 2>&1
+rsync -avhz "$ZSHRC" "$ZSHRC_PATH_2" >> "$ZSHRC_LOG_PATH" 2>&1
 
 # bash history
 rsync -avhz --delete "$ZSH_HISTORY" "$ZSHRC_PATH_1" >> "$ZSH_HISTORY_LOG_PATH" 2>&1
-rsync -avhz --delete "$ZSH_HISTORY" "$ZSHRC_PATH_2" >> "$ZSH_HISTORY_LOG_PATH" 2>&1
+rsync -avhz "$ZSH_HISTORY" "$ZSHRC_PATH_2" >> "$ZSH_HISTORY_LOG_PATH" 2>&1

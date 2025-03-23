@@ -14,7 +14,7 @@ i3-msg '[class="LibreWolf"] split h'
 sleep 0.5 
 
 copyq hide
-i3-msg '[class="Brave-browser" title="New Tab - Brave"] move to workspace 2'
+i3-msg '[class="Brave-browser"] move to workspace 2'
 i3-msg '[class="LibreWolf"] move to workspace 11'
 
 sleep 0.5

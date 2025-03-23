@@ -66,6 +66,8 @@ return {
             }
 
             lspconfig.phpactor.setup {
+                capabilities = capabilities,
+                handlers = handlers,
                 init_options = {
                     ["language_server.diagnostics_on_update"] = false,
                     ["language_server.diagnostics_on_open"] = false,
