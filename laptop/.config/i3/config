@@ -67,7 +67,7 @@ gaps top 37
 gaps inner 15
 
 # start copyq
-exec --no-startup-id copyq --start-server  && copyq hide
+exec --no-startup-id copyq --start-server
 
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled

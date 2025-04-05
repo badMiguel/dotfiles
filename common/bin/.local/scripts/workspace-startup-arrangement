@@ -6,7 +6,6 @@ i3-msg restart
 
 sleep 2
 
-copyq --start-server 
 i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
 i3-msg '[class="LibreWolf"] split h'
