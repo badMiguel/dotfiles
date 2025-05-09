@@ -9,27 +9,26 @@ sleep 2
 copyq --start-server 
 i3-msg '[class="Alacritty" title="primary"] move to workspace 1'
 i3-msg '[class="Alacritty" title="cava"] move container to down'
-i3-msg '[class="LibreWolf"] split h'
+i3-msg '[class="librewolf"] split h'
 
 sleep 0.5 
 
-copyq hide
 i3-msg '[class="Brave-browser"] move to workspace 2'
-i3-msg '[class="LibreWolf"] move to workspace 11'
+i3-msg '[class="librewolf"] move to workspace 11'
 
 sleep 0.5
 
-i3-msg '[class="LibreWolf"] resize set height 600px'
+i3-msg '[class="librewolf"] resize set height 600px'
 i3-msg '[class="Alacritty" title="cava"] resize set height 200px'
 i3-msg '[class="Alacritty" title="secondary"] resize set height 700px'
 
 sleep 0.5 
 
-i3-msg '[class="LibreWolf"] move container to up'
+i3-msg '[class="librewolf"] move container to up'
 
 sleep 0.5 
 
-i3-msg '[class="LibreWolf"] move container to up'
+i3-msg '[class="librewolf"] move container to up'
 
 sleep 0.5
 
