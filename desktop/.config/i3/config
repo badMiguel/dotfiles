@@ -89,6 +89,9 @@ exec --no-startup-id i3-msg 'focus output $pm'
 # change cursor size
 exec --no-startup-id i3-msg 'xrdb -merge ~/.Xresources'
 
+# start copyq
+exec copyq --start-server
+
 # floating windows
 for_window [class="steam" title="Friends List"] floating enabled
 for_window [class="steam" title="Steam Settings"] floating enabled
