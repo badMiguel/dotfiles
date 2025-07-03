@@ -432,3 +432,11 @@ Create a symbolic link
 ```bash
 ln -s /usr/share/spicetify-cli/Themes/* /home/miguel/.config/spicetify/Themes/
 ```
+
+#### Vesktop Not Showing In-game
+
+```bash
+mkdir -p ~/.config/user-tmpfiles.d
+echo 'L %t/discord-ipc-0 - - - - .flatpak/dev.vencord.Vesktop/xdg-run/discord-ipc-0' > ~/.config/user-tmpfiles.d/discord-rpc.conf
+systemctl --user enable --now systemd-tmpfiles-setup.service
+```
