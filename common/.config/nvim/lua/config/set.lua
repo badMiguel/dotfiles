@@ -9,6 +9,14 @@ v.tabstop = 4
 v.softtabstop = 4
 v.shiftwidth = 4
 v.expandtab = true
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "dart" },
+    callback = function()
+        v.tabstop = 2
+        v.softtabstop = 2
+        v.shiftwidth = 2
+    end
+})
 
 v.smartindent = true
 
@@ -30,4 +38,3 @@ v.isfname:append("@-@")
 v.colorcolumn = '80'
 
 v.updatetime = 50
-

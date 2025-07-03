@@ -17,6 +17,9 @@ return {
                 }),
                 nls.builtins.formatting.black,
                 nls.builtins.formatting.gofumpt,
+                nls.builtins.formatting.dart_format.with({
+                    cmd = "/opt/flutter/bin/cache/dart-sdk/bin/dart"
+                }),
             }
             -- followed syntax from:
             -- https://github.com/LazyVim/LazyVim/blob/ec5981dfb1222c3bf246d9bcaa713d5cfa486fbd/lua/lazyvim/plugins/extras/lsp/none-ls.lua#L4

@@ -46,6 +46,7 @@ return {
             lspconfig.cssls.setup {
                 capabilities = capabilities,
                 handlers = handlers,
+                init_options = { provideFormatter = true },
             }
 
             lspconfig.bashls.setup {
@@ -93,8 +94,8 @@ return {
                 "cssls",
                 "bashls",
                 "gopls",
-                "intelephense",
-                "phpactor",
+                -- "intelephense",
+                -- "phpactor",
             }
         }
     },
