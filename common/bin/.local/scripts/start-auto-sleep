@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xautolock -enable
+xset s on -dpms
