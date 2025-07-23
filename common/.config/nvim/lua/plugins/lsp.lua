@@ -77,6 +77,12 @@ return {
                     ["language_server_psalm.enabled"] = false,
                 }
             }
+
+            lspconfig.omnisharp.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+                cmd = { "dotnet", "/home/miguel/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" }
+            }
         end
     },
     { "artemave/workspace-diagnostics.nvim", lazy = true },
