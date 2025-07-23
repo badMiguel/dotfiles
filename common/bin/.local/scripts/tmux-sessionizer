@@ -26,7 +26,7 @@ hydrate() {
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find -L /home/ ~/ ~/sem_1 ~/sem_1/*/ ~/documents/ ~/documents/code/ ~/bin/.local/ ~/.config/ ~/documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" -not \( -path "$HOME/.config/Code" -prune \) | fzf)
+    selected=$(find -L /home/ ~/ ~/sem_2 ~/sem_2/*/ ~/documents/ ~/documents/code/ ~/bin/.local/ ~/.config/ ~/documents/personal/ -mindepth 1 -maxdepth 1 -type d ! -name ".*" -not \( -path "$HOME/.config/Code" -prune \) | fzf)
 fi
 
 if [[ -z $selected ]]; then
