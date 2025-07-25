@@ -204,7 +204,23 @@ return {
         build = "make install_jsregexp",
         dependencies = { "rafamadriz/friendly-snippets" },
         config = function()
+            local ls = require("luasnip")
             require("luasnip.loaders.from_vscode").lazy_load()
+
+            -- Tab keybindings to jump through snippet fields
+            vim.keymap.set({ "i", "s" }, "<Tab>", function()
+                if ls.expand_or_jumpable() then
+                    return "<Plug>luasnip-expand-or-jump"
+                end
+                return "<Tab>"
+            end, { expr = true, silent = true })
+
+            vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+                if ls.jumpable(-1) then
+                    return "<Plug>luasnip-jump-prev"
+                end
+                return "<S-Tab>"
+            end, { expr = true, silent = true })
         end
     },
 }
