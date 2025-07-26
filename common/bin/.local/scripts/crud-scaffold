@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+echo "Ensure to run on root directory"
+read -p "Confirm" _
+
+echo "
+.config
+*.db" >> .gitignore
+
+dotnet new tool-manifest
+dotnet tool install dotnet-ef
+dotnet tool install dotnet-aspnet-codegenerator
+
+proj_name=$(basename "$PWD")
+cd $proj_name
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+read -p "Controller name: " name
+read -p "Model class: " model
+database_context=$proj_name"Context"
+
+dotnet aspnet-codegenerator controller \
+  -name $name \
+  -m $model \
+  -dc $database_context \
+  --relativeFolderPath Controllers \
+  --useDefaultLayout \
+  --referenceScriptLibraries
+
+sed -i "/$database_context/s|$|,|; /$database_context/a\
+    \"${database_context}Sqlite\":\ \"Data\ Source=${proj_name}.db\"" appsettings.json
+
+echo "using System.Runtime.InteropServices;
+" | cat - Program.cs > temp && mv temp Program.cs
+sed -i '/options.UseSqlServer/d' Program.cs
+sed -i "s/builder.Services.AddDb.*/string\ connectionString;\
+\
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))\
+{\
+    connectionString = builder.Configuration.GetConnectionString(\"${database_context}\");\
+    builder.Services.AddDbContext<${database_context}>(options =>\
+        options.UseSqlServer(connectionString));\
+}\
+else\
+{\
+    connectionString = builder.Configuration.GetConnectionString(\"${database_context}Sqlite\");\
+    builder.Services.AddDbContext<${database_context}>(options =>\
+        options.UseSqlite(connectionString));\
+}/" Program.cs
+
+dotnet ef migrations add InitialCreat
+dotnet ef database update
