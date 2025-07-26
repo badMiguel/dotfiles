@@ -4,6 +4,7 @@ echo "Ensure to run on root directory"
 read -p "Confirm" _
 
 echo "
+*/Migrations/*
 .config
 *.db*" >> .gitignore
 
