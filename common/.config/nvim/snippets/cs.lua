@@ -57,4 +57,25 @@ return {
             "}"
         }),
     }),
+
+    s("models", {
+        t({
+            "using System.ComponentModel.DataAnnotations;",
+            "",
+            "",
+        }),
+        f(function()
+            return string.format("namespace %s.Models;", get_root_dir())
+        end),
+        t({ "", "", "" }),
+        f(function()
+            return string.format("public class %s", get_file_name())
+        end),
+        t({
+            "",
+            "{",
+            "",
+            "}",
+        })
+    }),
 }
