@@ -5,7 +5,7 @@ read -p "Confirm" _
 
 echo "
 .config
-*.db" >> .gitignore
+*.db*" >> .gitignore
 
 dotnet new tool-manifest
 dotnet tool install dotnet-ef
@@ -54,3 +54,24 @@ else\
 
 dotnet ef migrations add InitialCreat
 dotnet ef database update
+
+mkdir Properties
+cd Properties
+
+echo "{
+  \"dependencies\": {
+    \"mssql1\": {
+      \"type\": \"mssql\",
+      \"connectionId\": \"ConnectionStrings:$database_context\"
+    }
+  }
+}" > serviceDependencies.json
+
+echo "{
+  \"dependencies\": {
+    \"mssql1\": {
+      \"type\": \"mssql.local\",
+      \"connectionId\": \"ConnectionStrings:$database_context\"
+    }
+  }
+}" > serviceDependencies.local.json
