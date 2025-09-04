@@ -2,8 +2,11 @@
 
 echo "Ensure to run on root directory"
 read -p "Confirm" _
+proj_name=$(basename "$PWD")
 
+new=false
 if [[ ! -e '.config/dotnet-tools.json' ]]; then
+    new=true
     echo "
     */Migrations/*
     .config
@@ -13,14 +16,19 @@ if [[ ! -e '.config/dotnet-tools.json' ]]; then
     dotnet tool install dotnet-ef
     dotnet tool install dotnet-aspnet-codegenerator
 
+    cd $proj_name
+
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer
     dotnet add package Microsoft.EntityFrameworkCore.Sqlite
     dotnet add package Microsoft.EntityFrameworkCore.Tools
     dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
 fi
 
-proj_name=$(basename "$PWD")
-cd $proj_name
+if ! $new; then
+    cd $proj_name
+fi
+
+pwd
 
 read -p "Model class: " model
 if [[ ! $model ]]; then
@@ -35,7 +43,7 @@ if [[ ! $name ]]; then
 fi
 
 read -p "Migration name($model): " migration
-if [[ ! $name ]]; then
+if [[ ! $migration ]]; then
     migration=$model
 fi
 
@@ -48,10 +56,6 @@ dotnet aspnet-codegenerator controller \
   --relativeFolderPath Controllers \
   --useDefaultLayout \
   --referenceScriptLibraries
-
-dotnet ef migrations add $migration
-dotnet ef database update
-
 
 if [[ ! -e "serviceDependencies.local.json" ]]; then
     sed -i "/$database_context/s|$|,|; /$database_context/a\
@@ -75,7 +79,6 @@ if [[ ! -e "serviceDependencies.local.json" ]]; then
             options.UseSqlite(connectionString));\
     }/" Program.cs
 
-    mkdir Properties
     cd Properties
     echo "{
       \"dependencies\": {
@@ -94,4 +97,9 @@ if [[ ! -e "serviceDependencies.local.json" ]]; then
         }
       }
     }" > serviceDependencies.local.json
+
+    cd ..
 fi
+
+dotnet ef migrations add $migration
+dotnet ef database update
