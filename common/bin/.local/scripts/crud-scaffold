@@ -3,25 +3,42 @@
 echo "Ensure to run on root directory"
 read -p "Confirm" _
 
-echo "
-*/Migrations/*
-.config
-*.db*" >> .gitignore
+if [[ ! -e '.config/dotnet-tools.json' ]]; then
+    echo "
+    */Migrations/*
+    .config
+    *.db*" >> .gitignore
 
-dotnet new tool-manifest
-dotnet tool install dotnet-ef
-dotnet tool install dotnet-aspnet-codegenerator
+    dotnet new tool-manifest
+    dotnet tool install dotnet-ef
+    dotnet tool install dotnet-aspnet-codegenerator
+
+    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+    dotnet add package Microsoft.EntityFrameworkCore.Tools
+    dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+fi
 
 proj_name=$(basename "$PWD")
 cd $proj_name
 
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-dotnet add package Microsoft.EntityFrameworkCore.Tools
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-
-read -p "Controller name: " name
 read -p "Model class: " model
+if [[ ! $model ]]; then
+    echo "Model can't be empty. Bye!"
+    exit
+fi
+
+init_controller_name="$model"Controller
+read -p "Controller name($init_controller_name): " name
+if [[ ! $name ]]; then
+    name="$model"Controller
+fi
+
+read -p "Migration name($model): " migration
+if [[ ! $name ]]; then
+    migration=$model
+fi
+
 database_context=$proj_name"Context"
 
 dotnet aspnet-codegenerator controller \
@@ -32,47 +49,49 @@ dotnet aspnet-codegenerator controller \
   --useDefaultLayout \
   --referenceScriptLibraries
 
-sed -i "/$database_context/s|$|,|; /$database_context/a\
-    \"${database_context}Sqlite\":\ \"Data\ Source=${proj_name}.db\"" appsettings.json
-
-echo "using System.Runtime.InteropServices;
-" | cat - Program.cs > temp && mv temp Program.cs
-sed -i '/options.UseSqlServer/d' Program.cs
-sed -i "s/builder.Services.AddDb.*/string\ connectionString;\
-\
-if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))\
-{\
-    connectionString = builder.Configuration.GetConnectionString(\"${database_context}\");\
-    builder.Services.AddDbContext<${database_context}>(options =>\
-        options.UseSqlServer(connectionString));\
-}\
-else\
-{\
-    connectionString = builder.Configuration.GetConnectionString(\"${database_context}Sqlite\");\
-    builder.Services.AddDbContext<${database_context}>(options =>\
-        options.UseSqlite(connectionString));\
-}/" Program.cs
-
-dotnet ef migrations add InitialCreat
+dotnet ef migrations add $migration
 dotnet ef database update
 
-mkdir Properties
-cd Properties
 
-echo "{
-  \"dependencies\": {
-    \"mssql1\": {
-      \"type\": \"mssql\",
-      \"connectionId\": \"ConnectionStrings:$database_context\"
-    }
-  }
-}" > serviceDependencies.json
+if [[ ! -e "serviceDependencies.local.json" ]]; then
+    sed -i "/$database_context/s|$|,|; /$database_context/a\
+        \"${database_context}Sqlite\":\ \"Data\ Source=${proj_name}.db\"" appsettings.json
 
-echo "{
-  \"dependencies\": {
-    \"mssql1\": {
-      \"type\": \"mssql.local\",
-      \"connectionId\": \"ConnectionStrings:$database_context\"
-    }
-  }
-}" > serviceDependencies.local.json
+    echo "using System.Runtime.InteropServices;
+    " | cat - Program.cs > temp && mv temp Program.cs
+    sed -i '/options.UseSqlServer/d' Program.cs
+    sed -i "s/builder.Services.AddDb.*/string\ connectionString;\
+    \
+    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))\
+    {\
+        connectionString = builder.Configuration.GetConnectionString(\"${database_context}\");\
+        builder.Services.AddDbContext<${database_context}>(options =>\
+            options.UseSqlServer(connectionString));\
+    }\
+    else\
+    {\
+        connectionString = builder.Configuration.GetConnectionString(\"${database_context}Sqlite\");\
+        builder.Services.AddDbContext<${database_context}>(options =>\
+            options.UseSqlite(connectionString));\
+    }/" Program.cs
+
+    mkdir Properties
+    cd Properties
+    echo "{
+      \"dependencies\": {
+        \"mssql1\": {
+          \"type\": \"mssql\",
+          \"connectionId\": \"ConnectionStrings:$database_context\"
+        }
+      }
+    }" > serviceDependencies.json
+
+    echo "{
+      \"dependencies\": {
+        \"mssql1\": {
+          \"type\": \"mssql.local\",
+          \"connectionId\": \"ConnectionStrings:$database_context\"
+        }
+      }
+    }" > serviceDependencies.local.json
+fi
