@@ -8,9 +8,9 @@ new=false
 if [[ ! -e '.config/dotnet-tools.json' ]]; then
     new=true
     echo "
-    */Migrations/*
-    .config
-    *.db*" >> .gitignore
+*/Migrations/*
+.config
+*.db*" >> .gitignore
 
     dotnet new tool-manifest
     dotnet tool install dotnet-ef
@@ -27,8 +27,6 @@ fi
 if ! $new; then
     cd $proj_name
 fi
-
-pwd
 
 read -p "Model class: " model
 if [[ ! $model ]]; then
@@ -57,11 +55,24 @@ dotnet aspnet-codegenerator controller \
   --useDefaultLayout \
   --referenceScriptLibraries
 
-if [[ ! -e "serviceDependencies.local.json" ]]; then
+cd Controllers
+echo "using $proj_name.Data;" | cat - "$name".cs > temp && mv temp "$name".cs
+cd ..
+
+proj_model="$proj_name".Models
+proj_data="$proj_name".Data
+
+if [[ ! -e "Properties/serviceDependencies.local.json" ]]; then
+    cd Data
+    echo "namespace $proj_name.Data;" | cat - "$database_context".cs > temp && mv temp "$database_context".cs
+    cd ..
+
     sed -i "/$database_context/s|$|,|; /$database_context/a\
         \"${database_context}Sqlite\":\ \"Data\ Source=${proj_name}.db\"" appsettings.json
 
     echo "using System.Runtime.InteropServices;
+using $proj_model;
+using $proj_data;
     " | cat - Program.cs > temp && mv temp Program.cs
     sed -i '/options.UseSqlServer/d' Program.cs
     sed -i "s/builder.Services.AddDb.*/string\ connectionString;\
@@ -99,7 +110,8 @@ if [[ ! -e "serviceDependencies.local.json" ]]; then
     }" > serviceDependencies.local.json
 
     cd ..
+
+    dotnet ef migrations add $migration
+    dotnet ef database update
 fi
 
-dotnet ef migrations add $migration
-dotnet ef database update
