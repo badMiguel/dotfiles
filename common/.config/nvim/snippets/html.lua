@@ -9,7 +9,7 @@ local rep = require("luasnip.extras").rep -- repeat input
 return {
     s("cshtmlviews", {
         t({ "@{", "" }),
-        t("     ViewDate[\""), i(1, "Title"), t("\"] = \""), i(2, "Index"), t("\";"),
+        t("     ViewData[\""), i(1, "Title"), t("\"] = \""), i(2, "Index"), t("\";"),
         t({
             "",
             "}",

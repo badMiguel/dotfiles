@@ -41,7 +41,7 @@ return {
         }),
         t({ "", "", "" }),
         f(function()
-            return string.format("namespace %s.Controller;", get_root_dir())
+            return string.format("namespace %s.Controllers;", get_root_dir())
         end),
         t({ "", "", "" }),
         f(function()
@@ -52,7 +52,7 @@ return {
         t({
             "",
             "    {",
-            "        return View()",
+            "        return View();",
             "    }",
             "}"
         }),
