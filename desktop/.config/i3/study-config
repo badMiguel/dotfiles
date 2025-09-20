@@ -1,0 +1,130 @@
+include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/remap.conf
+include $HOME/.config/i3/rose-pine.conf
+include $HOME/.config/i3/study-startup.conf
+
+# xrandr for screens
+exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 100.00 --pos 2560x-200 --rotate left 
+
+# set monitors
+set $pm DP-0
+set $sm HDMI-0
+
+# set super key
+set $mod Mod1
+
+# start picom
+exec --no-startup-id picom
+
+# start borders
+exec_always --no-startup-id $HOME/bin/.local/scripts/start-xborder
+
+# scale down monitor 2
+exec_always --no-startup-id xrandr --output $sm --dpi 90
+
+# notification
+exec_always --no-startup-id dunst
+
+# remove title bar on window
+default_border pixel 1
+default_floating_border normal
+
+# set bg 
+# exec_always --no-startup-id feh --bg-scale ~/documents/background/city.png  ~/documents/background/city-right.png
+# exec_always --no-startup-id feh --bg-scale ~/documents/background/bridge.png  ~/documents/background/bridge-right.png
+exec_always --no-startup-id feh --bg-scale --no-xinerama ~/documents/background/cherry_blossom_flipped.png
+
+# font 
+font pango:monoscape 10
+
+# Start XDG autostart .desktop files using dex. See also
+exec --no-startup-id dex --autostart --environment i3
+
+# Uses xss-lock to manage screen locking before the system suspends and uses i3lock to lock the screen
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -nefc 000000 --nofork
+
+# auto lock screen
+exec --no-startup-id xautolock -detectsleep -time 60 -locker "i3lock -nefc 000000"
+
+# use nm-applet to manage network with GUI
+exec --no-startup-id nm-applet
+
+# use blueman-applet for bluetooth
+exec --no-startup-id blueman-applet
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# dont focus when hovering through container
+focus_follows_mouse no 
+
+# status bar
+exec_always --no-startup-id killall polybar
+exec_always --no-startup-id ~/.config/polybar/launch
+
+# set custom key binding
+exec --no-startup-id ~/bin/.local/scripts/key-remap
+
+# night light
+exec_always --no-startup-id redshift -O 4800 -P -b 1
+
+# add gaps
+gaps inner 15
+gaps top 37
+# workspace 1 gaps left 400
+
+# kill steam package install which causes problem on automation
+exec --no-startup-id ~/bin/.local/scripts/kill-steam-package-install
+
+# move vesktop
+exec --no-startup-id ~/bin/.local/scripts/move-vesktop
+
+# focus on primary monitor when reloading
+exec --no-startup-id i3-msg 'focus output $pm'
+
+# change cursor size
+exec --no-startup-id i3-msg 'xrdb -merge ~/.Xresources'
+
+# start copyq
+exec copyq --start-server
+
+# floating windows
+for_window [class="steam" title="Friends List"] floating enabled
+for_window [class="steam" title="Steam Settings"] floating enabled
+for_window [class="gnome-calculator"] floating enabled
+for_window [class="Display-im6.q16"] floating enabled
+for_window [class="feh"] floating enabled
+for_window [class="Totem"] floating enabled
+for_window [class="Gpick"] floating enabled
+for_window [class="Pavucontrol"] floating enabled
+for_window [class="Emulator"] floating enabled
+for_window [class="copyq"] floating enabled
+for_window [class="org.gnome.clocks"] floating enabled
+for_window [class="gnome-calendar"] floating enabled
+for_window [class="Blueman-manager"] floating enabled
+for_window [class="PacketTracer"] floating enabled
+for_window [class="firefox" title="Library"] floating enabled
+for_window [class="pavucontrol"] floating enabled
+
+for_window [class="KeePassXC"] floating enabled
+for_window [class="KeePassXC"] resize set 1000 800
+for_window [class="KeePassXC"] move position center
+for_window [class="KeePassXC"] move container to output $pm
+
+for_window [class="Alacritty" title="notes"] floating enabled
+for_window [class="Alacritty" title="notes"] resize set 1200 1000
+for_window [class="Alacritty" title="notes"] move position center
+for_window [class="Alacritty" title="notes"] move container to output $pm
+
+for_window [class="Alacritty" title="calendar"] floating enabled
+for_window [class="Alacritty" title="calendar"] resize set 800 600
+for_window [class="Alacritty" title="calendar"] move position center
+for_window [class="Alacritty" title="calendar"] move container to output $pm
+
+for_window [class="Nemo"] floating enabled
+for_window [class="Nemo"] resize set 1200 1000
+for_window [class="Nemo"] move position center
