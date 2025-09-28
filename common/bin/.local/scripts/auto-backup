@@ -70,8 +70,8 @@ CONFIG_PATH_2="/mnt/backup/backup/"
 
 CONFIG_LOG_PATH="/home/miguel/backup_logs/config_backup.log"
 
-rsync -avhz --delete "$CONFIG" "$CONFIG_PATH_1" >> "$CONFIG_LOG_PATH" 2>&1
-rsync -avhz "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
+rsync -avhz --delete --exclude=BraveSoftware "$CONFIG" "$CONFIG_PATH_1" >> "$CONFIG_LOG_PATH" 2>&1
+rsync -avhz --exclude=BraveSoftware "$CONFIG" "$CONFIG_PATH_2" >> "$CONFIG_LOG_PATH" 2>&1
 
 # bash config
 
