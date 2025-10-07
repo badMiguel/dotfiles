@@ -195,7 +195,9 @@ E: The package <package-name> needs to be reinstalled, but I can't find an archi
 sudo dpkg --remove --force-all <package-name>
 ```
 
-### Connect Controller via Bluetooth
+### Controller
+
+**Connect via bluetooth**
 
 ```
 # Disconnect your gamepad with blueman and remove the device
@@ -207,6 +209,9 @@ pair MAC_ADDRESS
 trust MAC_ADDRESS
 connect MAC_ADDRESS
 ```
+
+> [!NOTE]
+> If PC can detect controller but game cannot check [game-devices-udev](https://gitlab.com/jntesteves/game-devices-udev/) (in AUR).
 
 [source](https://github.com/bluez/bluez/issues/673#issuecomment-1849132576)
 
