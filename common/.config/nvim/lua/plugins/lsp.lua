@@ -23,6 +23,16 @@ return {
             }
             -- lspconfig.pylsp.setup { capabilities = capabilities, handlers = handlers, pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, }
 
+            lspconfig.robotframework_ls.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+            }
+
+            lspconfig.sqls.setup {
+                capabilities = capabilities,
+                handlers = handlers,
+            }
+
             lspconfig.ts_ls.setup {
                 capabilities = capabilities,
                 handlers = handlers,
@@ -81,7 +91,7 @@ return {
             lspconfig.omnisharp.setup {
                 capabilities = capabilities,
                 handlers = handlers,
-                cmd = { "dotnet", "/home/miguel/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" }
+                cmd = { "dotnet", "/home/miguel/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
             }
         end
     },
