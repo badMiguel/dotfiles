@@ -3,14 +3,13 @@ return {
         "neovim/nvim-lspconfig",
 
         config = function()
-            local lspconfig = require("lspconfig")
             local handlers = {
                 ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
                 ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
             }
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.pyright.setup {
+            vim.lsp.config("pyright", {
                 capabilities = capabilities,
                 handlers = handlers,
                 settings = {
@@ -20,63 +19,75 @@ return {
                         }
                     }
                 },
-            }
-            -- lspconfig.pylsp.setup { capabilities = capabilities, handlers = handlers, pylsp = { plugins = { pycodestyle = { ignore = { "E501" }, }, pylsp_mypy = { live_mode = false, enabled = true }, }, }, }
+            })
 
-            lspconfig.robotframework_ls.setup {
+            vim.lsp.config("pylsp", {
                 capabilities = capabilities,
                 handlers = handlers,
-            }
+                pylsp = {
+                    plugins = {
+                        pycodestyle = { ignore = { "E501" } },
+                        pylsp_mypy = { live_mode = false, enabled = true },
+                    },
+                },
+            })
 
-            lspconfig.sqls.setup {
+            vim.lsp.config("robotframework_ls", {
                 capabilities = capabilities,
                 handlers = handlers,
-            }
+            })
 
-            lspconfig.ts_ls.setup {
+            vim.lsp.config("sqls", {
                 capabilities = capabilities,
                 handlers = handlers,
-                root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
+            })
+
+            vim.lsp.config("ts_ls", {
+                capabilities = capabilities,
+                handlers = handlers,
+                root_dir = vim.fs.root(0, { "tsconfig.json", "package.json", ".git" }),
                 on_attach = function(id, bufnr)
                     require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
                 end,
-            }
+            })
 
-            lspconfig.lua_ls.setup {
+            vim.lsp.config("lua_ls", {
                 capabilities = capabilities,
                 handlers = handlers
-            }
+            })
 
-            lspconfig.html.setup {
+            vim.lsp.config("html", {
                 capabilities = capabilities,
                 handlers = handlers,
-                provideFormatter = true
-            }
+                provideFormatter = false,
+            })
 
-            lspconfig.cssls.setup {
+            vim.lsp.config("cssls", {
                 capabilities = capabilities,
                 handlers = handlers,
                 init_options = { provideFormatter = true },
-            }
+            })
 
-            lspconfig.bashls.setup {
+            vim.lsp.config("bashls", {
                 capabilities = capabilities,
                 handlers = handlers,
-            }
+            })
 
-            lspconfig.gopls.setup {
+            vim.lsp.config("gopls", {
                 capabilities = capabilities,
                 handlers = handlers,
-            }
+            })
 
-            lspconfig.intelephense.setup { capabilities = capabilities, handlers = handlers,
+            vim.lsp.config("intelephense", {
+                capabilities = capabilities,
+                handlers = handlers,
                 settings = { intelephense = { format = { enabled = false } } },
                 on_attach = function(id, bufnr)
                     require("workspace-diagnostics").populate_workspace_diagnostics(id, bufnr)
                 end,
-            }
+            })
 
-            lspconfig.phpactor.setup {
+            vim.lsp.config("phpactor", {
                 capabilities = capabilities,
                 handlers = handlers,
                 init_options = {
@@ -86,13 +97,20 @@ return {
                     ["language_server_phpstan.enabled"] = false,
                     ["language_server_psalm.enabled"] = false,
                 }
-            }
+            })
 
-            lspconfig.omnisharp.setup {
+            vim.lsp.config("omnisharp", {
                 capabilities = capabilities,
                 handlers = handlers,
                 cmd = { "dotnet", "/home/miguel/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
-            }
+            })
+
+            local servers = { "pyright", "robotframework_ls", "sqls", "ts_ls", "lua_ls", "html", "cssls", "bashls",
+                "gopls", "intelephense", "phpactor", "omnisharp", }
+
+            for _, value in pairs(servers) do
+                vim.lsp.enable(value)
+            end
         end
     },
     { "artemave/workspace-diagnostics.nvim", lazy = true },
