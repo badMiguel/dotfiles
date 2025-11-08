@@ -9,13 +9,10 @@ v.tabstop = 4
 v.softtabstop = 4
 v.shiftwidth = 4
 v.expandtab = true
+
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "dart" },
-    callback = function()
-        v.tabstop = 2
-        v.softtabstop = 2
-        v.shiftwidth = 2
-    end
+    pattern = { "dart", "yaml.docker-compose" },
+    command="setlocal tabstop=2 softtabstop=2 shiftwidth=2"
 })
 
 v.smartindent = true

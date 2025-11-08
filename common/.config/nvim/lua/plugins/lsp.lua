@@ -105,9 +105,18 @@ return {
                 cmd = { "dotnet", "/home/miguel/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
             })
 
-            local servers = { "pyright", "robotframework_ls", "sqls", "ts_ls", "lua_ls", "html", "cssls", "bashls",
-                "gopls", "intelephense", "phpactor", "omnisharp", }
+            vim.lsp.config("dockerls", {
+                capabilities = capabilities,
+                handlers = handlers,
+            })
 
+            vim.lsp.config("docker_compose_language_service", {
+                capabilities = capabilities,
+                handlers = handlers,
+            })
+
+            local servers = { "pyright", "robotframework_ls", "sqls", "ts_ls", "lua_ls", "html", "cssls", "bashls",
+                "gopls", "intelephense", "phpactor", "omnisharp", "dockerls", "docker_compose_language_service" }
             for _, value in pairs(servers) do
                 vim.lsp.enable(value)
             end
