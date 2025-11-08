@@ -6,7 +6,7 @@
 
 To have icons in terminal/neovim, you need a [patched font](https://www.nerdfonts.com/font-downloads).
 
-## GPG Key Issue
+## PGP Key Issue
 
 ```
 rm -r /etc/pacman.d/gnupg
