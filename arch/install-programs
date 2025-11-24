@@ -37,3 +37,4 @@ sudo pacman -S --noconfirm \
     cheese \
     thunderbird steam \
     obs-studio \
+    cups cups-filters \ #printer

@@ -224,6 +224,19 @@ echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 
 [source](<[https://github.com/bluez/bluez/issues/673#issuecomment-1849132576](https://www.linuxuprising.com/2018/05/get-qt5-apps-to-use-native-gtk-style-in.html)>)
 
+## PRINTER
+
+```bash
+pacman -S cups cups-filter
+systemctl enable --now cups.service
+
+# Add the printer 
+lpadmin -p PRINTER_NAME \
+  -E \
+  -v ipp://IP_ADDRESS/ipp/print \
+  -m everywhere
+```
+
 ## FOR LAPTOP
 
 **Add this for touchpad and other keybinds**
