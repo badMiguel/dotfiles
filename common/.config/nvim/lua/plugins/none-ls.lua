@@ -20,7 +20,12 @@ return {
                 nls.builtins.formatting.dart_format.with({
                     cmd = "/opt/flutter/bin/cache/dart-sdk/bin/dart"
                 }),
-                nls.builtins.formatting.csharpier
+                nls.builtins.formatting.csharpier,
+                nls.builtins.formatting.clang_format.with({
+                    extra_args = {
+                        "--style={IndentWidth: 4, TabWidth: 4, UseTab: Never}"
+                    },
+                })
             }
             -- followed syntax from:
             -- https://github.com/LazyVim/LazyVim/blob/ec5981dfb1222c3bf246d9bcaa713d5cfa486fbd/lua/lazyvim/plugins/extras/lsp/none-ls.lua#L4

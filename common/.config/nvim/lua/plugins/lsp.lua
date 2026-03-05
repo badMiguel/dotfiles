@@ -115,8 +115,14 @@ return {
                 handlers = handlers,
             })
 
+            vim.lsp.config("clangd", {
+                capabilities = capabilities,
+                handlers = handlers,
+                cmd = { "--indent-width=4" },
+            })
+
             local servers = { "pyright", "robotframework_ls", "sqls", "ts_ls", "lua_ls", "html", "cssls", "bashls",
-                "gopls", "intelephense", "phpactor", "omnisharp", "dockerls", "docker_compose_language_service" }
+                "gopls", "intelephense", "phpactor", "omnisharp", "dockerls", "docker_compose_language_service", "clangd" }
             for _, value in pairs(servers) do
                 vim.lsp.enable(value)
             end
