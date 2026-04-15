@@ -230,7 +230,7 @@ echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 pacman -S cups cups-filter
 systemctl enable --now cups.service
 
-# Add the printer 
+# Add the printer
 lpadmin -p PRINTER_NAME \
   -E \
   -v ipp://IP_ADDRESS/ipp/print \
@@ -321,6 +321,12 @@ Section "InputClass"
     Option "Tapping" "on"
     Option "NaturalScrolling" "false"
 EndSection
+```
+
+**Touchpad suddenly stopped clicking? Try...**
+
+```bash
+sudo modprobe -r psmouse && sudo modprobe psmouse proto=imps
 ```
 
 **Current tlp settings (different from defaults)**
