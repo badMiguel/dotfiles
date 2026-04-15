@@ -118,7 +118,7 @@ return {
             vim.lsp.config("clangd", {
                 capabilities = capabilities,
                 handlers = handlers,
-                cmd = { "--indent-width=4" },
+                -- cmd = { "--indent-width=4" },
             })
 
             local servers = { "pyright", "robotframework_ls", "sqls", "ts_ls", "lua_ls", "html", "cssls", "bashls",
