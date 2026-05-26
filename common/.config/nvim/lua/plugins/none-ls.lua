@@ -23,7 +23,15 @@ return {
                 nls.builtins.formatting.csharpier,
                 nls.builtins.formatting.clang_format.with({
                     extra_args = {
-                        "--style={IndentWidth: 4, TabWidth: 4, UseTab: Never}"
+                        "--style={"
+                        .. "BasedOnStyle: LLVM, "
+                        .. "IndentWidth: 4, "
+                        .. "TabWidth: 4, "
+                        .. "UseTab: Never, "
+                        .. "AllowShortIfStatementsOnASingleLine: AllIfsAndElse, "
+                        .. "AllowShortLoopsOnASingleLine: true, "
+                        .. "AllowShortCaseLabelsOnASingleLine: true"
+                        .. "}"
                     },
                 })
             }
